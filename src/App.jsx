@@ -377,30 +377,30 @@ export default function App(){
   const [category,setCategory] = useState("Toutes");
   const [index,setIndex] = useState(0);
   const [showAnswer,setShowAnswer] = useState(false);
+  const [mode,setMode] = useState("quiz");
   const [order,setOrder] = useState(questions);
   const [known,setKnown] = useState([]);
   const [review,setReview] = useState([]);
 
   const categories = [
-  {key:"Toutes", label:"Toutes"},
-  {key:"Questions personnelles", label:"Perso"},
-  {key:"Histoire, culture et société", label:"Culture"},
-  {key:"Institutions françaises", label:"Institutions"},
-  {key:"Lois et République", label:"Lois"},
-  {key:"Review", label:"À revoir"}
-];
+    {key:"Toutes", label:"Toutes"},
+    {key:"Questions personnelles", label:"Perso"},
+    {key:"Histoire, culture et société", label:"Culture"},
+    {key:"Institutions françaises", label:"Institutions"},
+    {key:"Lois et République", label:"Lois"}
+  ];
 
-  const filtered = useMemo(() => {
-  if (category === "Review") {
-    return order.filter(q => review.includes(q.id));
-  }
-  return order.filter(q => category === "Toutes" || q.cat === category);
-}, [order, category, review]);
+  const filtered = useMemo(() => order.filter(q => category === "Toutes" || q.cat === category), [order, category]);
   const current = filtered[index] || filtered[0];
   const progress = Math.round((known.length / questions.length) * 100);
 
-  const goNext = () => { setIndex(i => Math.min(i + 1, filtered.length - 1)); setShowAnswer(false); };
-  const goPrev = () => { setIndex(i => Math.max(i - 1, 0)); setShowAnswer(false); };
+  const goNext = () => { setIndex(i => Math.min(i + 1, filtered.length - 1)); setShowAnswer(mode === "revision"); };
+  const goPrev = () => { setIndex(i => Math.max(i - 1, 0)); setShowAnswer(mode === "revision"); }; 
+
+  const switchMode = (newMode) => {
+    setMode(newMode);
+    setShowAnswer(newMode === "revision");
+  };
 
   const markKnown = () => {
     if(!current) return;
@@ -432,6 +432,27 @@ export default function App(){
         .container {
           max-width: 1120px;
           margin: 0 auto;
+        }
+        .modebar {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 12px;
+        }
+        .modeBtn {
+          flex: 1;
+          padding: 12px 14px;
+          border-radius: 16px;
+          border: 1px solid #334155;
+          background: rgba(255,255,255,.04);
+          color: #e5e7eb;
+          font-weight: 800;
+          cursor: pointer;
+          font-size: 15px;
+        }
+        .modeBtn.active {
+          border-color: #60a5fa;
+          background: rgba(37,99,235,.28);
+          color: #bfdbfe;
         }
         .topbar {
           display: flex;
@@ -513,6 +534,21 @@ export default function App(){
           max-width: 850px;
           margin: 0;
         }
+        .revisionCard {
+          cursor: default;
+          gap: 22px;
+        }
+        .revisionQuestion {
+          margin-bottom: 6px;
+        }
+        .revisionAnswerBox {
+          width: 100%;
+          max-width: 900px;
+          padding: 20px;
+          border-radius: 18px;
+          border: 1px solid rgba(34,197,94,.35);
+          background: rgba(34,197,94,.08);
+        }
         .memoryTip {
           margin-top: 22px;
           padding: 12px 16px;
@@ -554,6 +590,15 @@ export default function App(){
             padding-bottom: max(10px, env(safe-area-inset-bottom));
           }
           .container { max-width: 100%; }
+          .modebar {
+            gap: 8px;
+            margin-bottom: 10px;
+          }
+          .modeBtn {
+            padding: 10px 8px;
+            font-size: 13px;
+            border-radius: 14px;
+          }
           .topbar {
             gap: 8px;
             margin: 0 -10px 12px;
@@ -609,6 +654,18 @@ export default function App(){
             margin-top: 14px;
             padding: 10px 12px;
           }
+          .revisionCard {
+            gap: 14px;
+            justify-content: flex-start;
+            overflow-y: auto;
+          }
+          .revisionAnswerBox {
+            padding: 14px;
+            border-radius: 16px;
+          }
+          .revisionQuestion {
+            margin-bottom: 0;
+          }
           .actions {
             grid-template-columns: 1fr 1fr;
             gap: 9px;
@@ -640,6 +697,11 @@ export default function App(){
       `}</style>
 
       <main className="container">
+        <div className="modebar">
+          <button onClick={() => switchMode("quiz")} className={`modeBtn ${mode === "quiz" ? "active" : ""}`}>🎯 Mode quiz</button>
+          <button onClick={() => switchMode("revision")} className={`modeBtn ${mode === "revision" ? "active" : ""}`}>📖 Mode révision</button>
+        </div>
+
         <div className="topbar">
           {categories.map(cat => (
             <button key={cat.key} onClick={() => {setCategory(cat.key); setIndex(0); setShowAnswer(false);}} className={`chip ${category === cat.key ? "active" : ""}`}>
@@ -655,9 +717,16 @@ export default function App(){
             <div className="hideMobile">🔖 Marquer</div>
           </div>
 
-          <div onClick={() => setShowAnswer(!showAnswer)} className="card">
+          <div onClick={() => mode === "quiz" && setShowAnswer(!showAnswer)} className={`card ${mode === "revision" ? "revisionCard" : ""}`}>
             <div className="badge">{current.cat.toUpperCase()}</div>
-            {!showAnswer ? <>
+            {mode === "revision" ? <>
+              <h1 className="question revisionQuestion">{current.q}</h1>
+              <div className="revisionAnswerBox">
+                <h2 className="answerTitle">Réponse modèle</h2>
+                <p className="answer">{sampleAnswers[current.id]}</p>
+                {memoryTips[current.id] && <div className="memoryTip"><strong>Astuce :</strong> {memoryTips[current.id]}</div>}
+              </div>
+            </> : !showAnswer ? <>
               <h1 className="question">{current.q}</h1>
               <p className="hint">☝️ Cliquer pour voir la réponse</p>
             </> : <>
