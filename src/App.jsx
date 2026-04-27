@@ -124,126 +124,249 @@ const questions = [
 ];
 
 const sampleAnswers = {
-  1:"Je souhaite devenir français(e) car je vis en France depuis plusieurs années, je suis intégré(e) et je partage les valeurs de la République.",
+  1:"Je vis en France depuis plusieurs années, je suis intégré(e) et je partage les valeurs de la République.",
   2:"Je vis en France depuis plusieurs années, ce qui m’a permis de m’intégrer progressivement.",
   3:"J’ai choisi la France pour sa stabilité, ses opportunités et son respect des droits.",
-  4:"Oui, car j’ai un travail, des relations sociales et je participe à la vie quotidienne.",
+  4:"Oui, j’ai un travail, des relations sociales et je participe à la vie quotidienne.",
   5:"Je parle français, je travaille, je respecte les lois et je m’implique localement.",
   6:"J’aime la stabilité, la qualité de vie, les services publics et la culture.",
-  7:"Comme dans tous les pays, il y a des défis, mais je m’adapte et reste positif(ve).",
-  8:"C’est un engagement et une reconnaissance de mon intégration.",
-  9:"Liberté, égalité, fraternité, respect et solidarité.",
-  10:"Elle représente les principes fondamentaux de la République.",
-  11:"Oui, car voter est un droit et un devoir citoyen.",
-  12:"La citoyenneté, c’est participer à la vie du pays et respecter ses lois.",
-  13:"Un système fondé sur l’égalité, les droits et les lois.",
-  14:"Oui, au travail et dans mon entourage.",
-  15:"Oui, par des activités locales ou associatives.",
-  16:"Pas toujours, mais je participe quand c’est possible.",
-  17:"Oui, pour aider les autres et contribuer à la société.",
-  18:"Oui, par des actions locales ou solidaires.",
-  19:"Par la télévision, internet et les journaux.",
-  20:"Oui, pour progresser et m’intégrer.",
-  21:"En lisant, en parlant et en regardant les actualités.",
+  7:"Comme dans tous les pays, il y a des choses plus difficiles, mais je m’adapte et je reste positif(ve).",
+  8:"La nationalité française représente pour moi un engagement et une reconnaissance de mon intégration.",
+  9:"Je partage les valeurs de liberté, d’égalité, de fraternité, de respect et de solidarité.",
+  10:"Elle représente les principes fondamentaux de la République : la liberté, l’égalité des droits et la solidarité entre les citoyens.",
+  11:"Oui, car voter est un droit et aussi un devoir citoyen. Cela permet de participer à la démocratie.",
+  12:"La citoyenneté, c’est participer à la vie du pays, respecter ses lois et contribuer à la société.",
+  13:"La République représente un système fondé sur l’égalité, les droits, les devoirs et le respect des lois.",
+  14:"Oui, j’ai des amis français au travail et dans mon entourage.",
+  15:"Oui, je participe à la vie locale par des activités de quartier ou associatives quand c’est possible.",
+  16:"Pas toujours, mais je participe quand c’est possible à des activités locales ou associatives.",
+  17:"Oui, j’ai déjà participé à des actions bénévoles pour aider les autres et contribuer à la société.",
+  18:"Oui, j’ai participé à des actions locales ou solidaires.",
+  19:"Je m’informe par la télévision, internet, les journaux et les discussions avec mon entourage.",
+  20:"Oui, je parle français à la maison pour progresser et favoriser l’intégration de ma famille.",
+  21:"J’améliore mon français en lisant, en parlant avec les autres et en suivant l’actualité.",
   22:"Oui, je travaille en France.",
-  23:"J’exerce un métier qui me permet de participer à la société.",
-  24:"Continuer à travailler et construire mon avenir en France.",
-  25:"Oui, je souhaite m’installer durablement.",
-  26:"Avoir trouvé ma place et un emploi stable.",
-  27:"La langue ou l’adaptation culturelle au début.",
-  28:"En apprenant et en faisant des efforts.",
-  29:"Lecture, sport, promenades, activités culturelles.",
-  30:"Oui, comme le 14 juillet ou Noël.",
-  31:"Oui, avec ma famille ou mes amis.",
-  32:"L’importance de la culture et du débat.",
-  33:"L’école offre une éducation de qualité.",
-  34:"C’est une liberté essentielle avec des limites.",
-  35:"Elle garantit la neutralité et la liberté de croire ou non.",
-  36:"L’équilibre entre travail et vie personnelle.",
-  37:"Oui, ils sont scolarisés ici.",
-  38:"Le français principalement.",
-  39:"Apprendre la langue et être patient.",
-  40:"Respecter les lois et participer à la société.",
-  41:"Le président actuel est Emmanuel Macron.",
-  42:"Le Premier ministre est Gabriel Attal, selon l’actualité.",
-  43:"La capitale est Paris.",
-  44:"Il y a 18 régions.",
-  45:"Le drapeau, Marianne, l’hymne et la devise.",
-  46:"Il symbolise liberté, égalité et fraternité.",
-  47:"Elle représente la République.",
-  48:"L’hymne est La Marseillaise.",
-  49:"Il commémore la Révolution française.",
-  50:"Un événement majeur marquant la fin de la monarchie absolue.",
-  51:"En 1789.",
-  52:"Un empereur et chef militaire français.",
-  53:"Un général et président fondateur de la Ve République.",
-  54:"Fin de la Seconde Guerre mondiale.",
-  55:"Un conflit mondial de 1939 à 1945.",
-  56:"Un texte fondamental sur les droits humains.",
-  57:"Liberté, égalité, fraternité.",
-  58:"La séparation de l’État et des religions.",
-  59:"Le français.",
-  60:"Fromage, baguette, gastronomie variée.",
-  61:"Oui, comme Victor Hugo.",
-  62:"Oui, comme Claude Monet.",
-  63:"Elle est centrale dans la société.",
-  64:"L’ensemble des biens culturels et historiques.",
-  65:"Oui, comme la Tour Eiffel.",
-  66:"Une organisation de pays européens.",
-  67:"Oui.",
-  68:"L’euro.",
-  69:"Espagne, Italie, Allemagne, Belgique…",
-  70:"L’ensemble des pays parlant français.",
-  71:"Un régime politique sans roi.",
-  72:"Le président et le gouvernement.",
-  73:"L’institution qui vote les lois.",
-  74:"L’Assemblée nationale et le Sénat.",
-  75:"Voter les lois et contrôler le gouvernement.",
-  76:"Représenter les territoires.",
-  77:"Diriger l’État et représenter la France.",
-  78:"Diriger la politique du pays.",
-  79:"Appliquer les lois.",
-  80:"Voter les lois.",
-  81:"Rendre la justice.",
-  82:"Séparer les pouvoirs pour éviter les abus.",
-  83:"Par élection.",
-  84:"5 ans.",
-  85:"Un vote pour choisir des représentants.",
-  86:"Les citoyens français majeurs.",
-  87:"Une collectivité locale.",
-  88:"Le responsable de la commune.",
-  89:"Gérer la ville et ses services.",
-  90:"Le représentant de l’État.",
-  91:"Le Parlement.",
-  92:"Elle est votée puis promulguée.",
-  93:"Une règle générale.",
-  94:"Gouvernement ou parlementaires.",
-  95:"Le texte fondamental.",
-  96:"Chacun doit respecter la loi.",
-  97:"On est innocent jusqu’à preuve du contraire.",
-  98:"18 ans.",
-  99:"Organiser la société.",
-  100:"Tout le monde.",
-  101:"Oui, mais elle doit être respectée.",
-  102:"Le Conseil constitutionnel.",
-  103:"Une institution de justice.",
-  104:"Contester une décision.",
-  105:"Oui.",
-  106:"Oui, pacifiquement.",
-  107:"Oui.",
-  108:"Arrêter de travailler pour défendre ses droits.",
-  109:"Constitution, lois, règlements.",
-  110:"Avocat, silence, juge.",
-  111:"Loi = Parlement / règlement = gouvernement.",
-  112:"Oui.",
-  113:"Oui.",
-  114:"Oui, avec limites.",
-  115:"Historique des condamnations.",
-  116:"Indirectement.",
-  117:"Oui.",
-  118:"Oui.",
-  119:"Un accord juridique.",
-  120:"Car elle est indépendante du pouvoir politique."
+  23:"J’exerce un métier qui me permet de participer à la société et de construire mon avenir en France.",
+  24:"Mes projets sont de m’installer durablement, développer ma carrière et construire ma vie familiale en France.",
+  25:"Oui, je souhaite rester en France durablement car j’y ai construit ma vie.",
+  26:"Ma plus grande fierté est d’avoir trouvé ma place, d’avoir progressé en français et d’avoir un emploi stable.",
+  27:"Au début, la langue et l’adaptation culturelle ont été les principales difficultés.",
+  28:"J’ai surmonté ces difficultés en apprenant, en pratiquant le français et en faisant des efforts régulièrement.",
+  29:"Mes loisirs sont la lecture, le sport, les promenades et les activités culturelles.",
+  30:"Oui, je connais des traditions comme le 14 juillet, Noël, la galette des rois et le 1er mai.",
+  31:"Oui, je célèbre certaines fêtes françaises avec ma famille ou mes amis.",
+  32:"Ce qui m’a marqué, c’est l’importance de la culture, du débat et de l’accès aux musées et aux événements culturels.",
+  33:"Je pense que l’école en France offre une éducation de qualité et donne une chance aux enfants de réussir.",
+  34:"La liberté d’expression est essentielle, mais elle doit s’exercer dans le respect des lois et des autres.",
+  35:"La laïcité garantit la neutralité de l’État et la liberté de croire ou de ne pas croire.",
+  36:"J’apprécie l’équilibre entre le travail, la vie personnelle, la culture et les relations sociales.",
+  37:"Oui, mes enfants sont scolarisés en France.",
+  38:"Je parle principalement français avec mes enfants pour les aider à bien s’intégrer.",
+  39:"Je lui conseillerais d’apprendre la langue, de respecter les règles, de s’informer et d’être patient.",
+  40:"Être un bon citoyen, c’est respecter les lois, participer à la société et faire preuve de civisme.",
+  41:"Le président de la République est Emmanuel Macron.",
+  42:"Le Premier ministre change selon l’actualité. Il faut vérifier son nom avant l’entretien.",
+  43:"La capitale de la France est Paris.",
+  44:"Il y a 18 régions françaises : 13 en métropole et 5 en outre-mer.",
+  45:"Les symboles de la République sont le drapeau tricolore, Marianne, La Marseillaise et la devise Liberté, Égalité, Fraternité.",
+  46:"Le drapeau français symbolise la République et ses valeurs : liberté, égalité et fraternité.",
+  47:"Marianne représente la République française et la liberté.",
+  48:"L’hymne national est La Marseillaise.",
+  49:"Le 14 juillet est la fête nationale. Elle est liée à la Révolution française et à la prise de la Bastille en 1789.",
+  50:"La Révolution française est un événement majeur qui marque la fin de la monarchie absolue et le début d’une nouvelle organisation politique.",
+  51:"La Révolution française a commencé en 1789.",
+  52:"Napoléon Bonaparte était un général devenu empereur. Il a marqué l’histoire de France.",
+  53:"Charles de Gaulle était un général, chef de la Résistance et fondateur de la Ve République.",
+  54:"En 1945, c’est la fin de la Seconde Guerre mondiale en Europe.",
+  55:"La Seconde Guerre mondiale est un conflit mondial qui a duré de 1939 à 1945.",
+  56:"La Déclaration des droits de l’homme est un texte fondamental qui affirme les libertés et les droits des citoyens.",
+  57:"Les grandes valeurs de la République sont la liberté, l’égalité et la fraternité.",
+  58:"La laïcité, c’est la séparation de l’État et des religions. Elle garantit la liberté de croire ou non.",
+  59:"La langue officielle de la République est le français.",
+  60:"On peut citer la baguette, le fromage, le vin, le cassoulet ou le bœuf bourguignon.",
+  61:"Oui, par exemple Victor Hugo, Molière ou Voltaire.",
+  62:"Oui, par exemple Claude Monet, Édith Piaf ou Auguste Rodin.",
+  63:"La culture est très importante en France. Elle fait partie de l’identité du pays et elle est accessible à tous.",
+  64:"Le patrimoine, c’est l’ensemble des biens culturels, historiques et naturels transmis aux générations futures.",
+  65:"Oui, par exemple la Tour Eiffel, l’Arc de Triomphe, Notre-Dame de Paris ou le Mont-Saint-Michel.",
+  66:"L’Union européenne est une organisation de pays européens qui coopèrent dans plusieurs domaines.",
+  67:"Oui, la France fait partie de l’Union européenne et fait même partie des pays fondateurs.",
+  68:"La monnaie utilisée en France est l’euro.",
+  69:"Les pays voisins sont notamment la Belgique, l’Allemagne, la Suisse, l’Italie et l’Espagne.",
+  70:"La francophonie désigne l’ensemble des pays et des personnes qui parlent français.",
+  71:"La République est un régime politique sans roi, fondé sur la souveraineté du peuple et le respect des lois.",
+  72:"La France est dirigée par le président de la République et le gouvernement.",
+  73:"Le Parlement est l’institution qui vote les lois.",
+  74:"Les deux chambres du Parlement sont l’Assemblée nationale et le Sénat.",
+  75:"L’Assemblée nationale vote les lois et contrôle l’action du gouvernement.",
+  76:"Le Sénat représente les territoires et participe au vote des lois.",
+  77:"Le président dirige l’État, représente la France et veille au respect des institutions.",
+  78:"Le gouvernement dirige la politique du pays et applique les lois.",
+  79:"Le pouvoir exécutif applique les lois et dirige la politique du pays.",
+  80:"Le pouvoir législatif vote les lois.",
+  81:"Le pouvoir judiciaire rend la justice.",
+  82:"La séparation des pouvoirs permet d’éviter les abus en séparant le pouvoir exécutif, législatif et judiciaire.",
+  83:"Les députés sont élus par les citoyens lors des élections législatives.",
+  84:"Le mandat présidentiel dure 5 ans. On appelle cela le quinquennat.",
+  85:"Une élection est un vote qui permet de choisir des représentants.",
+  86:"Les citoyens français majeurs peuvent voter aux élections nationales.",
+  87:"Une commune est une collectivité locale, comme une ville ou un village.",
+  88:"Le maire est le responsable de la commune.",
+  89:"Le maire gère la ville, les services locaux et représente la commune.",
+  90:"La préfecture représente l’État dans un département.",
+  91:"Les lois sont faites par le Parlement.",
+  92:"Une loi est discutée, votée par le Parlement puis promulguée par le président de la République.",
+  93:"Une loi est une règle générale qui organise la vie en société.",
+  94:"Les lois peuvent être proposées par le gouvernement ou par les parlementaires.",
+  95:"La Constitution est le texte fondamental qui organise les institutions et garantit les droits.",
+  96:"Cela signifie que chacun doit respecter la loi, même s’il ne la connaît pas dans le détail.",
+  97:"La présomption d’innocence signifie qu’une personne est innocente jusqu’à preuve du contraire.",
+  98:"La majorité pénale est fixée à 18 ans.",
+  99:"La loi sert à organiser la société, protéger les personnes et garantir l’égalité.",
+  100:"Toutes les personnes présentes en France sont protégées par la loi.",
+  101:"Oui, on peut critiquer une loi, mais elle doit être respectée tant qu’elle est en vigueur.",
+  102:"Le Conseil constitutionnel contrôle que les lois respectent la Constitution.",
+  103:"Un tribunal est une institution chargée de rendre la justice.",
+  104:"Le droit au recours permet de contester une décision de justice ou une décision administrative.",
+  105:"Oui, la loi est la même pour tous. C’est le principe d’égalité devant la loi.",
+  106:"Oui, on peut manifester pacifiquement, dans le respect de la loi.",
+  107:"Oui, on peut critiquer le gouvernement. C’est la liberté d’opinion et d’expression.",
+  108:"Le droit de grève permet aux salariés d’arrêter le travail pour défendre leurs droits.",
+  109:"Les sources du droit sont notamment la Constitution, les lois et les règlements.",
+  110:"En cas d’arrestation, on a le droit d’être informé, de garder le silence, d’avoir un avocat et de voir un juge.",
+  111:"Une loi est votée par le Parlement, alors qu’un règlement est pris par le gouvernement pour appliquer la loi.",
+  112:"Oui, toute personne a le droit d’être défendue, notamment par un avocat.",
+  113:"Oui, la loi protège la liberté de religion et la liberté de croire ou de ne pas croire.",
+  114:"Oui, la loi protège la liberté d’expression, mais elle interdit les propos haineux, racistes ou diffamatoires.",
+  115:"Un casier judiciaire est un document qui contient l’historique des condamnations pénales d’une personne.",
+  116:"Un citoyen ne change pas directement une loi, mais il peut agir indirectement en votant ou en contactant ses élus.",
+  117:"Oui, les lois françaises s’appliquent aux étrangers présents en France.",
+  118:"Oui, on peut se défendre seul, mais il est souvent conseillé d’avoir un avocat.",
+  119:"Un contrat est un accord juridique entre plusieurs personnes qui crée des obligations.",
+  120:"La justice est indépendante car elle ne dépend pas du pouvoir politique. Les juges appliquent la loi de manière impartiale."
+};
+
+const memoryTips = {
+  1:"Intégration + valeurs",
+  2:"Durée + intégration",
+  3:"Stabilité + opportunités + droits",
+  4:"Travail + relations + quotidien",
+  5:"Langue + travail + lois",
+  6:"Stabilité + services publics + culture",
+  7:"Rester positif(ve)",
+  8:"Engagement + reconnaissance",
+  9:"Devise + respect + solidarité",
+  10:"Devise = 3 principes",
+  11:"Droit + devoir",
+  12:"Participation + lois",
+  13:"Droits + devoirs + lois",
+  14:"Travail + entourage",
+  15:"Local + associations",
+  16:"Réponse honnête",
+  17:"Aider + contribuer",
+  18:"Action locale",
+  19:"TV + internet + journaux",
+  20:"Français = intégration",
+  21:"Lire / parler / actualité",
+  22:"Oui simple",
+  23:"Métier = contribution",
+  24:"Stabilité + avenir",
+  25:"Durablement",
+  26:"Place + emploi stable",
+  27:"Langue ou culture",
+  28:"Efforts réguliers",
+  29:"3 exemples simples",
+  30:"14 juillet + Noël",
+  31:"Famille ou amis",
+  32:"Culture + débat",
+  33:"Éducation de qualité",
+  34:"Liberté + limites",
+  35:"Neutralité + liberté",
+  36:"Équilibre",
+  37:"Oui simple",
+  38:"Français principalement",
+  39:"Langue + patience",
+  40:"Lois + participation",
+  41:"À vérifier avant l’entretien",
+  42:"À vérifier avant l’entretien",
+  43:"Paris",
+  44:"18 = 13 + 5",
+  45:"4 symboles",
+  46:"Valeurs républicaines",
+  47:"République",
+  48:"La Marseillaise",
+  49:"1789 + fête nationale",
+  50:"Fin monarchie absolue",
+  51:"1789",
+  52:"Général devenu empereur",
+  53:"Résistance + Ve République",
+  54:"Fin guerre",
+  55:"1939–1945",
+  56:"Droits + libertés",
+  57:"Liberté Égalité Fraternité",
+  58:"État / religions",
+  59:"Le français",
+  60:"Baguette + fromage",
+  61:"Victor Hugo",
+  62:"Claude Monet",
+  63:"Culture centrale",
+  64:"Transmission",
+  65:"Tour Eiffel",
+  66:"Organisation européenne",
+  67:"Oui + pays fondateur",
+  68:"€",
+  69:"4-5 voisins suffisent",
+  70:"Pays parlant français",
+  71:"Pas de roi",
+  72:"Président + gouvernement",
+  73:"Vote les lois",
+  74:"2 chambres",
+  75:"Lois + contrôle",
+  76:"Territoires",
+  77:"Chef de l’État",
+  78:"Politique du pays",
+  79:"Appliquer",
+  80:"Voter",
+  81:"Justice",
+  82:"Évite les abus",
+  83:"Élections législatives",
+  84:"Quinquennat",
+  85:"Vote",
+  86:"18 ans + français",
+  87:"Local",
+  88:"Commune",
+  89:"Gestion ville",
+  90:"État dans département",
+  91:"Parlement",
+  92:"Vote + promulgation",
+  93:"Règle générale",
+  94:"Gouvernement ou parlementaires",
+  95:"Base du pays",
+  96:"Respecter la loi",
+  97:"Innocent jusqu’à preuve",
+  98:"18",
+  99:"Organisation + protection",
+  100:"Tout le monde",
+  101:"Critiquer mais respecter",
+  102:"Contrôle",
+  103:"Justice",
+  104:"Recours = contester",
+  105:"Égalité devant la loi",
+  106:"Pacifique",
+  107:"Liberté d’opinion",
+  108:"Travail + droits",
+  109:"3 sources",
+  110:"Avocat + silence + juge",
+  111:"Parlement / gouvernement",
+  112:"Avocat",
+  113:"Croire ou non",
+  114:"Liberté + limites",
+  115:"Historique",
+  116:"Indirectement",
+  117:"Oui",
+  118:"Oui, avocat conseillé",
+  119:"Accord juridique",
+  120:"Séparation politique / justice"
 };
 
 function shuffleArray(list){
@@ -258,7 +381,14 @@ export default function App(){
   const [known,setKnown] = useState([]);
   const [review,setReview] = useState([]);
 
-  const categories = ["Toutes", "Questions personnelles", "Histoire, culture et société", "Institutions françaises", "Lois et République"];
+  const categories = [
+    {key:"Toutes", label:"Toutes"},
+    {key:"Questions personnelles", label:"Perso"},
+    {key:"Histoire, culture et société", label:"Culture"},
+    {key:"Institutions françaises", label:"Institutions"},
+    {key:"Lois et République", label:"Lois"}
+  ];
+
   const filtered = useMemo(() => order.filter(q => category === "Toutes" || q.cat === category), [order, category]);
   const current = filtered[index] || filtered[0];
   const progress = Math.round((known.length / questions.length) * 100);
@@ -281,62 +411,268 @@ export default function App(){
   };
 
   return (
-    <div style={{minHeight:"100vh",background:"radial-gradient(circle at top,#1e293b,#020617)",color:"white",fontFamily:"Arial, sans-serif",display:"flex"}}>
-      <aside style={{width:250,borderRight:"1px solid #334155",padding:24,display:"none"}} className="sidebar">
-        <h2 style={{fontSize:22,marginBottom:4}}>🇫🇷 Naturalisation</h2>
-        <p style={{color:"#94a3b8",marginBottom:35}}>Simulateur d’entretien</p>
-        <div style={{display:"grid",gap:14,color:"#cbd5e1"}}>
-          <div>⌂ Question</div><div>☑ Révisions</div><div>◷ Historique</div><div>▥ Statistiques</div><div>⌕ Recherche</div>
-        </div>
-        <div style={{marginTop:45,padding:20,borderRadius:16,background:"rgba(255,255,255,.06)",border:"1px solid #1f2937",textAlign:"center"}}>
-          <p>Progression globale</p>
-          <div style={{fontSize:34,fontWeight:"bold",margin:"20px 0"}}>{progress}%</div>
-          <p style={{color:"#94a3b8"}}>{known.length} / 120 questions</p>
-        </div>
-      </aside>
+    <div className="app">
+      <style>{`
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        .app {
+          min-height: 100vh;
+          min-height: 100dvh;
+          background: radial-gradient(circle at top,#1e293b,#020617);
+          color: white;
+          font-family: Arial, sans-serif;
+          padding: 18px;
+        }
+        .container {
+          max-width: 1120px;
+          margin: 0 auto;
+        }
+        .topbar {
+          display: flex;
+          gap: 10px;
+          overflow-x: auto;
+          padding-bottom: 10px;
+          margin-bottom: 14px;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .topbar::-webkit-scrollbar { display: none; }
+        .chip {
+          white-space: nowrap;
+          padding: 10px 15px;
+          border-radius: 999px;
+          border: 1px solid #334155;
+          background: rgba(255,255,255,.04);
+          color: #e5e7eb;
+          font-weight: 700;
+          cursor: pointer;
+          font-size: 14px;
+        }
+        .chip.active {
+          border-color: #60a5fa;
+          background: rgba(37,99,235,.28);
+          color: #bfdbfe;
+        }
+        .meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+          color: #cbd5e1;
+          font-size: 16px;
+        }
+        .progressText { color: #93c5fd; font-weight: 700; }
+        .card {
+          min-height: 300px;
+          border-radius: 22px;
+          border: 1px solid #334155;
+          background: linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+          box-shadow: 0 25px 70px rgba(0,0,0,.35);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 26px;
+          cursor: pointer;
+        }
+        .badge {
+          padding: 8px 16px;
+          border-radius: 999px;
+          background: rgba(37,99,235,.18);
+          color: #93c5fd;
+          font-weight: 800;
+          margin-bottom: 28px;
+          font-size: 14px;
+        }
+        .question {
+          font-size: clamp(24px,4vw,38px);
+          line-height: 1.25;
+          max-width: 850px;
+          margin: 0;
+        }
+        .hint {
+          color: #94a3b8;
+          font-size: 16px;
+          margin-top: 34px;
+        }
+        .answerTitle {
+          font-size: 22px;
+          color: #86efac;
+          margin: 0 0 16px;
+        }
+        .answer {
+          font-size: clamp(20px,3vw,28px);
+          line-height: 1.45;
+          max-width: 850px;
+          margin: 0;
+        }
+        .memoryTip {
+          margin-top: 22px;
+          padding: 12px 16px;
+          border-radius: 14px;
+          border: 1px solid rgba(96,165,250,.45);
+          background: rgba(37,99,235,.16);
+          color: #bfdbfe;
+          font-size: 16px;
+          font-weight: 700;
+        }
+        .actions {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 12px;
+          margin-top: 18px;
+          align-items: center;
+        }
+        .btn {
+          padding: 14px 16px;
+          border-radius: 14px;
+          border: 1px solid #334155;
+          background: rgba(255,255,255,.04);
+          color: white;
+          font-weight: 800;
+          cursor: pointer;
+          font-size: 15px;
+        }
+        .red { border-color: #ef4444; color: #f87171; }
+        .green { border-color: #22c55e; color: #86efac; }
+        .shuffleWrap { text-align: center; margin-top: 14px; }
+        .shuffle { min-width: 240px; }
 
-      <main style={{flex:1,padding:24,maxWidth:1200,margin:"0 auto"}}>
-        <div style={{display:"flex",gap:12,marginBottom:30,flexWrap:"wrap"}}>
+        @media (max-width: 640px) {
+          .app {
+            padding: 10px;
+            padding-left: max(10px, env(safe-area-inset-left));
+            padding-right: max(10px, env(safe-area-inset-right));
+            padding-top: max(10px, env(safe-area-inset-top));
+            padding-bottom: max(10px, env(safe-area-inset-bottom));
+          }
+          .container { max-width: 100%; }
+          .topbar {
+            gap: 8px;
+            margin: 0 -10px 12px;
+            padding: 0 10px 10px;
+          }
+          .chip {
+            padding: 8px 11px;
+            font-size: 12px;
+            flex: 0 0 auto;
+          }
+          .meta {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 6px;
+            font-size: 13px;
+            margin-bottom: 10px;
+          }
+          .hideMobile { display: none; }
+          .card {
+            min-height: calc(100dvh - 285px);
+            max-height: none;
+            padding: 18px 14px;
+            border-radius: 18px;
+            justify-content: center;
+          }
+          .badge {
+            font-size: 10px;
+            padding: 7px 11px;
+            margin-bottom: 18px;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .question {
+            font-size: clamp(22px, 7vw, 30px);
+            line-height: 1.22;
+          }
+          .hint {
+            font-size: 13px;
+            margin-top: 24px;
+          }
+          .answerTitle {
+            font-size: 18px;
+            margin-bottom: 12px;
+          }
+          .answer {
+            font-size: clamp(18px, 5.6vw, 23px);
+            line-height: 1.35;
+          }
+          .memoryTip {
+            font-size: 13px;
+            margin-top: 14px;
+            padding: 10px 12px;
+          }
+          .actions {
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin-top: 12px;
+          }
+          .btn {
+            padding: 12px 8px;
+            font-size: 13px;
+            border-radius: 13px;
+            min-height: 44px;
+          }
+          .shuffleWrap { margin-top: 10px; }
+          .shuffle {
+            width: 100%;
+            min-width: 0;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .question { font-size: 21px; }
+          .answer { font-size: 18px; }
+          .btn { font-size: 12px; }
+        }
+
+        @media (min-width: 641px) and (max-width: 900px) {
+          .container { max-width: 760px; }
+          .actions { grid-template-columns: repeat(4, 1fr); }
+        }
+      `}</style>
+
+      <main className="container">
+        <div className="topbar">
           {categories.map(cat => (
-            <button key={cat} onClick={() => {setCategory(cat); setIndex(0); setShowAnswer(false);}} style={{padding:"12px 18px",borderRadius:18,border:category===cat ? "1px solid #60a5fa" : "1px solid #334155",background:category===cat ? "rgba(37,99,235,.25)" : "rgba(255,255,255,.03)",color:category===cat ? "#bfdbfe" : "#e5e7eb",fontWeight:700,cursor:"pointer"}}>
-              {cat} ({cat === "Toutes" ? questions.length : questions.filter(q=>q.cat===cat).length})
+            <button key={cat.key} onClick={() => {setCategory(cat.key); setIndex(0); setShowAnswer(false);}} className={`chip ${category === cat.key ? "active" : ""}`}>
+              {cat.label} ({cat.key === "Toutes" ? questions.length : questions.filter(q=>q.cat===cat.key).length})
             </button>
           ))}
         </div>
 
         {current && <>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:18,color:"#cbd5e1"}}>
+          <div className="meta">
             <div>Question {index + 1} / {filtered.length}</div>
-            <div>🔖 Marquer cette question</div>
+            <div className="progressText">{progress}% mémorisé</div>
+            <div className="hideMobile">🔖 Marquer</div>
           </div>
 
-          <div onClick={() => setShowAnswer(!showAnswer)} style={{minHeight:330,borderRadius:22,border:"1px solid #334155",background:"linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02))",boxShadow:"0 25px 70px rgba(0,0,0,.35)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center",padding:30,cursor:"pointer"}}>
-            <div style={{padding:"10px 18px",borderRadius:999,background:"rgba(37,99,235,.18)",color:"#93c5fd",fontWeight:700,marginBottom:35}}>{current.cat.toUpperCase()}</div>
+          <div onClick={() => setShowAnswer(!showAnswer)} className="card">
+            <div className="badge">{current.cat.toUpperCase()}</div>
             {!showAnswer ? <>
-              <h1 style={{fontSize:"clamp(26px,4vw,40px)",lineHeight:1.25,maxWidth:850}}>{current.q}</h1>
-              <p style={{color:"#94a3b8",fontSize:18,marginTop:45}}>☝️ Cliquer pour voir la réponse</p>
+              <h1 className="question">{current.q}</h1>
+              <p className="hint">☝️ Cliquer pour voir la réponse</p>
             </> : <>
-              <h2 style={{fontSize:24,color:"#86efac",marginBottom:18}}>Réponse modèle</h2>
-              <p style={{fontSize:"clamp(20px,3vw,30px)",lineHeight:1.45,maxWidth:850}}>{sampleAnswers[current.id]}</p>
+              <h2 className="answerTitle">Réponse modèle</h2>
+              <p className="answer">{sampleAnswers[current.id]}</p>
+              {memoryTips[current.id] && <div className="memoryTip"><strong>Astuce :</strong> {memoryTips[current.id]}</div>}
             </>}
           </div>
 
-          <div style={{display:"flex",justifyContent:"space-between",gap:16,marginTop:28,flexWrap:"wrap"}}>
-            <button onClick={goPrev} style={buttonStyle}>← Précédent</button>
-            <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
-              <button onClick={markReview} style={{...buttonStyle,border:"1px solid #ef4444",color:"#f87171"}}>↻ À revoir</button>
-              <button onClick={markKnown} style={{...buttonStyle,border:"1px solid #22c55e",color:"#86efac"}}>✓ Mémorisé</button>
-            </div>
-            <button onClick={goNext} style={buttonStyle}>Suivant →</button>
+          <div className="actions">
+            <button onClick={goPrev} className="btn">← Précédent</button>
+            <button onClick={markReview} className="btn red">↻ À revoir</button>
+            <button onClick={markKnown} className="btn green">✓ Mémorisé</button>
+            <button onClick={goNext} className="btn">Suivant →</button>
           </div>
 
-          <div style={{textAlign:"center",marginTop:26}}>
-            <button onClick={() => {setOrder(shuffleArray(questions)); setIndex(0); setShowAnswer(false);}} style={{...buttonStyle,minWidth:280}}>🔀 Mélanger les cartes</button>
+          <div className="shuffleWrap">
+            <button onClick={() => {setOrder(shuffleArray(questions)); setIndex(0); setShowAnswer(false);}} className="btn shuffle">🔀 Mélanger les cartes</button>
           </div>
         </>}
       </main>
     </div>
   );
 }
-
-const buttonStyle = {padding:"16px 28px",borderRadius:14,border:"1px solid #334155",background:"rgba(255,255,255,.03)",color:"white",fontWeight:700,cursor:"pointer",fontSize:16};
