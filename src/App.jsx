@@ -382,14 +382,20 @@ export default function App(){
   const [review,setReview] = useState([]);
 
   const categories = [
-    {key:"Toutes", label:"Toutes"},
-    {key:"Questions personnelles", label:"Perso"},
-    {key:"Histoire, culture et société", label:"Culture"},
-    {key:"Institutions françaises", label:"Institutions"},
-    {key:"Lois et République", label:"Lois"}
-  ];
+  {key:"Toutes", label:"Toutes"},
+  {key:"Questions personnelles", label:"Perso"},
+  {key:"Histoire, culture et société", label:"Culture"},
+  {key:"Institutions françaises", label:"Institutions"},
+  {key:"Lois et République", label:"Lois"},
+  {key:"Review", label:"À revoir"}
+];
 
-  const filtered = useMemo(() => order.filter(q => category === "Toutes" || q.cat === category), [order, category]);
+  const filtered = useMemo(() => {
+  if (category === "Review") {
+    return order.filter(q => review.includes(q.id));
+  }
+  return order.filter(q => category === "Toutes" || q.cat === category);
+}, [order, category, review]);
   const current = filtered[index] || filtered[0];
   const progress = Math.round((known.length / questions.length) * 100);
 
