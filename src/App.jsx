@@ -421,7 +421,7 @@ export default function App() {
 
       <main className="container">
         <header className="header">
-          <h1 className="title">Entretien_JIB</h1>
+          <h1 className="title">Entretien JIB</h1>
           <p className="subtitle">Révision pour l’entretien de naturalisation</p>
         </header>
 
