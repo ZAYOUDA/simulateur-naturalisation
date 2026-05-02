@@ -1,14 +1,20 @@
 import React, { useMemo, useState } from "react";
 
 const questions = [
-  { id:1, cat:"Questions personnelles", q:"Pourquoi souhaitez-vous devenir français(e) ?", r:"JJe souhaite devenir français car la France représente aujourd’hui le centre de ma vie personnelle et professionnelle. J’y vis de manière continue depuis 2017, après une première expérience professionnelle en 2016, et j’y ai construit un parcours solide dans le domaine de la data et de l'IA. J’ai débuté en tant que consultant senior, puis j’ai évolué vers des fonctions à plus forte responsabilité jusqu’à occuper actuellement un poste de directeur des opérations. Mon engagement s’est également concrétisé par un investissement dans mon entreprise, dont je suis aujourd’hui associé, ce qui témoigne de ma volonté de m’inscrire durablement dans l’économie française. Sur le plan personnel, je suis marié depuis 2018 et je partage ma vie en France avec mon épouse. Nous y avons construit notre stabilité familiale et sociale, ce qui renforce profondément mon attachement au pays.Je me reconnais pleinement dans les valeurs de la République française, notamment le mérite, l’égalité des chances et la responsabilité. Obtenir la nationalité française représente pour moi une étape naturelle afin de m’engager pleinement dans la société, de participer activement à son développement et de construire mon avenir sur le long terme en France.", astuce:"Intégration + valeurs" },
-  { id:2, cat:"Questions personnelles", q:"Depuis combien de temps vivez-vous en France ?", r:"Je vis en France depuis plusieurs années, ce qui m’a permis de m’intégrer progressivement.", astuce:"Durée + intégration" },
+  { id:1, cat:"Questions personnelles", q:"Pourquoi souhaitez-vous devenir français(e) ?", r:"Je souhaite devenir français car la France représente aujourd’hui le centre de ma vie personnelle et professionnelle. La France m'a acceuilli et m'a permis de m'épanouir sur l eplan pro et perso, J’y vis de manière continue depuis 2017, après une première expérience professionnelle en 2016, et j’y ai construit un parcours solide dans le domaine de la data et de l'IA. J’ai débuté en tant que consultant senior, puis j’ai évolué vers des fonctions à plus forte responsabilité jusqu’à occuper actuellement un poste de directeur des opérations. Mon engagement s’est également concrétisé par un investissement dans mon entreprise, dont je suis aujourd’hui associé, ce qui témoigne de ma volonté de m’inscrire durablement dans l’économie française. Sur le plan personnel, je suis marié depuis 2018 et je partage ma vie en France avec mon épouse. Nous y avons construit notre stabilité familiale et sociale, ce qui renforce profondément mon attachement au pays.Je me reconnais pleinement dans les valeurs de la République française, notamment le mérite, l’égalité des chances et la responsabilité. Obtenir la nationalité française représente pour moi une étape naturelle afin de m’engager pleinement dans la société, de participer activement à son développement et de construire mon avenir sur le long terme en France.", astuce:"Intégration + valeurs" },
+  { id:2, cat:"Questions personnelles", q:"Que reprensente pour toi la nationalité francaise?", r:"La nationalité francaise est pour moi une reconnaissant de mon attachement à la france et une étape naturelle dans mon parcours d'integration.", astuce:"Durée + intégration" },
   { id:3, cat:"Questions personnelles", q:"Pourquoi avez-vous choisi de vivre en France ?", r:"J’ai choisi de vivre en France initialement dans le cadre d’une opportunité professionnelle en 2016, qui m’a permis de découvrir un environnement de travail dynamique et structuré, notamment dans le domaine de la data et des nouvelles technologies. La France s’est rapidement imposée comme un choix évident grâce à la qualité de son écosystème professionnel, à la richesse de ses opportunités dans mon domaine, ainsi qu’à la stabilité qu’elle offre. J’ai particulièrement apprécié l’importance accordée à l’innovation, notamment dans les secteurs de la data et de l’intelligence artificielle. Au-delà de l’aspect professionnel, j’ai été sensible à la qualité de vie, à l’équilibre entre vie personnelle et professionnelle, ainsi qu’aux valeurs portées par la société française. Cette première expérience positive m’a naturellement conduit à m’y installer durablement dès 2017, puis à y construire l’ensemble de mon parcours professionnel et personnel.", astuce:"Stabilité + opportunités + droits" },
   { id:4, cat:"Questions personnelles", q:"Vous sentez-vous intégré(e) ? Pourquoi ?", r:"Oui, je me sens pleinement intégré en France, aussi bien sur le plan professionnel que personnel.Sur le plan professionnel, j’ai construit une grande partie de ma carrière en France depuis 2017, en évoluant de consultant senior à directeur des opérations. Aujourd’hui, j’occupe un poste à responsabilités et je suis également associé dans mon entreprise, ce qui implique une participation active au développement économique et une interaction quotidienne avec des équipes, des partenaires et des clients en France.Sur le plan personnel, je vis en France avec mon épouse depuis notre mariage en 2018, et nous y avons construit notre stabilité familiale et sociale. Par ailleurs, je maîtrise la langue française, comme en atteste mon niveau B2 obtenu au TEF avec une moyenne de 490, ce qui me permet d’être parfaitement à l’aise dans mon environnement professionnel et dans la vie quotidienne. Enfin, je comprends et je partage les valeurs de la République française, ce qui renforce mon sentiment d’appartenance et mon intégration dans la société.", astuce:"Travail + relations + quotidien" },
-  { id:5, cat:"Questions personnelles", q:"Comment montrez-vous votre intégration ?", r:"Je parle français, je travaille, je respecte les lois et je m’implique localement.", astuce:"Langue + travail + lois" },
+  { id:5, cat:"Questions personnelles", q:"Pourquoi avez vous décidé de demander la Naturatlisation en france ?", r:"J'ai choisi de demander la naturalisation en France car je concidére ce pays comme ma nouvelle patrie, j'admire profondément sa culture, son histoire et ses valeurs républicaines telles que la libérté, l'égalité et la fraternité. Je souhaite pleinement m'integré à la société francaise et contribuer à son enrechissement.", astuce:"Langue + travail + lois" },
   { id:6, cat:"Questions personnelles", q:"Qu’aimez-vous dans la vie en France ?", r:"Ce que j’apprécie particulièrement dans la vie en France, c’est d’abord l’équilibre entre vie professionnelle et vie personnelle. Cela m’a permis de construire une carrière ambitieuse tout en maintenant une stabilité familiale avec mon épouse. J’apprécie également la qualité de l’environnement professionnel, notamment dans mon domaine de la data et de l’intelligence artificielle, où la France offre un écosystème dynamique et innovant, propice à l’évolution et à la prise de responsabilités. Sur le plan personnel, je suis sensible à la qualité de vie, à la richesse culturelle et à la diversité, qui permettent de s’ouvrir et de s’intégrer facilement. Enfin, j’apprécie les valeurs portées par la société française, notamment l’égalité des chances, le mérite et la solidarité, qui correspondent à ma vision personnelle et professionnelle.", astuce:"Stabilité + services publics + culture" },
   { id:7, cat:"Questions personnelles", q:"Qu’est-ce qui vous plaît le moins en France ?", r:"Comme dans tout pays, il peut exister certains aspects du quotidien qui demandent de l’adaptation. Par exemple, j’ai dû m’habituer à certaines différences culturelles au début, notamment dans les modes de communication ou certaines habitudes. Cependant, avec le temps, j’ai appris à les comprendre et à m’y adapter pleinement, et cela fait aujourd’hui partie de mon intégration. Cela reste pour moi très secondaire par rapport à tout ce que la vie en France m’apporte au quotidien.", astuce:"Rester positif(ve)" },
-  { id:8, cat:"Questions personnelles", q:"Que représente pour vous la nationalité française ?", r:"Pour moi, la nationalité française représente un engagement et une responsabilité. C’est appartenir pleinement à une société avec des valeurs fortes comme la liberté, l’égalité et la fraternité. C’est aussi la continuité de mon parcours en France et la volonté de m’y inscrire durablement en contribuant activement à la société.", astuce:"Engagement + reconnaissance" },
+  {  
+  id: 7, 
+  cat: "Questions personnelles", 
+  q: "Vous sentez-vous aujourd’hui plus français que de votre pays d’origine, ou l’inverse ?", 
+  r: "Aujourd’hui, je me sens profondément attaché à la France, qui est devenue mon foyer. C’est ici que je me suis construit, que j’ai développé ma vie personnelle et professionnelle, et que je me projette pour l’avenir. Je me reconnais dans les valeurs de la République française, notamment la liberté, l’égalité et la fraternité, auxquelles j’adhère pleinement. Je me sens également proche de la culture française, de son histoire et de son art de vivre. J’ai appris à apprécier la langue, les traditions et l’esprit d’ouverture qui caractérisent la société française. Cependant, je n’oppose pas ces deux identités. Mon pays d’origine fait partie de mon histoire et de mon parcours. Aujourd’hui, je dirais que je me sens intégré en France et en accord avec ses valeurs, ce qui me donne naturellement le sentiment d’appartenance à la communauté française. Devenir français représente pour moi une continuité logique de mon parcours et une volonté de m’engager pleinement dans la société française.", 
+  astuce: "Équilibre + attachement France + respect origine + intégration" 
+},
   { id:9, cat:"Questions personnelles", q:"Quelles valeurs françaises partagez-vous ?", r:"Je partage les valeurs fondamentales de la République française : la liberté, l’égalité et la fraternité. Par exemple, l’égalité des chances est une valeur importante pour moi, que j’ai pu constater dans mon parcours professionnel en France. Je suis aussi attaché au respect des lois, à la laïcité et au sens des responsabilités, qui sont essentiels pour vivre ensemble.", astuce:"Devise + respect + solidarité" },
   { id:10, cat:"Questions personnelles", q:"Que pensez-vous de la devise « Liberté, Égalité, Fraternité » ?", r:"Pour moi, cette devise représente les valeurs essentielles de la France. La liberté, c’est le respect des choix de chacun, l’égalité c’est l’égalité des chances — que j’ai pu vivre dans mon parcours professionnel — et la fraternité, c’est le respect et la solidarité entre les personnes. Ce sont des valeurs dans lesquelles je me reconnais.", astuce:"Devise = 3 principes" },
   { id:11, cat:"Questions personnelles", q:"Souhaitez-vous voter ? Pourquoi ?", r:"Oui, je souhaite voter. Pour moi, le droit de vote est un élément essentiel de la citoyenneté et de la vie démocratique. Il permet de participer activement aux décisions qui concernent la société et son avenir. Après avoir construit une grande partie de ma vie en France, tant sur le plan professionnel que personnel, il me semble important de pouvoir m’impliquer pleinement, notamment en participant aux choix démocratiques. Voter représente pour moi à la fois un droit et une responsabilité, ainsi qu’une manière concrète de contribuer à la vie publique.", astuce:"Droit + devoir" },
@@ -42,13 +48,25 @@ const questions = [
   { id:39, cat:"Questions personnelles", q:"Quel conseil donneriez-vous à un nouvel arrivant ?", r:"Je lui conseillerais d’apprendre la langue, de respecter les règles, de s’informer et d’être patient.", astuce:"Langue + patience" },
   { id:40, cat:"Questions personnelles", q:"Que signifie être un bon citoyen ?", r:"Être un bon citoyen, c’est respecter les lois, participer à la société et faire preuve de civisme.", astuce:"Lois + participation" },
   { id:41, cat:"Histoire, culture et société", q:"Qui est le président de la République ?", r:"Le président de la République est Emmanuel Macron.", astuce:"À vérifier avant l’entretien" },
-  { id:42, cat:"Histoire, culture et société", q:"Qui est le Premier ministre ?", r:"Le Premier ministre change selon l’actualité. Il faut vérifier son nom avant l’entretien.", astuce:"À vérifier avant l’entretien" },
+  { 
+  id: 42, 
+  cat: "Histoire, culture et société", 
+  q: "Quels sont les principes de la République française ?", 
+  r: "La France est une République indivisible, laïque, démocratique et sociale, comme le prévoit la Constitution du 4 octobre 1958. Le principe d’indivisibilité signifie que la souveraineté appartient au peuple français dans son ensemble et qu’aucune partie du territoire ou aucun individu ne peut s’en attribuer l’exercice. Le principe de laïcité garantit la liberté de conscience : chacun est libre de croire ou de ne pas croire, et l’État est neutre vis-à-vis des religions, qui sont séparées de lui. Le principe démocratique signifie que le pouvoir appartient au peuple, qui l’exerce par ses représentants élus et par le référendum, avec un suffrage universel, égal et secret. Enfin, le principe social signifie que la République veille à la solidarité et à la protection des citoyens en assurant des conditions de vie dignes pour tous.", 
+  astuce: "4 mots clés + définition simple + exemples concrets" 
+},
   { id:43, cat:"Histoire, culture et société", q:"Quelle est la capitale de la France ?", r:"La capitale de la France est Paris.", astuce:"Paris" },
-  { id:44, cat:"Histoire, culture et société", q:"Combien y a-t-il de régions en France ?", r:"Il y a 18 régions françaises : 13 en métropole et 5 en outre-mer.", astuce:"18 = 13 + 5" },
+  { 
+  id: 44, 
+    cat: "Territoire",
+  q: "Quelles sont les régions de la France ?", 
+ r: "La France compte 13 régions métropolitaines + 5 OM :\n1. Île-de-France : Paris, Versailles, Créteil\n2. Provence-Alpes-Côte d’Azur : Marseille, Nice, Toulon\n3. Auvergne-Rhône-Alpes : Lyon, Grenoble, Clermont-Ferrand\n4. Bretagne : Rennes, Brest\n5. Normandie : Rouen, Caen, Le Havre\n6. Grand Est : Strasbourg, Metz, Reims\n7. Hauts-de-France : Lille, Amiens, Dunkerque\n8. Pays de la Loire : Nantes, Angers, Le Mans\n9. Occitanie : Toulouse, Montpellier, Nîmes\n10. Nouvelle-Aquitaine : Bordeaux, Limoges, Poitiers\n11. Centre-Val de Loire : Tours, Orléans, Bourges\n12. Bourgogne-Franche-Comté : Dijon, Besançon, Auxerre\n13. Corse : Ajaccio, Bastia, Corte\nLa France comprend également des territoires d’outre-mer :\n- La Guadeloupe : dans les Caraïbes\n- La Martinique : dans les Caraïbes\n- La Guyane : en Amérique du Sud\n- La Réunion : dans l’océan Indien\n- Mayotte : dans l’océan Indien\nCes territoires font partie de la République française et possèdent des statuts spécifiques.", 
+  astuce: "13 régions + outre-mer + rester synthétique"  
+},
   { id:45, cat:"Histoire, culture et société", q:"Quels sont les symboles de la République ?", r:"Les symboles de la République sont le drapeau tricolore, Marianne, La Marseillaise et la devise Liberté, Égalité, Fraternité.", astuce:"4 symboles" },
   { id:46, cat:"Histoire, culture et société", q:"Que représente le drapeau français ?", r:"Le drapeau français symbolise la République et ses valeurs : liberté, égalité et fraternité.", astuce:"Valeurs républicaines" },
   { id:47, cat:"Histoire, culture et société", q:"Que représente Marianne ?", r:"Marianne représente la République française et la liberté.", astuce:"République" },
-  { id:48, cat:"Histoire, culture et société", q:"Quel est l’hymne national ?", r:"L’hymne national est La Marseillaise.", astuce:"La Marseillaise" },
+  { id:48, cat:"Histoire, culture et société", q:"Quel est l’hymne national ?", r:"L’hymne national est La Marseillaise. Composée en 1792 par Claude Joseph Rouget de LIsle 1792 et Adopté en 1975", astuce:"La Marseillaise" },
   { id:49, cat:"Histoire, culture et société", q:"Que signifie la fête du 14 juillet ?", r:"Le 14 juillet est la fête nationale. Elle est liée à la Révolution française et à la prise de la Bastille en 1789.", astuce:"1789 + fête nationale" },
   { id:50, cat:"Histoire, culture et société", q:"Qu’est-ce que la Révolution française ?", r:"La Révolution française marque la fin de la monarchie absolue et le début d’une nouvelle organisation politique.", astuce:"Fin monarchie absolue" },
   { id:51, cat:"Histoire, culture et société", q:"En quelle année a eu lieu la Révolution française ?", r:"La Révolution française a commencé en 1789.", astuce:"1789" },
@@ -58,10 +76,16 @@ const questions = [
   { id:55, cat:"Histoire, culture et société", q:"Qu’est-ce que la Seconde Guerre mondiale ?", r:"La Seconde Guerre mondiale est un conflit mondial qui a duré de 1939 à 1945.", astuce:"1939–1945" },
   { id:56, cat:"Histoire, culture et société", q:"Qu’est-ce que la Déclaration des droits de l’homme ?", r:"La Déclaration des droits de l’homme est un texte fondamental qui affirme les libertés et les droits des citoyens.", astuce:"Droits + libertés" },
   { id:57, cat:"Histoire, culture et société", q:"Quelles sont les grandes valeurs de la République ?", r:"Les grandes valeurs de la République sont la liberté, l’égalité et la fraternité.", astuce:"Liberté Égalité Fraternité" },
-  { id:58, cat:"Histoire, culture et société", q:"Qu’est-ce que la laïcité ?", r:"La laïcité, c’est la séparation de l’État et des religions. Elle garantit la liberté de croire ou non.", astuce:"État / religions" },
+  { id:58, cat:"Histoire, culture et société", q:"Qu’est-ce que la laïcité ?", r:"La laïcité, c’est la séparation de l’État et des religions. Elle garantit la liberté de croire ou non. En 1905 la loi de séparation des églises et de l'etat a été promulguée en France, L'etat ne finance pas les cultes et etablit la neutralité religieuse dans les affaire publiques", astuce:"État / religions / 9 décembre 1905, le président Émile Loubet" },
   { id:59, cat:"Histoire, culture et société", q:"Quelle est la langue officielle ?", r:"La langue officielle de la République est le français.", astuce:"Le français" },
   { id:60, cat:"Histoire, culture et société", q:"Quelles sont les grandes spécialités culinaires françaises ?", r:"On peut citer la baguette, le fromage, le vin, le cassoulet ou le bœuf bourguignon.", astuce:"Baguette + fromage" },
-  { id:61, cat:"Histoire, culture et société", q:"Connaissez-vous des écrivains français ?", r:"Oui, par exemple Victor Hugo, Molière ou Voltaire.", astuce:"Victor Hugo" },
+{ 
+  id: 61, 
+  cat: "Histoire, culture et société", 
+  q: "Énumérez des personnages français connus.", 
+  r: "Littérature Victor Hugo, Gustave Flaubert et Émile Zola, en philosophie René Descartes et Blaise Pascal, en science Marie Curie, en musique Claude Debussy et Charles Aznavour, dans le sport Zinedine Zidane et Kylian Mbappé, en histoire Charles de Gaulle, dans le cinéma François Truffaut et Marion Cotillard, en art Claude Monet, et dans la mode Coco Chanel.", 
+  astuce: "3-4 domaines + noms connus + réponse fluide" 
+},
   { id:62, cat:"Histoire, culture et société", q:"Connaissez-vous des artistes français ?", r:"Oui, par exemple Claude Monet, Édith Piaf ou Auguste Rodin.", astuce:"Claude Monet" },
   { id:63, cat:"Histoire, culture et société", q:"Quelle est l’importance de la culture en France ?", r:"La culture est très importante en France. Elle fait partie de l’identité du pays et elle est accessible à tous.", astuce:"Culture centrale" },
   { id:64, cat:"Histoire, culture et société", q:"Qu’est-ce que le patrimoine ?", r:"Le patrimoine, c’est l’ensemble des biens culturels, historiques et naturels transmis aux générations futures.", astuce:"Transmission" },
@@ -140,7 +164,7 @@ const questions = [
   { id:137, cat:"Rois", q:"Qui est Hugues Capet ?", r:"Le fondateur de la dynastie capétienne.", astuce:"987" },
   { id:138, cat:"Rois", q:"Qui était Saint Louis ?", r:"Un roi juste et respecté.", astuce:"Justice" },
   { id:139, cat:"Rois", q:"Qui était Charles VII ?", r:"Le roi aidé par Jeanne d’Arc.", astuce:"Jeanne d’Arc" },
-  { id:140, cat:"Histoire", q:"Qui était Jeanne d’Arc ?", r:"Une héroïne qui a aidé à libérer la France.", astuce:"Héroïne" },
+  { id:140, cat:"Histoire", q:"Qui était Jeanne d’Arc ?", r:" 1412-1431 Une héroïne qui a mené les troupes francaises à la victoire contre les Anglais pendant la guerre de 100 ans, Capturé et brulée vive a 19 ans.", astuce:"Héroïne" },
   { id:141, cat:"Rois", q:"Qui était Henri IV ?", r:"Un roi qui a rétabli la paix religieuse.", astuce:"Paix" },
   { id:142, cat:"Rois", q:"Quelle décision prend Henri IV ?", r:"L’édit de Nantes en 1598.", astuce:"Tolérance" },
   { id:143, cat:"Rois", q:"Qui était Louis XIV ?", r:"Le roi Soleil, symbole de la monarchie absolue.", astuce:"Pouvoir" },
@@ -155,7 +179,8 @@ const questions = [
   { id:152, cat:"Valeurs", q:"Qu’est-ce que la laïcité ?", r:"La séparation entre l’État et les religions.", astuce:"Séparation" },
   { id:153, cat:"Valeurs", q:"Peut-on pratiquer sa religion ?", r:"Oui, librement.", astuce:"Liberté" },
   { id:154, cat:"Valeurs", q:"Pourquoi pas de signes religieux à l’école ?", r:"Pour garantir la neutralité.", astuce:"Neutre" },
-  { id:155, cat:"Citoyenneté", q:"Quels sont les droits des citoyens ?", r:"Vote, expression, accès aux emplois publics.", astuce:"Droits" },
+  { id:155, q: "Quels sont les droits et les devoirs du citoyen français ?", 
+  r: "Les droits du citoyen français incluent notamment le droit de vote aux élections nationales et locales, la liberté d’expression, de réunion et de croyance, ainsi que le droit à l’éducation et à la protection sociale. En contrepartie, les devoirs du citoyen comprennent le respect des lois et de l’ordre public, le paiement des impôts pour financer les services publics, la participation à la défense nationale si nécessaire, ainsi que le respect des valeurs républicaines de liberté, d’égalité et de fraternité.",  astuce: "Droits + devoirs + équilibre + exemples concrets" },
   { id:156, cat:"Citoyenneté", q:"Quels sont les devoirs ?", r:"Respecter la loi, payer les impôts, défendre le pays.", astuce:"Devoirs" },
   { id:157, cat:"Citoyenneté", q:"Faut-il payer des impôts ?", r:"Oui, pour financer les services publics.", astuce:"Impôts" },
   { id:158, cat:"Institutions", q:"Qui est le chef de l’État ?", r:"Le Président de la République.", astuce:"Président" },
@@ -165,7 +190,8 @@ const questions = [
   { id:162, cat:"Territoire", q:"Quelles sont les collectivités locales ?", r:"Commune, département, région.", astuce:"3 niveaux" },
   { id:163, cat:"Territoire", q:"Que fait la commune ?", r:"Elle gère les services locaux et l’état civil.", astuce:"Local" },
   { id:164, cat:"Culture", q:"Quelle est la fête nationale ?", r:"Le 14 juillet.", astuce:"Bastille" },
-  { id:165, cat:"Culture", q:"Quels sont les symboles de la France ?", r:"Drapeau, Marseillaise, Marianne.", astuce:"Symboles" },
+  { id:165, cat:"Culture", q: "Quels sont les symboles de la France ?", 
+  r: "Les principaux symboles de la France sont le drapeau tricolore bleu, blanc et rouge, qui représente les valeurs de liberté, d’égalité et de fraternité, la Marseillaise qui est l’hymne national, Marianne qui incarne la République et ses valeurs, ainsi que la devise « Liberté, Égalité, Fraternité ». On peut également citer le coq gaulois comme emblème national, le sceau de la République utilisé pour les actes officiels, ainsi que des symboles historiques comme le bonnet phrygien et la fleur de lys.",   astuce: "4 principaux + 2 secondaires + rester structuré"  },
   { id:166, cat:"Culture", q:"Quelle est la langue officielle ?", r:"Le français.", astuce:"Français" },
   { id:167, cat:"Europe", q:"La France fait-elle partie de l’Union européenne ?", r:"Oui.", astuce:"UE" },
   { id:168, cat:"Europe", q:"Quelle est la monnaie ?", r:"L’euro.", astuce:"€" },
@@ -202,13 +228,19 @@ const questions = [
   { id:199, cat:"Histoire", q:"Que s’est-il passé le 8 mai ?", r:"Fin de la Seconde Guerre mondiale.", astuce:"Victoire" },
   { id:200, cat:"Histoire", q:"Que s’est-il passé le 11 novembre ?", r:"Fin de la Première Guerre mondiale.", astuce:"Armistice" },
   { id:201, cat:"Culture", q:"Quel est l’hymne national ?", r:"La Marseillaise.", astuce:"Hymne" },
-  { id:202, cat:"Culture", q:"Que représente Marianne ?", r:"La République.", astuce:"Symbole" },
-  { id:203, cat:"Culture", q:"Quelles sont les couleurs du drapeau ?", r:"Bleu, blanc, rouge.", astuce:"3 couleurs" },
+  { id:202, cat:"Culture", q:"Que représente Marianne ?", r:"Marianne est le symbole de la République française, elle incarne les valeurs de liberté, d’égalité et de fraternité. Elle représente la liberté et la raison, et est généralement représentée sous les traits d’une femme portant un bonnet phrygien. C’est une figure allégorique utilisée depuis la Révolution française, présente dans de nombreux lieux publics comme les mairies, et qui symbolise l’engagement républicain et la souveraineté du peuple.", astuce:"Symbole + valeurs + représentation + origine Révolution" },
+  { id:203, cat:"Culture", q:"Quelles sont les couleurs du drapeau ?", r:"Bleu et rouge Symbolise Paris, blanc represente la Monarchie.", astuce:"3 couleurs" },
   { id:204, cat:"Culture", q:"Quelle est la capitale de la France ?", r:"Paris.", astuce:"Paris" },
   { id:205, cat:"Géographie", q:"Quel est le plus long fleuve ?", r:"La Loire.", astuce:"Loire" },
-  { id:206, cat:"Géographie", q:"Quelle est la plus haute montagne ?", r:"Le Mont-Blanc.", astuce:"Mont-Blanc" },
-  { id:207, cat:"Géographie", q:"Cite un fleuve français.", r:"Seine, Loire, Rhône ou Garonne.", astuce:"Fleuves" },
-  { id:208, cat:"Europe", q:"Combien de pays dans l’UE ?", r:"27 pays.", astuce:"27" },
+  { 
+  id: 206, 
+  cat: "Géographie", 
+  q: "Citez des chaînes de montagnes en France.", 
+  r: "En France, on peut citer plusieurs chaînes de montagnes importantes :\n- Les Alpes, où se trouve le Mont Blanc, le plus haut sommet d’Europe occidentale\n- Les Pyrénées, qui forment une frontière naturelle avec l’Espagne\n- Le Massif central, connu pour ses volcans éteints\n- Les Vosges, caractérisées par des montagnes arrondies\n- Le Jura, situé à la frontière avec la Suisse", 
+  astuce: "5 chaînes + 1 caractéristique chacune" 
+},
+  { id:207, cat:"Géographie", q:"Cite un fleuve français.", r:"Seine, Loire, Rhône ou Garonne.", astuce:"La loire (1006km), La seine (777km), Le Rhone (817km), La garonne (602KM), Le Rhin (Partie en FR 185km)" },
+  { id:208, cat:"Europe", q:"Combien de pays dans l’UE ?", r:"27 pays depuis le depart du Royaume uni en 202 (Brixit).", astuce:"27" },
   { id:209, cat:"Europe", q:"Peut-on circuler librement en Europe ?", r:"Oui.", astuce:"Libre" },
   { id:210, cat:"Europe", q:"Peut-on travailler dans un autre pays européen ?", r:"Oui.", astuce:"Travail UE" },
   { id:211, cat:"Économie", q:"La France est-elle une grande puissance ?", r:"Oui, économique mondiale.", astuce:"Puissance" },
@@ -223,6 +255,13 @@ const questions = [
   { id:220, cat:"Institutions", q:"Combien de députés environ ?", r:"577.", astuce:"577" },
   { id:221, cat:"Institutions", q:"Combien de sénateurs ?", r:"Environ 348.", astuce:"Sénat" },
   { id:222, cat:"Territoire", q:"Combien de communes en France ?", r:"Environ 34 875.", astuce:"Beaucoup" },
+  { 
+  id: 222, 
+  cat: "Territoire", 
+  q: "Quelles sont les 3 types de collectivités en France ?", 
+  r: "En France, il existe trois types de collectivités territoriales : les communes, les départements et les régions. Les communes sont les collectivités de proximité 34871, les départements gèrent notamment l’action sociale 101=96+5, et les régions sont compétentes en matière de développement économique et d’aménagement du territoire 13+5. ", 
+  astuce: "3 niveaux + rôle simple de chaque" 
+},
   { id:223, cat:"Histoire", q:"Qui était Louis XIV ?", r:"Le roi Soleil.", astuce:"Soleil" },
   { id:224, cat:"Histoire", q:"Que symbolise Versailles ?", r:"Le pouvoir royal.", astuce:"Versailles" },
   { id:225, cat:"Histoire", q:"Qui était Victor Hugo ?", r:"Un grand écrivain français.", astuce:"Écrivain" },
@@ -242,7 +281,7 @@ const questions = [
   { id:239, cat:"Territoire", q:"Qui gère les écoles ?", r:"La commune.", astuce:"Commune" },
   { id:240, cat:"Histoire", q:"Qui était Simone Veil ?", r:"Une femme politique importante.", astuce:"IVG" },
   { id:241, cat:"Histoire", q:"Que fait la loi Veil ?", r:"Autorise l’avortement.", astuce:"1975" },
-  { id:242, cat:"Histoire", q:"Quand abolition peine de mort ?", r:"1981.", astuce:"18 septembre 1981" },
+  { id:242, cat:"Histoire", q:"Quand abolition peine de mort ?", r:"Loi porté par le ministre de la justice Robert Badinter , Pr Francois Miterand 1981.", astuce:"18 septembre 1981" },
   { id:243, cat:"Culture", q:"Quel est le slogan de la République ?", r:"Liberté, Égalité, Fraternité.", astuce:"Devise" },
   { id:244, cat:"Culture", q:"Où voit-on Marianne ?", r:"Dans les mairies.", astuce:"Mairie" },
   { id:245, cat:"Géographie", q:"Combien d’habitants en France ?", r:"Environ 69,1 millions.", astuce:"Janvier 2026" },
@@ -268,7 +307,35 @@ const questions = [
   { id:265, cat:"Citoyenneté", q:"Qu’est-ce qu’un citoyen ?", r:"Une personne avec des droits et devoirs.", astuce:"Citoyen" },
   { id:266, cat:"Citoyenneté", q:"Qu’est-ce que la nationalité ?", r:"Appartenance à un pays.", astuce:"Nation" },
   { id:267, cat:"Citoyenneté", q:"Pourquoi devenir français ?", r:"Partager les valeurs et vivre en France.", astuce:"Valeurs" },
-  { id:268, cat:"Citoyenneté", q:"Qu’est-ce que l’intégration ?", r:"Participer à la société.", astuce:"Intégration" }
+  { id:268, cat:"Citoyenneté", q:"Qu’est-ce que l’intégration ?", r:"Participer à la société.", astuce:"Intégration" },
+  { 
+  id: 269, 
+  cat: "Territoire", 
+  q: "Donnez des noms de grandes villes françaises.", 
+  r: "Parmi les grandes villes françaises, on peut citer :\n- Paris, la capitale\n- Marseille\n- Lyon\n- Toulouse\n- Nice\nOn peut également ajouter d’autres villes importantes comme Nantes, Strasbourg, Montpellier ou Bordeaux.", 
+  astuce: "5 villes principales + 2-3 en bonus + pas de chiffres" 
+}, 
+{ 
+  id: 270, 
+  cat: "Valeurs", 
+  q: "Qu’est-ce que le mariage pour tous ?", 
+  r: "Le mariage pour tous est une loi adoptée en France en 2013 qui permet aux couples de même sexe de se marier civilement. Avant cette loi, le mariage était réservé aux couples hétérosexuels. Cette réforme a permis de garantir l’égalité des droits entre les citoyens et s’inscrit dans le respect des valeurs de la République, notamment l’égalité et la non-discrimination.", 
+  astuce: "2013 + égalité + loi républicaine" 
+}, 
+{ 
+  id: 271, 
+  cat: "Valeurs", 
+  q: "Que pensez-vous de cette loi ?", 
+  r: "Cette loi a été adoptée démocratiquement par le Parlement français. Elle fait partie des lois de la République et vise à garantir l’égalité entre les citoyens. En tant que futur citoyen, il est important pour moi de respecter les lois françaises et les valeurs de la République, même si chacun peut avoir des opinions personnelles.", 
+  astuce: "Respect des lois + neutralité + valeurs républicaines" 
+}, 
+{ 
+  id: 272, 
+  cat: "Valeurs", 
+  q: "Si votre enfant vous dit qu’il est homosexuel, que faites-vous ?", 
+  r: "En France, chacun a le droit de vivre librement sa vie privée. Si mon enfant me disait cela, je respecterais sa liberté et ses droits. En tant que parent, je privilégierais le dialogue, le respect et le soutien. La République protège tous les citoyens de la même manière, et il est important de respecter les choix individuels dans le cadre des lois.", 
+  astuce: "Liberté + respect + soutien + valeurs républicaines" 
+}
 ];
 
 const allQuestions = questions;
@@ -587,3 +654,4 @@ export default function App() {
 //git add . 
 //git commit -m "fix: restore full app version"
 //git push
+//page 33
