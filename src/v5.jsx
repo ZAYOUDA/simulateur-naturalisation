@@ -374,7 +374,6 @@ La France comprend également des territoires d’outre-mer :
 - Mayotte : dans l’océan Indien
 
 Ces territoires font partie de la République française et possèdent des statuts spécifiques.`,
-  image: "/images/Regions.png",
     astuce: "13 régions + outre-mer + rester synthétique",
   },
   {
@@ -1400,7 +1399,6 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     Cat: "Histoire, culture et société",
     q: "Quel est l’hymne national ?",
     r: "La Marseillaise.",
-    image: "/images/Marseillaise.png",  
     astuce: "Hymne",
   },
   {
@@ -2025,7 +2023,6 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
 • Le Sénat : son président assure l'intérim en cas de vacance de la présidence de la République.
 • Le Conseil constitutionnel : composé de 9 membres nommés pour 9 ans, il veille au respect de la Constitution par les lois.
 • Parité : la loi de 2000 oblige à un nombre égal de candidats hommes et femmes ; en 2026, l'Assemblée compte environ 36 % de femmes.`,
-  image: "/images/Resume_Institition.png",
     astuce: "Assemblée (députés), Sénat (sénateurs), Conseil constitutionnel.",
   }
 ];
