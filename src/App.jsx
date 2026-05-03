@@ -1155,6 +1155,7 @@ Président : Gérard Larcher (Les Républicains).`,
   },
   {
     id: 155,
+    Cat: "Valeurs et Principes",    
     q: "Quels sont les droits et les devoirs du citoyen français ?",
     r: `Les droits incluent le droit de vote, la liberté d'expression et l'accès aux services publics.
 Les devoirs comprennent le respect des lois, le paiement des impôts, la participation aux jurys d'assises et la défense de la patrie.`,
@@ -1986,7 +1987,10 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
   }
 ];
 
-const allQuestions = questions;
+const allQuestions = questions.map((q) => ({
+  ...q,
+  cat: q.cat || q.Cat || "Autres",
+}));
 
 function shuffleArray(list) {
   return [...list].sort(() => Math.random() - 0.5);
@@ -2093,8 +2097,21 @@ export default function App() {
           font-weight: 800;
           outline: none;
         }
-        .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-        .chip { border-radius: 999px; padding: 9px 13px; font-size: 13px; }
+        .chips {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+          gap: 8px;
+          justify-content: center;
+        }
+        .chip {
+          border-radius: 999px;
+          padding: 9px 13px;
+          font-size: 12px;
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         .meta { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; margin-bottom: 12px; }
         .mobileLabel { display: none; }
         .progress { color: #93c5fd; font-weight: 800; }
@@ -2119,6 +2136,10 @@ export default function App() {
           font-weight: 900;
           margin-bottom: 24px;
           font-size: 13px;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
         .question { font-size: clamp(24px, 4vw, 38px); line-height: 1.25; max-width: 900px; margin: 0 0 24px; }
         .answerBox {
