@@ -2201,6 +2201,15 @@ export default function App() {
           overflow-y: auto;
           overscroll-behavior: contain;
         }
+        .answerImage {
+          display: block;
+          width: 100%;
+          max-height: 360px;
+          object-fit: contain;
+          border-radius: 14px;
+          margin: 0 auto 18px;
+          background: rgba(255,255,255,.04);
+        }
         .answerBox::-webkit-scrollbar { width: 10px; }
         .answerBox::-webkit-scrollbar-thumb { background: rgba(148,163,184,.45); border-radius: 999px; }
         .answerBox::-webkit-scrollbar-track { background: rgba(15,23,42,.35); border-radius: 999px; }
@@ -2285,6 +2294,7 @@ export default function App() {
             margin-bottom: 9px;
           }
           .answerBox { padding: 10px; border-radius: 13px; }
+          .answerImage { max-height: 230px; margin-bottom: 10px; }
           .answerTitle { font-size: 14px; margin-bottom: 6px; }
           .answer { font-size: clamp(14px, 4.2vw, 17px); line-height: 1.28; }
           .tip { margin-top: 8px; padding: 7px 9px; font-size: 12px; border-radius: 11px; }
@@ -2399,6 +2409,9 @@ export default function App() {
 
               {showAnswer ? (
                 <div className="answerBox">
+                  {current.image && (
+                    <img className="answerImage" src={current.image} alt={current.q} />
+                  )}
                   <h3 className="answerTitle">Réponse modèle</h3>
                   <p className="answer">{current.r}</p>
                   {current.astuce && <div className="tip">Astuce : {current.astuce}</div>}
