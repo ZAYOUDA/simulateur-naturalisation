@@ -1155,7 +1155,6 @@ Président : Gérard Larcher (Les Républicains).`,
   },
   {
     id: 155,
-    Cat: "Valeurs et Principes",    
     q: "Quels sont les droits et les devoirs du citoyen français ?",
     r: `Les droits incluent le droit de vote, la liberté d'expression et l'accès aux services publics.
 Les devoirs comprennent le respect des lois, le paiement des impôts, la participation aux jurys d'assises et la défense de la patrie.`,
@@ -2062,19 +2061,28 @@ export default function App() {
     <div className="app">
       <style>{`
         * { box-sizing: border-box; }
+        html, body, #root { height: 100%; overflow: hidden; }
         body { margin: 0; }
         .app {
-          min-height: 100vh;
+          height: 100dvh;
+          min-height: 100dvh;
           background: radial-gradient(circle at top, #1e293b, #020617);
           color: white;
           font-family: Arial, sans-serif;
-          padding: 18px;
+          padding: 14px 18px;
+          overflow: hidden;
         }
-        .container { max-width: 1120px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 16px; }
-        .title { margin: 0; font-size: clamp(34px, 5vw, 56px); font-weight: 900; letter-spacing: -0.04em; }
-        .subtitle { margin: 8px 0 0; color: #94a3b8; font-size: 17px; }
-        .modebar { display: flex; gap: 10px; margin-bottom: 14px; }
+        .container {
+          max-width: 1120px;
+          height: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+        }
+        .header { text-align: center; margin-bottom: 10px; flex: 0 0 auto; }
+        .title { margin: 0; font-size: clamp(30px, 4.4vw, 50px); font-weight: 900; letter-spacing: -0.04em; }
+        .subtitle { margin: 4px 0 0; color: #94a3b8; font-size: 15px; }
+        .modebar { display: flex; gap: 10px; margin-bottom: 10px; flex: 0 0 auto; }
         .modeBtn, .btn, .chip {
           border: 1px solid #334155;
           background: rgba(255,255,255,.05);
@@ -2084,7 +2092,7 @@ export default function App() {
         }
         .modeBtn { flex: 1; padding: 13px 14px; border-radius: 16px; font-size: 15px; }
         .active { border-color: #60a5fa !important; background: rgba(37,99,235,.28) !important; color: #bfdbfe !important; }
-        .categoryArea { margin-bottom: 14px; }
+        .categoryArea { margin-bottom: 10px; flex: 0 0 auto; }
         .categorySelect {
           display: none;
           width: 100%;
@@ -2112,11 +2120,12 @@ export default function App() {
           text-overflow: ellipsis;
           white-space: nowrap;
         }
-        .meta { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; margin-bottom: 12px; }
+        .meta { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; margin-bottom: 8px; flex: 0 0 auto; }
         .mobileLabel { display: none; }
         .progress { color: #93c5fd; font-weight: 800; }
         .card {
-          min-height: 350px;
+          flex: 1 1 auto;
+          min-height: 0;
           border-radius: 24px;
           border: 1px solid #334155;
           background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
@@ -2124,9 +2133,10 @@ export default function App() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           text-align: center;
-          padding: 30px;
+          padding: 24px 30px;
+          overflow: hidden;
         }
         .badge {
           padding: 8px 16px;
@@ -2134,32 +2144,39 @@ export default function App() {
           background: rgba(37,99,235,.20);
           color: #93c5fd;
           font-weight: 900;
-          margin-bottom: 24px;
+          margin-bottom: 18px;
           font-size: 13px;
           max-width: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
-        .question { font-size: clamp(24px, 4vw, 38px); line-height: 1.25; max-width: 900px; margin: 0 0 24px; }
+        .question { font-size: clamp(22px, 3.2vw, 34px); line-height: 1.2; max-width: 900px; margin: 0 0 18px; flex: 0 0 auto; }
         .answerBox {
           width: 100%;
           max-width: 900px;
+          flex: 1 1 auto;
+          min-height: 0;
           padding: 22px;
           border-radius: 18px;
           border: 1px solid rgba(34,197,94,.35);
           background: rgba(34,197,94,.08);
+          overflow-y: auto;
+          overscroll-behavior: contain;
         }
+        .answerBox::-webkit-scrollbar { width: 10px; }
+        .answerBox::-webkit-scrollbar-thumb { background: rgba(148,163,184,.45); border-radius: 999px; }
+        .answerBox::-webkit-scrollbar-track { background: rgba(15,23,42,.35); border-radius: 999px; }
         .answerTitle { color: #86efac; font-size: 22px; margin: 0 0 14px; }
         .answer { font-size: clamp(18px, 2.5vw, 24px); line-height: 1.45; margin: 0; white-space: pre-line; }
         .tip { margin-top: 18px; padding: 12px 16px; border-radius: 14px; border: 1px solid rgba(96,165,250,.45); background: rgba(37,99,235,.16); color: #bfdbfe; font-size: 16px; font-weight: 800; }
         .hint { color: #94a3b8; font-size: 16px; }
-        .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
+        .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 10px; flex: 0 0 auto; }
         .btn { padding: 14px 16px; border-radius: 14px; font-size: 15px; }
         .btn:hover, .chip:hover, .modeBtn:hover { background: rgba(255,255,255,.10); }
         .red { border-color: #ef4444; color: #fca5a5; }
         .green { border-color: #22c55e; color: #86efac; }
-        .bottomActions { display: flex; gap: 12px; justify-content: center; margin-top: 14px; }
+        .bottomActions { display: flex; gap: 12px; justify-content: center; margin-top: 8px; flex: 0 0 auto; }
         .bottomActions .btn { min-width: 240px; }
 
         @media (max-width: 700px) {
