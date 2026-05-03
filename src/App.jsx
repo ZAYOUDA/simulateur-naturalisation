@@ -401,8 +401,9 @@ Ces territoires font partie de la République française et possèdent des statu
   {
     id: 48,
     cat: "Histoire, culture et société",
-    q: "Quel est l’hymne national ?",
+    q: "Quel est l’hymne national.. ?",
     r: `L’hymne national est La Marseillaise. Composée en 1792 par Claude Joseph Rouget de Lisle et adoptée en 1879 (définitivement).`,
+        image: "/images/Marseillaise.png", 
     astuce: "La Marseillaise",
   },
   {
@@ -1394,14 +1395,6 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     q: "Que s’est-il passé le 11 novembre 1918 ?",
     r: `C'est la signature de l'Armistice mettant fin aux combats de la Première Guerre mondiale.`,
     astuce: "Armistice",
-  },
-  {
-    id: 201,
-    Cat: "Histoire, culture et société",
-    q: "Quel est l’hymne national ?",
-    r: "La Marseillaise.",
-    image: "/images/Marseillaise.png",  
-    astuce: "Hymne",
   },
   {
     id: 202,
