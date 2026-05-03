@@ -1564,7 +1564,7 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
   },
 {
     id: 225,
-    Cat: "Littérature française",
+    Cat: "Histoire, culture et société",
     q: "Donnez le nom de littéraires français et les titres de leurs écrits.",
     r: `• Voltaire : Candide, Lettres philosophiques
 • Rousseau : Du contrat social, Les Confessions
