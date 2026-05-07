@@ -978,6 +978,7 @@ Ces territoires font partie de la République française et possèdent des statu
     cat: "Institutions et Vie Politique",
     q: "Qu'est-ce que la République ?",
     r: `La République est un régime politique sans roi, fondé sur la souveraineté du peuple et le respect des lois.`,
+    image: "/images/institutions_pouvoirs_valeurs.png",
     astuce: "Pas de roi",
   },
   {
