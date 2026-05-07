@@ -1762,6 +1762,31 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     r: "Je respecterais la décision et je chercherais à comprendre les raisons du refus pour m'améliorer. Je continuerais à m'intégrer pleinement, car mon attachement à la France va au-delà de l'obtention de la nationalité.",
     astuce: "Réponse humble, résiliente et attachée à la France.",
   },
+  // Illustrations
+    {
+    id: 243,
+    cat: "Illustration",
+    q: "institutions pouvoirs valeurs",
+    r: "institutions pouvoirs valeurs.",
+    image: "/images/institutions_pouvoirs_valeurs.png",
+    astuce: "A dessiner.",
+  },
+      {
+    id: 244,
+    cat: "Illustration",
+    q: "institutions collectivités",
+    r: "institutions collectivités.",
+    image: "/images/institutions_collectivités.png",
+    astuce: "A dessiner.",
+  },
+       {
+    id: 245,
+    cat: "Illustration",
+    q: "valeurs symboles",
+    r: "valeurs symboles",
+    image: "/images/valeurs_symboles _repères_historiques.png",
+    astuce: "A dessiner.",
+  } 
 ];
 
 function shuffleArray(list) {
