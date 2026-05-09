@@ -52,7 +52,7 @@ Enfin, je comprends et je partage les valeurs de la République française, ce q
     id: 5,
     cat: "Questions personnelles",
     q: "Pourquoi avez-vous décidé de demander la naturalisation en France ?",
-    r: `J'ai choisi de demander la naturalisation en France car je considère ce pays comme ma nouvelle patrie. J'admire profondément sa culture, son histoire et ses valeurs républicaines telles que la liberté, l'égalité et la fraternité. Je souhaite pleinement m'intégrer à la société française et contribuer à son enrichissement.`,
+    r: `Cela fait 10 ans que je construis ma vie ici. Je paye mes impôts, je crée de l'emploi, j'ai mes attaches personnelles. Devenir Français n'est pas une simple formalité administrative pour obtenir un passeport, c'est une démarche de cohérence. Je veux participer à la vie de la cité, voter, et porter officiellement les couleurs d'un pays dont je partage déjà le quotidien et les valeurs`,
     astuce: "Langue + travail + lois",
   },
   {
@@ -141,7 +141,7 @@ Après avoir construit une grande partie de ma vie en France, tant sur le plan p
     id: 16,
     cat: "Questions personnelles",
     q: "Êtes-vous membre d'une association ?",
-    r: `Pas toujours, mais je participe quand c'est possible à des activités locales ou associatives.`,
+    r: `Je n'ai pas d'engagement formel dans une structure par manque de temps lié à mes responsabilités, mais je pratique une solidarité de proximité. Pendant le Covid, j'ai naturellement aidé mes voisins seniors à Chevilly-Larue pour leurs courses. Pour moi, l'esprit associatif commence par le civisme au quotidien..`,
     astuce: "Réponse honnête",
   },
   {
@@ -1755,12 +1755,26 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     r: "La liberté d'expression est un droit fondamental en France et elle est essentielle à la démocratie. Cependant, elle a des limites, notamment lorsqu'il s'agit d'incitation à la haine, à la violence ou d'atteinte à la dignité d'autrui.",
     astuce: "Liberté d'expression avec des limites légales.",
   },
-  {
+    {
     id: 242,
     cat: "DELICATE",
     q: "Si votre demande de nationalité française était refusée, comment réagiriez-vous ?",
     r: "Je respecterais la décision et je chercherais à comprendre les raisons du refus pour m'améliorer. Je continuerais à m'intégrer pleinement, car mon attachement à la France va au-delà de l'obtention de la nationalité.",
     astuce: "Réponse humble, résiliente et attachée à la France.",
+  },
+  {
+    id: 245,
+    cat: "DELICATE",
+    q: "Quelle est votre perspective sur les événements tragiques comme les attentats de Charlie Hebdo, en tant que résident en France ?",
+    r: "C'est un événement qui m'a profondément touché. Pour moi, la liberté d'expression est le pilier de la démocratie. On a le droit de critiquer ou de caricaturer ; c'est ce qui permet le débat d'idées. La violence ne peut jamais être une réponse à un désaccord intellectuel.",
+    astuce: "Réponse humble, résiliente.",
+  },
+    {
+    id: 246,
+    cat: "DELICATE",
+    q: "Compte tenu de votre expérience en France, quel est votre avis sur l'IVG et comment percevez-vous son acceptation dans la société française ?",
+    r: "C'est un droit fondamental qui garantit l'autonomie et la liberté des femmes sur leur propre corps. Je salue d'ailleurs sa récente constitutionnalisation en France, ce qui montre l'attachement de la nation à cette protection",
+    astuce: "Réponse humble, résiliente.",
   },
   // Illustrations
     {
