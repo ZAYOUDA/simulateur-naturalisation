@@ -321,480 +321,377 @@ Après avoir construit une grande partie de ma vie en France, tant sur le plan p
   },
 
   // ── Histoire, culture et société ───────────────────────────────────────────
-  {
-    id: 41,
-    cat: "Histoire, culture et société",
-    q: "Qui est le président de la République ?",
-    r: `Le président de la République est Emmanuel Macron. Il a été réélu en 2022.`,
-    astuce: "À vérifier avant l'entretien",
-  },
+  // ── Histoire, culture et société (Tranche 1 : 1-15) ───────────────────────────
   {
     id: 42,
     cat: "Histoire, culture et société",
-    q: "Quels sont les symboles de la République française ?",
-    r: `Les principaux symboles sont le drapeau bleu-blanc-rouge, Marianne, La Marseillaise et la devise Liberté, Égalité, Fraternité. On peut aussi citer le coq gaulois comme symbole traditionnel de la France.`,
-    astuce: "Drapeau, Marianne, Marseillaise, devise",
-  },
-  {
-    id: 43,
-    cat: "Histoire, culture et société",
-    q: "Que représente le drapeau français ?",
-    r: `Le drapeau français est bleu, blanc et rouge. Il représente la République française et ses valeurs. Le bleu et le rouge sont associés à Paris, et le blanc est traditionnellement associé à la monarchie.`,
-    astuce: "Bleu blanc rouge",
-  },
-  {
-    id: 44,
-    cat: "Histoire, culture et société",
-    q: "Que représente Marianne ?",
-    r: `Marianne représente la République française. Elle incarne les valeurs de liberté, d'égalité et de fraternité. On voit souvent son buste dans les mairies.`,
-    astuce: "Symbole de la République",
-  },
-  {
-    id: 45,
-    cat: "Histoire, culture et société",
-    q: "Quel est l'hymne national français ?",
-    r: `L'hymne national français est La Marseillaise. Elle a été composée en 1792 par Rouget de Lisle et elle est devenue l'hymne national de la République.`,
-    image: "/images/Marseillaise.png",
-    astuce: "La Marseillaise",
+    q: "Quels sont les symboles de la République française et que représentent-ils ?",
+    r: `Les principaux symboles sont : 
+• Le drapeau bleu-blanc-rouge (le blanc pour la royauté, le bleu et rouge pour Paris) 15 février 1794.
+• Marianne, qui incarne la République et la liberté.
+• La Marseillaise, l'hymne national composé par Rouget de Lisle en 1792.
+• La devise "Liberté, Égalité, Fraternité, 1848". 
+• Le coq gaulois (symbole traditionnel), symbole de fierté et de courage.`,
+    astuce: "Drapeau, Marianne, Marseillaise, Devise",
   },
   {
     id: 46,
     cat: "Histoire, culture et société",
-    q: "Quelle est la fête nationale française ?",
-    r: `La fête nationale française est le 14 juillet. Elle rappelle la Révolution française, notamment la prise de la Bastille en 1789, et la fête de la Fédération en 1790.`,
-    astuce: "14 juillet",
-  },
-  {
-    id: 47,
-    cat: "Histoire, culture et société",
-    q: "Que marque l'année 1789 ?",
-    r: `L'année 1789 marque le début de la Révolution française, avec la prise de la Bastille et la Déclaration des droits de l'homme et du citoyen. Elle marque aussi la fin progressive de la monarchie absolue.`,
-    astuce: "Révolution + Bastille + DDHC",
+    q: "Quelle est la fête nationale française et que commémore-t-elle ?",
+    r: `La fête nationale est le 14 juillet. Elle commémore la prise de la Bastille en 1789 (fin de la monarchie royale) et la Fête de la Fédération de 1790 (union de la nation).`,
+    astuce: "14 juillet / Bastille",
   },
   {
     id: 48,
     cat: "Histoire, culture et société",
-    q: "Qu'est-ce que la Révolution française ?",
-    r: `La Révolution française est un événement majeur qui commence en 1789. Elle met fin à la monarchie absolue et fonde de nouveaux principes politiques comme la liberté, l'égalité et la souveraineté du peuple.`,
-    astuce: "Fin monarchie absolue",
-  },
-  {
-    id: 49,
-    cat: "Histoire, culture et société",
-    q: "Qui était Napoléon Bonaparte ?",
-    r: `Napoléon Bonaparte était un général de la Révolution devenu Premier consul puis empereur des Français. Il a marqué la France par ses conquêtes, mais aussi par des réformes importantes comme le Code civil de 1804, les lycées et la Légion d'honneur.`,
-    astuce: "Empereur + Code civil",
-  },
-  {
-    id: 50,
-    cat: "Histoire, culture et société",
-    q: "Qui était Charles de Gaulle ?",
-    r: `Charles de Gaulle était un général français. Il a dirigé la France libre pendant la Seconde Guerre mondiale et il est ensuite devenu le fondateur de la Ve République en 1958.`,
-    astuce: "France libre + Ve République",
-  },
-  {
-    id: 51,
-    cat: "Histoire, culture et société",
-    q: "Quand a eu lieu la Première Guerre mondiale ?",
-    r: `La Première Guerre mondiale a eu lieu de 1914 à 1918. Le 11 novembre 1918 marque l'armistice, c'est-à-dire la fin des combats.`,
-    astuce: "1914-1918",
-  },
-  {
-    id: 52,
-    cat: "Histoire, culture et société",
-    q: "Quand a eu lieu la Seconde Guerre mondiale ?",
-    r: `La Seconde Guerre mondiale a eu lieu de 1939 à 1945. En Europe, elle se termine le 8 mai 1945 avec la capitulation de l'Allemagne nazie.`,
-    astuce: "1939-1945",
+    q: "Qu'est-ce que la Révolution française et que marque l'année 1789 ?",
+    r: `La Révolution française commence en 1789. Elle marque la fin de la monarchie absolue et des privilèges. Elle fonde la souveraineté du peuple et proclame la Déclaration des droits de l'homme et du citoyen. Le 21 septembre 1792, la Convention nationale abolit la monarchie et proclame la Première République ; c’est l’acte qui met officiellement fin à la royauté en France.`,
+    astuce: "Evenement fondateur , Fin de la monarchie absolue",
   },
   {
     id: 53,
     cat: "Histoire, culture et société",
     q: "Qu'est-ce que la Déclaration des droits de l'homme et du citoyen ?",
-    r: `La Déclaration des droits de l'homme et du citoyen est un texte fondamental de 1789. Elle affirme des droits essentiels comme la liberté, l'égalité devant la loi et la souveraineté du peuple.`,
-    astuce: "1789 + droits fondamentaux",
+    r: `C'est un texte fondamental de 26 août 1789 qui définit les droits naturels et individuels : la liberté, la propriété, la sûreté et la résistance à l'oppression. Elle affirme l'égalité devant la loi.`,
+    astuce: "Liberté et égalité devant la loi",
   },
   {
-    id: 54,
+    id: 49,
     cat: "Histoire, culture et société",
-    q: "Quelle est la devise de la République française ?",
-    r: `La devise de la République française est Liberté, Égalité, Fraternité. Elle résume les grandes valeurs républicaines.`,
-    astuce: "Liberté Égalité Fraternité",
+    q: "Qui était Napoléon Bonaparte ?",
+    r: `Général de la Révolution, il devient Premier consul puis Empereur (Napoléon Ier). Il est à l'origine de réformes majeures : le Code civil, les lycées, la Légion d'honneur et les départements, 1804--1814.`,
+    astuce: "Empereur + 1er Président IIe republique + Code civil",
+  },
+  {
+    id: 50,
+    cat: "Histoire, culture et société",
+    q: "Qui était Charles de Gaulle ?",
+    r: `Général et homme d'État, il a dirigé la France Libre depuis Londres pendant la Seconde Guerre mondiale. Il est le fondateur de la Ve République en 1958 dont il fut le premier président, 1959--1969.`,
+    astuce: "Résistance + Ve République",
+  },
+  {
+    id: 51,
+    cat: "Histoire, culture et société",
+    q: "Quelles sont les dates des deux guerres mondiales et leurs armistices ?",
+    r: `• 1914-1918 : Première Guerre mondiale (Armistice le 11 novembre 1918).
+• 1939-1945 : Seconde Guerre mondiale (Capitulation allemande le 8 mai 1945). Le 6 juin 1944 marque le Débarquement allié en Normandie.`,
+    astuce: "14-18 et 39-45",
   },
   {
     id: 55,
     cat: "Histoire, culture et société",
     q: "Qu'est-ce que la laïcité ?",
-    r: `La laïcité signifie que l'État est neutre envers les religions. Chacun est libre de croire, de ne pas croire ou de changer de religion, dans le respect de la loi et des autres.`,
-    astuce: "Neutralité + liberté de conscience",
-  },
-  {
-    id: 56,
-    cat: "Histoire, culture et société",
-    q: "Quelle est la langue officielle de la République ?",
-    r: `La langue officielle de la République est le français.`,
-    astuce: "Le français",
+    r: `C'est un principe de neutralité de l'État envers toutes les religions. Elle garantit la liberté de conscience (croire ou ne pas croire) et la séparation des Églises et de l'État (Loi de 1905).`,
+    astuce: "Neutralité de l'État",
   },
   {
     id: 57,
     cat: "Histoire, culture et société",
-    q: "Citez des plats typiques français.",
-    r: `On peut citer le bœuf bourguignon, la blanquette de veau, la ratatouille, la quiche lorraine, le cassoulet, la choucroute, la tartiflette ou encore les crêpes bretonnes. La gastronomie fait partie du patrimoine culturel français.`,
-    astuce: "3 ou 4 exemples suffisent",
-  },
-  {
-    id: 58,
-    cat: "Histoire, culture et société",
-    q: "Pouvez-vous citer des personnalités françaises connues ?",
-    r: `Oui, par exemple Victor Hugo en littérature, Marie Curie en science, Claude Monet en peinture, Charles de Gaulle en histoire, Édith Piaf en chanson et Zinedine Zidane dans le sport.`,
-    astuce: "Plusieurs domaines",
-  },
-  {
-    id: 59,
-    cat: "Histoire, culture et société",
-    q: "Connaissez-vous des artistes français ?",
-    r: `Oui, on peut citer Claude Monet pour la peinture, Auguste Rodin pour la sculpture, Édith Piaf pour la chanson et François Truffaut pour le cinéma.`,
-    astuce: "Monet, Rodin, Piaf",
+    q: "Citez des plats typiques et des monuments célèbres de France.",
+    r: `• Plats : Bœuf bourguignon, blanquette de veau, ratatouille, quiche lorraine.
+• Monuments : La Tour Eiffel, l'Arc de Triomphe, le Louvre, le château de Versailles, le Mont-Saint-Michel.`,
+    astuce: "Patrimoine culinaire et architectural",
   },
   {
     id: 60,
     cat: "Histoire, culture et société",
-    q: "Quelle est l'importance de la culture en France ?",
-    r: `La culture est très importante en France. Elle fait partie de l'identité du pays et elle est valorisée par les musées, le cinéma, la littérature, la musique, les monuments et le patrimoine.`,
-    astuce: "Identité + patrimoine",
-  },
-  {
-    id: 61,
-    cat: "Histoire, culture et société",
-    q: "Qu'est-ce que le patrimoine ?",
-    r: `Le patrimoine désigne l'ensemble des biens culturels, historiques, architecturaux ou naturels transmis par les générations précédentes. Il faut le protéger pour les générations futures.`,
-    astuce: "Transmission",
-  },
-  {
-    id: 62,
-    cat: "Histoire, culture et société",
-    q: "Connaissez-vous des monuments français ?",
-    r: `Oui, par exemple la Tour Eiffel, l'Arc de Triomphe, le Louvre, Notre-Dame de Paris, le château de Versailles et le Mont-Saint-Michel.`,
-    astuce: "Tour Eiffel + Versailles",
+    q: "Qu'est-ce que le patrimoine et quelle est l'importance de la culture en France ?",
+    r: `Le patrimoine est l'ensemble des biens (monuments, œuvres, traditions) transmis par nos ancêtres. La culture est une priorité en France, elle renforce l'identité nationale et l'attractivité du pays.`,
+    astuce: "Transmission et identité",
   },
   {
     id: 63,
     cat: "Histoire, culture et société",
-    q: "Qu'est-ce que l'Union européenne ?",
-    r: `L'Union européenne est une organisation qui regroupe 27 pays européens. Elle permet aux États membres de coopérer pour la paix, l'économie, les droits des citoyens et la libre circulation.`,
-    astuce: "27 pays + coopération",
-  },
-  {
-    id: 64,
-    cat: "Histoire, culture et société",
-    q: "La France fait-elle partie de l'Union européenne ?",
-    r: `Oui, la France fait partie de l'Union européenne. Elle est même l'un des pays fondateurs de la construction européenne.`,
-    astuce: "Pays fondateur",
-  },
-  {
-    id: 65,
-    cat: "Histoire, culture et société",
-    q: "Quelle est la monnaie utilisée en France ?",
-    r: `La monnaie utilisée en France est l'euro. Les billets et pièces en euros sont utilisés depuis le 1er janvier 2002.`,
-    astuce: "Euro depuis 2002",
+    q: "Qu'est-ce que l'Union européenne et la France en fait-elle partie ?",
+    r: `L'Union européenne est une organisation de 27 pays coopérant sur l'économie et la paix. La France est un pays fondateur. La monnaie commune est l'euro (en circulation depuis 2002).`,
+    image: "/images/EU.png",    
+    astuce: "27 pays + Euro",
   },
   {
     id: 66,
     cat: "Histoire, culture et société",
-    q: "Quels sont les pays voisins de la France ?",
-    r: `Les pays voisins de la France métropolitaine sont la Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie, Monaco, l'Espagne et Andorre.`,
-    astuce: "Belgique, Allemagne, Suisse, Italie, Espagne",
+    q: "Quels sont les pays voisins de la France et qu'est-ce que la francophonie ?",
+    r: `• Voisins : Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre.
+• Francophonie : Ensemble des personnes et pays qui utilisent la langue française dans le monde.`,
+    astuce: "8 pays voisins + langue française",
   },
   {
-    id: 67,
+    id: 100,
     cat: "Histoire, culture et société",
-    q: "Qu'est-ce que la francophonie ?",
-    r: `La francophonie désigne l'ensemble des personnes et des pays qui utilisent la langue française. Elle représente aussi un lien culturel entre plusieurs pays dans le monde.`,
-    astuce: "Pays et personnes parlant français",
-  },
-  {
-    id: 68,
-    cat: "Histoire, culture et société",
-    q: "Qui était Clovis ?",
-    r: `Clovis était un roi des Francs. Il a unifié une grande partie de la Gaule et il est connu pour sa conversion au christianisme, qui a marqué l'histoire de la France.`,
-    astuce: "Premier roi des Francs important",
-  },
-  {
-    id: 69,
-    cat: "Histoire, culture et société",
-    q: "Qui était Charlemagne ?",
-    r: `Charlemagne était un roi des Francs devenu empereur d'Occident en l'an 800. Il a agrandi son empire et encouragé le développement de l'enseignement.`,
-    astuce: "Empereur en 800",
-  },
-  {
-    id: 70,
-    cat: "Histoire, culture et société",
-    q: "Qui était Hugues Capet ?",
-    r: `Hugues Capet est le fondateur de la dynastie des Capétiens en 987. Cette dynastie a régné sur la France pendant plusieurs siècles.`,
-    astuce: "987 + Capétiens",
-  },
-  {
-    id: 71,
-    cat: "Histoire, culture et société",
-    q: "Pouvez-vous citer des rois de France marquants ?",
-    r: `Oui, on peut citer Clovis, Charlemagne, François Ier, Henri IV, Louis XIV et Louis XVI. Louis XIV est associé à Versailles et à la monarchie absolue, tandis que Louis XVI est le roi de la période de la Révolution française.`,
-    astuce: "Louis XIV + Louis XVI",
+    q: "Citez des rois de France marquants et leurs accomplissements.",
+    r: `• Clovis : 1er roi des Francs chrétien, 481 -- 511.
+• Charlemagne : Empereur en 800, développe l'enseignement.
+• Francois 1er 1515 à 1547: Il incarne la Renaissance française, protège les arts et les lettres, et fait construire les châteaux de la Loire - Chateau Chambord.
+• Henri IV - 1598: Édit de Nantes (paix religieuse, le droit aux protestants de pratiquer leur religion).
+• Louis XIV - 1638 - 1643 (Roi-Soleil) : Symbole de la monarchie absolue et de Versailles.
+• Louis XVI - 1754 : Roi sous la Révolution, dernier de l'Ancien Régime.
+• Louis-Philippe - 1815-1848 : Dernier Roi de France -- 1ere republique.`,
+    astuce: "Clovis, Louis XIV, Louis XVI",
   },
   {
     id: 72,
     cat: "Histoire, culture et société",
     q: "Qui était Jeanne d'Arc ?",
-    r: `Jeanne d'Arc est une héroïne française du XVe siècle. Elle a aidé le roi Charles VII pendant la guerre de Cent Ans. Elle a été capturée puis brûlée vive à Rouen en 1431.`,
-    astuce: "Héroïne française",
+    r: `Une héroïne du XVe siècle qui a aidé le roi Charles VII à libérer la France des Anglais durant la guerre de Cent Ans. Elle fut brûlée vive à Rouen en 1431.`,
+    astuce: "Libération d'Orléans",
   },
   {
     id: 73,
     cat: "Histoire, culture et société",
     q: "Que signifie la monarchie absolue ?",
-    r: `La monarchie absolue est un régime politique où le roi concentre tous les pouvoirs. Il décide seul des grandes affaires de l'État, sans véritable contrôle démocratique.`,
-    astuce: "Le roi a tous les pouvoirs",
+    r: `C'est un régime où le roi détient tous les pouvoirs (législatif, exécutif, judiciaire) par droit divin, sans contrôle parlementaire ou citoyen. Louis XIV en est le meilleur exemple.`,
+    astuce: "Le roi décide de tout",
   },
-  {
+    {
     id: 74,
     cat: "Histoire, culture et société",
-    q: "Qui était Louis XIV ?",
-    r: `Louis XIV, appelé le Roi-Soleil, est un roi de France connu pour la monarchie absolue et pour le château de Versailles. Son règne a fortement marqué l'histoire française.`,
-    astuce: "Roi-Soleil + Versailles",
+    q: "Quel événement marque le début de la IIIe République ?",
+    r: `La IIIe République est proclamée le 4 septembre 1870 après la défaite de Sedan et la capture de Napoléon III, mettant fin au Second Empire.`,
+    astuce: "Le roi décide de tout",
   },
-  {
-    id: 75,
+      {
+    id: 74,
     cat: "Histoire, culture et société",
-    q: "Que symbolise le château de Versailles ?",
-    r: `Le château de Versailles symbolise la grandeur de la France et le pouvoir royal sous Louis XIV. C'est aussi aujourd'hui un grand lieu du patrimoine français.`,
-    astuce: "Pouvoir royal + patrimoine",
+    q: "Quelle guerre d'indépendance coloniale précède la guerre d'Algérie ?",
+    r: `La guerre d'Indochine (1946-1954) oppose la France au Viêt Minh et se termine par la défaite française à Diên Biên Phu et les accords de Genève, Le conflit de 1954-1962 aboutit aux Accords d'Évian et à l’indépendance de l’Algérie, entraînant le démantèlement du reste de l’Empire français en Afrique du Nord.`,
+    astuce: "Algerie 1962 - FIn colonial Afrique de nord, Indochine 1946-1954",
   },
+// ── Histoire, culture et société (Tranche 2 : 16-30) ───────────────────────────
   {
     id: 76,
     cat: "Histoire, culture et société",
-    q: "Qui étaient les philosophes des Lumières ?",
-    r: `Les philosophes des Lumières étaient des penseurs du XVIIIe siècle qui défendaient la raison, la liberté, la tolérance et le progrès. Ils ont influencé la Révolution française.`,
-    astuce: "Raison, liberté, tolérance",
-  },
-  {
-    id: 77,
-    cat: "Histoire, culture et société",
-    q: "Citez un philosophe des Lumières.",
-    r: `On peut citer Voltaire, Rousseau, Montesquieu ou Diderot. Par exemple, Montesquieu est connu pour ses idées sur la séparation des pouvoirs.`,
-    astuce: "Voltaire ou Montesquieu",
-  },
-  {
-    id: 78,
-    cat: "Histoire, culture et société",
-    q: "Que s'est-il passé le 8 mai 1945 ?",
-    r: `Le 8 mai 1945 marque la victoire des Alliés et la capitulation de l'Allemagne nazie. C'est la fin de la Seconde Guerre mondiale en Europe.`,
-    astuce: "Victoire 1945",
-  },
-  {
-    id: 79,
-    cat: "Histoire, culture et société",
-    q: "Que s'est-il passé le 11 novembre 1918 ?",
-    r: `Le 11 novembre 1918 marque l'armistice de la Première Guerre mondiale. C'est la fin des combats entre les pays en guerre.`,
-    astuce: "Armistice 1918",
-  },
-  {
-    id: 80,
-    cat: "Histoire, culture et société",
-    q: "Que s'est-il passé le 6 juin 1944 en France ?",
-    r: `Le 6 juin 1944, les Alliés ont débarqué en Normandie. Cet événement, appelé le Jour J, a été une étape importante dans la libération de la France pendant la Seconde Guerre mondiale.`,
-    astuce: "Débarquement de Normandie",
+    q: "Qui étaient les philosophes des Lumières et qu'ont-ils apporté ?",
+    r: `Les philosophes des Lumières (XVIIIe siècle) comme Voltaire, Rousseau, Montesquieu et Diderot défendaient la raison, la liberté et la tolérance. Ils ont critiqué la monarchie absolue et inspiré la Révolution française (ex: séparation des pouvoirs de Montesquieu).`,
+    astuce: "Voltaire, Rousseau, Montesquieu",
   },
   {
     id: 81,
     cat: "Histoire, culture et société",
-    q: "Peut-on circuler librement en Europe ?",
-    r: `Oui, dans l'espace Schengen, les personnes peuvent circuler librement entre plusieurs pays européens, sans contrôle systématique aux frontières intérieures.`,
-    astuce: "Espace Schengen",
-  },
-  {
-    id: 82,
-    cat: "Histoire, culture et société",
-    q: "Peut-on travailler dans un autre pays européen ?",
-    r: `Oui, un citoyen de l'Union européenne peut travailler dans un autre pays membre, sous réserve de respecter les règles du pays concerné.`,
-    astuce: "Libre circulation des travailleurs",
+    q: "Peut-on circuler et travailler librement en Europe ?",
+    r: `Oui, grâce à l'espace Schengen, les citoyens peuvent circuler sans contrôle aux frontières intérieures. De plus, tout citoyen de l'Union européenne a le droit de s'installer et de travailler dans un autre pays membre.`,
+    astuce: "Espace Schengen + Libre circulation",
   },
   {
     id: 83,
     cat: "Histoire, culture et société",
     q: "Pouvez-vous citer les principales institutions européennes et leurs rôles ?",
-    r: `• Le Parlement européen : Élu au suffrage universel, il vote les lois et le budget.
-• Le Conseil européen : Réunit les chefs d'État pour définir les orientations politiques.
-• La Commission européenne : Propose les lois et veille à leur application (pouvoir exécutif).
-• La Banque Centrale Européenne (BCE) : Assure la stabilité des prix et gère l'euro.`,
-    astuce: "Le Conseil dirige Antonio Costa (Port), la Commission exécute Ursula von der Leyen (DE), BCE Christine Lagarde, Parlement Roberta Metsola",
+    r: `• Le Parlement européen : Vote les lois et le budget --Roberta Metsola.
+• Le Conseil européen : Définit les grandes orientations politiques -- António Costa.
+• La Commission européenne : Propose les lois (pouvoir exécutif) -- Ursula von der Leyen.
+• La Banque Centrale Européenne (BCE) : Gère l'euro et la stabilité des prix. -- Christine Lagarde`,
+    astuce: "Parlement, Conseil, Commission, BCE",
   },
   {
     id: 84,
     cat: "Histoire, culture et société",
-    q: "La France est-elle une grande puissance ?",
-    r: `Oui, la France est une grande puissance économique, diplomatique, militaire et culturelle. Elle est membre de l'Union européenne, de l'ONU et dispose d'une influence internationale importante.`,
-    astuce: "Économie, diplomatie, culture",
-  },
-  {
-    id: 85,
-    cat: "Histoire, culture et société",
-    q: "Citez un secteur fort en France.",
-    r: `La France est forte dans plusieurs secteurs comme l'aéronautique avec Airbus, le luxe, le tourisme, l'agroalimentaire, l'énergie et la culture.`,
-    astuce: "Aéronautique, luxe, tourisme",
+    q: "La France est-elle une puissance mondiale ? Citez un secteur fort.",
+    r: `Oui, c'est une puissance économique, diplomatique et culturelle. Elle brille dans des secteurs comme l'aéronautique (Airbus), le luxe (LVMH), le tourisme, l'agroalimentaire et l'énergie.`,
+    astuce: "7eme,  Aéronautique, luxe, tourisme",
   },
   {
     id: 86,
     cat: "Histoire, culture et société",
-    q: "Qu'est-ce que la Sécurité sociale ?",
-    r: `La Sécurité sociale est un système de protection sociale. Elle aide à couvrir les risques de la vie comme la maladie, la retraite, la famille ou les accidents du travail.`,
-    astuce: "Protection sociale",
-  },
-  {
-    id: 87,
-    cat: "Histoire, culture et société",
-    q: "Qui finance la Sécurité sociale ?",
-    r: `La Sécurité sociale est principalement financée par les cotisations sociales des salariés et des employeurs, ainsi que par certains impôts comme la CSG.`,
-    astuce: "Cotisations + impôts",
+    q: "Qu'est-ce que la Sécurité sociale et comment est-elle financée ?",
+    r: `C'est un système de protection sociale couvrant les risques de la vie (maladie, retraite, famille, accidents). Elle est financée par les cotisations sociales des travailleurs et des employeurs, ainsi que par l'impôt (COntribution sociale généralisée CSG).`,
+    astuce: "Protection sociale + Cotisations",
   },
   {
     id: 88,
     cat: "Histoire, culture et société",
-    q: "L'instruction est-elle obligatoire en France ?",
-    r: `Oui, l'instruction est obligatoire pour tous les enfants, français ou étrangers, de 3 à 16 ans. Cela montre l'importance de l'éducation dans la République.`,
-    astuce: "3 à 16 ans",
-  },
-  {
-    id: 89,
-    cat: "Histoire, culture et société",
-    q: "L'école publique est-elle gratuite et laïque ?",
-    r: `Oui, l'école publique est gratuite et laïque. Elle respecte la neutralité religieuse et accueille les élèves sans distinction d'origine, de religion ou de situation sociale.`,
-    astuce: "Gratuite + laïque",
+    q: "L'instruction est-elle obligatoire ? Quelles sont les valeurs de l'école publique ?",
+    r: `L'instruction est obligatoire de 3 à 16 ans. L'école publique est gratuite, laïque (neutralité religieuse) et accueille tous les enfants sans distinction.`,
+    astuce: "3 à 16 ans + Gratuite et laïque",
   },
   {
     id: 90,
     cat: "Histoire, culture et société",
-    q: "Pouvez-vous citer des écrivains français et leurs œuvres ?",
-    r: `Oui, Victor Hugo a écrit Les Misérables et Notre-Dame de Paris. Émile Zola a écrit Germinal. Gustave Flaubert a écrit Madame Bovary. Albert Camus a écrit L'Étranger et La Peste.`,
-    astuce: "Hugo, Zola, Flaubert, Camus",
+    q: "Citez des écrivains français célèbres et leurs œuvres.",
+    r: `• Victor Hugo : Les Misérables.
+• Émile Zola : Germinal.
+• Gustave Flaubert : Madame Bovary.
+• Jean-Paul Sartre : L'Être et le Néant.
+• Albert Camus : L'Étranger ou La Peste.`,
+    astuce: "Hugo, Zola, Camus",
+  },
+  {
+    id: 59,
+    cat: "Histoire, culture et société",
+    q: "Connaissez-vous des artistes français (peinture, sculpture, musique) ?",
+    r: `• Peinture : Claude Monet (Impressionnisme).
+• Sculpture : Auguste Rodin (Le Penseur).
+• Musique/Chant : Édith Piaf ou Claude Debussy.
+• Cinéma : François Truffaut ou les frères Lumière.`,
+    astuce: "Monet, Rodin, Piaf",
   },
   {
     id: 91,
     cat: "Histoire, culture et société",
     q: "Qu'est-ce que l'égalité entre les hommes et les femmes ?",
-    r: `L'égalité entre les hommes et les femmes signifie qu'ils ont les mêmes droits, les mêmes devoirs et les mêmes chances dans la société, au travail, en famille et dans la vie publique.`,
-    astuce: "Même droits + mêmes chances",
+    r: `C'est le principe selon lequel les deux sexes ont les mêmes droits, devoirs et opportunités, que ce soit au travail (salaire égal), en politique ou dans la sphère privée.`,
+    astuce: "Mêmes droits et chances",
   },
   {
     id: 92,
     cat: "Histoire, culture et société",
     q: "Qui était Simone Veil ?",
-    r: `Simone Veil était une femme d'État française, rescapée de la Shoah. Elle est connue pour avoir porté la loi de 1975 qui a dépénalisé l'interruption volontaire de grossesse. Elle a aussi été présidente du Parlement européen.`,
-    astuce: "IVG + Europe",
+    r: `Femme d'État et rescapée de la Shoah, elle a fait adopter la loi dépénalisant l'IVG en 1975. Elle fut aussi la première femme présidente du Parlement européen. Elle repose au Panthéon.`,
+    astuce: "Loi IVG + Europe",
   },
   {
     id: 93,
     cat: "Histoire, culture et société",
     q: "Quand la peine de mort a-t-elle été abolie en France ?",
-    r: `La peine de mort a été abolie en France en 1981, sous la présidence de François Mitterrand. Cette abolition a été portée par Robert Badinter.`,
-    astuce: "1981 + Badinter",
+    r: `Elle a été abolie en 1981 sous la présidence de François Mitterrand, grâce au combat de Robert Badinter, alors garde des Sceaux.`,
+    astuce: "1981 + Robert Badinter",
   },
   {
     id: 94,
     cat: "Histoire, culture et société",
-    q: "Peut-on exprimer ses opinions en France ?",
-    r: `Oui, la liberté d'expression est un droit fondamental en France. On peut exprimer ses opinions, mais dans le respect de la loi, sans diffamation, menace ou incitation à la haine.`,
-    astuce: "Liberté avec limites légales",
-  },
-  {
-    id: 95,
-    cat: "Histoire, culture et société",
-    q: "Peut-on manifester en France ?",
-    r: `Oui, le droit de manifester existe en France. Une manifestation doit être déclarée et elle doit rester pacifique et respecter l'ordre public.`,
-    astuce: "Droit de manifester",
+    q: "Quelles sont les libertés d'opinion, d'expression et de manifestation ?",
+    r: `Ce sont des droits fondamentaux. On peut exprimer ses idées et manifester pacifiquement, à condition de respecter la loi (pas de haine, de diffamation ou de trouble à l'ordre public).`,
+    astuce: "Droits fondamentaux + Respect de la loi",
   },
   {
     id: 96,
     cat: "Histoire, culture et société",
-    q: "Peut-on choisir sa religion ou ne pas en avoir ?",
-    r: `Oui, chacun est libre de choisir sa religion, d'en changer ou de ne pas en avoir. C'est la liberté de conscience, protégée par la laïcité et par la loi.`,
-    astuce: "Liberté de conscience",
-  },
-  {
-    id: 97,
-    cat: "Histoire, culture et société",
-    q: "Citez une personne naturalisée française connue.",
-    r: `On peut citer Marie Curie, née en Pologne et devenue française. Elle a reçu deux prix Nobel et elle repose au Panthéon. C'est un bon exemple d'intégration et de contribution à la France.`,
-    astuce: "Marie Curie",
+    q: "Qu'est-ce que la liberté de conscience ?",
+    r: `C'est le droit de choisir sa religion, d'en changer ou de ne pas en avoir. Elle est garantie par la laïcité qui assure que l'État ne privilégie aucune croyance.`,
+    astuce: "Droit de croire ou non",
   },
   {
     id: 98,
     cat: "Histoire, culture et société",
-    q: "Citez une personne naturalisée.",
-    r: `• Marie Curie (1867-1934) : physicienne née en Pologne, double prix Nobel (physique et chimie) et inhumée au Panthéon.
-• Léon Gambetta (1838-1882) : petit-fils d'un commerçant italien, il est l'un des pères de la IIIe République.
-• Joseph Kessel (1898-1979) : grand reporter et romancier né en Argentine, élu à l'Académie française en 1962.`,
-    astuce: "Marie Curie, Gambetta ou Kessel",
+    q: "Citez une personne naturalisée française célèbre.",
+    r: `Marie Curie, née Polonaise, naturalisée française. Scientifique de génie (physique et chimie), elle est la première femme à avoir reçu deux prix Nobel et repose au Panthéon. On peut aussi citer Joséphine Baker - Chanteuse, Marc Chagall -chef d'orchestre .`,
+    astuce: "Marie Curie (Science)",
   },
   {
     id: 99,
     cat: "Histoire, culture et société",
-    q: "Donnez le nom de reines de France.",
-    r: `• Anne d'Autriche : Mère de Louis XIV « le Roi Soleil »
-• Marie-Antoinette d'Autriche : Épouse de Louis XVI
-• Joséphine de la Pagerie : 1ère épouse de l'empereur Napoléon 1er
-• Anne de Bretagne : Épouse de Charles VIII`,
-    astuce: "Anne d'Autriche ou Marie-Antoinette",
+    q: "Pouvez-vous citer des reines de France marquantes ?",
+    r: `• Anne d'Autriche (mère de Louis XIV).
+• Marie-Antoinette (épouse de Louis XVI).
+• Anne de Bretagne (épouse de Charles VIII et Louis XII, rattachant la Bretagne à la France).
+• Catherine de Médicis.`,
+    astuce: "Anne d'Autriche, Marie-Antoinette",
   },
-  {
-    id: 100,
-    cat: "Histoire, culture et société",
-    q: "Pourriez-vous citer des rois de France marquants et leurs accomplissements ?",
-    r: `• Clovis Ier (481-511) : Premier roi des Francs à unifier le royaume et à se convertir au christianisme.
-• Louis IX (Saint Louis) (1226-1270) : Connu pour sa piété, ses réformes judiciaires et sa canonisation.
-• Charles VII (1422-1461) : Sacré à Reims grâce à l'intervention de Jeanne d'Arc durant la guerre de Cent Ans.
-• François Ier (1515-1547) : Roi de la Renaissance et grand mécène artistique.
-• Henri IV (1589-1610) : Premier Bourbon, auteur de l'Édit de Nantes mettant fin aux guerres de religion.
-• Louis XIV (1643-1715) : Le Roi Soleil, symbole de l'absolutisme et constructeur de Versailles.
-• Louis XVI (1774-1792) : Dernier roi de l'Ancien Régime, guillotiné en 1793 après la Révolution.`,
-    astuce: "Clovis, Charles VII, Louis XIV ou Louis XVI",
-  },
-  {
-    id: 101,
-    cat: "Histoire, culture et société",
-    q: "Donnez le nom de littéraires français et les titres de leurs écrits.",
-    r: `• Voltaire : Candide, Lettres philosophiques
-• Rousseau : Du contrat social, Les Confessions
-• Montesquieu : De l'Esprit des lois, Lettres persanes
-• Diderot : Jacques le fataliste, L'Encyclopédie
-• Victor Hugo : Les Misérables, Notre-Dame de Paris
-• Flaubert : Madame Bovary, L'Éducation sentimentale
-• Émile Zola : Germinal, L'Assommoir
-• Albert Camus : L'Étranger, La Peste`,
-    astuce: "Grands auteurs classiques",
-  },
+  // ── Histoire, culture et société (Tranche 3 : 31-36) ───────────────────────────
   {
     id: 102,
     cat: "Histoire, culture et société",
     q: "Pouvez-vous citer quelques ministres actuels du gouvernement (en 2026) ?",
-    r: `Le gouvernement est dirigé par le Premier ministre Sébastien Lecornu. Parmi les principaux ministres, on trouve :
-• Laurent Nuñez : Ministre de l'Intérieur.
-• Jean-Noël Barrot : Ministre de l'Europe et des Affaires étrangères.
-• Roland Lescure : Ministre de l'Économie, des Finances et de la Souveraineté industrielle.
-• Édouard Geffray : Ministre de l'Éducation nationale.
-• Gérald Darmanin : Garde des Sceaux, Ministre de la Justice.
-• Catherine Vautrin : Ministre des Armées et des Anciens combattants.`,
-    astuce: "Nuñez (Intérieur), Barrot (Affaires étrangères), Darmanin (Justice).",
+    r: `Le gouvernement est dirigé par le Premier ministre Sébastien Lecornu. Parmi les ministres principaux :
+• Laurent Nuñez (Intérieur).
+• Jean-Noël Barrot (Europe et Affaires étrangères).
+• Roland Lescure (Économie et Finances).
+• Gérald Darmanin (Justice / Garde des Sceaux).
+• Édouard Geffray (Éducation nationale).
+• Catherine Vautrin (Armées).`,
+    astuce: "Lecornu (PM), Nuñez (Intérieur), Darmanin (Justice)",
   },
   {
     id: 103,
     cat: "Histoire, culture et société",
-    q: "Que pouvez-vous nous dire sur le fonctionnement du Parlement et des institutions françaises ?",
-    r: `• Le Parlement : composé de l'Assemblée nationale (577 députés élus pour 5 ans au Palais Bourbon) et du Sénat (348 sénateurs élus pour 6 ans par de grands électeurs au Palais du Luxembourg).
-• Le Sénat : son président assure l'intérim en cas de vacance de la présidence de la République.
-• Le Conseil constitutionnel : composé de 9 membres nommés pour 9 ans, il veille au respect de la Constitution par les lois.
-• Parité : la loi de 2000 oblige à un nombre égal de candidats hommes et femmes ; en 2026, l'Assemblée compte environ 36 % de femmes.`,
+    q: "Comment fonctionne le Parlement et quelles sont les institutions de contrôle ?",
+    r: `• Le Parlement : composé de l'Assemblée nationale (députés élus au suffrage universel direct) et du Sénat (sénateurs élus au suffrage indirect). Ils votent les lois.
+• Le Conseil constitutionnel : 9 membres qui veillent à ce que les lois respectent la Constitution.
+• Le Président du Sénat : il assure l'intérim si le Président de la République ne peut plus exercer ses fonctions.`,
     image: "/images/Resume_Institition.png",
-    astuce: "Assemblée (députés), Sénat (sénateurs), Conseil constitutionnel.",
+    astuce: "Assemblée nationale + Sénat + Conseil constitutionnel",
   },
-
+  {
+    id: 80,
+    cat: "Histoire, culture et société",
+    q: "Quels sont les moments clés de la Libération lors de la Seconde Guerre mondiale ?",
+    r: `Le 6 juin 1944 marque le Débarquement des Alliés en Normandie (Jour J). S'ensuit la libération de Paris en août 1944. La guerre prend fin officiellement en Europe le 8 mai 1945 avec la capitulation de l'Allemagne nazie.`,
+    astuce: "6 juin 1944 / 8 mai 1945",
+  },
+  {
+    id: 101,
+    cat: "Histoire, culture et société",
+    q: "Citez des auteurs majeurs du siècle des Lumières et leurs idées.",
+    r: `• Montesquieu : La séparation des pouvoirs.
+• Voltaire : La tolérance religieuse et la liberté de pensée.
+• Rousseau : Le contrat social et l'égalité.
+• Diderot : L'Encyclopédie (rassemblement des connaissances).`,
+    astuce: "Montesquieu, Voltaire, Rousseau",
+  },
+  {
+    id: 85,
+    cat: "Histoire, culture et société",
+    q: "Qu'est-ce que la parité en politique ?",
+    r: `C'est le principe qui vise à garantir un accès égal des femmes et des hommes aux mandats électoraux et fonctions électives. La loi oblige les partis à présenter autant de candidats que de candidates.`,
+    astuce: "Égalité hommes-femmes en politique",
+  },
+  {
+    id: 104,
+    cat: "Histoire, culture et société",
+    q: "Qu'est-ce que le Panthéon ?",
+    r: `C'est un monument situé à Paris où la patrie honore les grands personnages qui ont marqué l'histoire de France. On y trouve par exemple Victor Hugo, Marie Curie, Voltaire ou Simone Veil.`,
+    astuce: "Aux grands hommes, la patrie reconnaissante",
+  },
+  // ── Histoire, culture et société (Tranche 4 : 37-45) ───────────────────────────
+  {
+    id: 105,
+    cat: "Histoire, culture et société",
+    q: "Quelles sont les trois valeurs de la devise de la République et qu'impliquent-elles ?",
+    r: `• Liberté : pouvoir faire tout ce qui ne nuit pas à autrui.
+• Égalité : tous les citoyens ont les mêmes droits et devoirs devant la loi.
+• Fraternité : l'entraide et la solidarité entre tous les membres de la nation.`,
+    astuce: "Liberté, Égalité, Fraternité -- 1848",
+  },
+  {
+    id: 106,
+    cat: "Histoire, culture et société",
+    q: "Quels sont les devoirs d'un citoyen français ?",
+    r: `Un citoyen doit respecter les lois, payer ses impôts, participer à la défense du pays si nécessaire, et participer à la vie démocratique (voter). Il doit aussi respecter les droits d'autrui.`,
+    astuce: "Respect des lois + Impôts + Vote",
+  },
+  {
+    id: 107,
+    cat: "Histoire, culture et société",
+    q: "Qu'est-ce que le droit de vote et qui peut l'exercer ?",
+    r: `Le vote est un droit et un acte civique. En France, le suffrage est universel : tous les citoyens français, hommes et femmes, majeurs (18 ans) et jouissant de leurs droits civils et politiques, peuvent voter.`,
+    astuce: "Droit et devoir civique",
+  },
+  {
+    id: 108,
+    cat: "Histoire, culture et société",
+    q: "Citez des dates clés de l'acquisition de nouveaux droits en France.",
+    r: `• 1789 : Déclaration des droits de l'homme.
+• 1848 : Abolition définitive de l'esclavage et suffrage universel masculin.
+• 1944 : Droit de vote des femmes (exercé pour la première fois en 1945).
+• 1981 : Abolition de la peine de mort.`,
+    astuce: "1848 (Esclavage), 1944 (Femmes), 1981 (Peine de mort)",
+  },
+  {
+    id: 109,
+    cat: "Histoire, culture et société",
+    q: "Qu'est-ce que l'ordre public ?",
+    r: `L'ordre public est l'état de paix sociale garanti par les lois. Il permet la sécurité, la salubrité et la tranquillité de tous. Le respect de l'ordre public est nécessaire pour l'exercice des libertés.`,
+    astuce: "Sécurité et tranquillité",
+  },
+  {
+    id: 110,
+    cat: "Histoire, culture et société",
+    q: "Quelle est la différence entre un droit et un devoir ?",
+    r: `Un droit est une prérogative accordée par la loi (ex: liberté d'expression). Un devoir est une obligation que le citoyen doit remplir pour le bon fonctionnement de la société (ex: respecter la loi, fraternité).`,
+    astuce: "Liberté vs Obligation",
+  },
+  {
+    id: 112,
+    cat: "Histoire, culture et société",
+    q: "Qu'est-ce que la démocratie ?",
+    r: `C'est un régime politique dans lequel le pouvoir appartient au peuple, qui l'exerce soit directement, soit par l'intermédiaire de représentants élus. Elle repose sur le multipartisme et des élections régulières.`,
+    astuce: "Le pouvoir au peuple",
+  },
+  {
+    id: 113,
+    cat: "Histoire, culture et société",
+    q: "Citez un grand événement sportif qui a marqué la France.",
+    r: `On peut citer la Coupe du Monde de football (victoires en 1998 et 2018), le Tour de France (compétition cycliste mondiale) ou les Jeux Olympiques (Paris 2024).`,
+    astuce: "1998, 2018 ou JO 2024",
+  },
   // ── Géographie et Territoires ──────────────────────────────────────────────
   {
     id: 104,
