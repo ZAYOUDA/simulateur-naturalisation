@@ -1695,7 +1695,7 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     cat: "Illustration",
     q: "L hymen",
     r: "Marseillaise.",
-    image: "/images/institutions_collectivités.png",
+    image: "/images/Marseillaise.png",
     astuce: "A dessiner.",
   },
        {
