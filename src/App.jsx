@@ -1690,18 +1690,59 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     image: "/images/institutions_collectivités.png",
     astuce: "A dessiner.",
   },
+  {
+    id: 244,
+    cat: "Illustration",
+    q: "L hymen",
+    r: "Marseillaise.",
+    image: "/images/institutions_collectivités.png",
+    astuce: "A dessiner.",
+  },
        {
     id: 245,
     cat: "Illustration",
     q: "valeurs symboles",
     r: "valeurs symboles",
-    image: "/images/valeurs_symboles _repères_historiques.png",
+    image: "/images/valeurs_symboles Marseillaise.png",
     astuce: "A dessiner.",
   } 
 ];
 
 function shuffleArray(list) {
   return [...list].sort(() => Math.random() - 0.5);
+}
+
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function HighlightText({ text, search }) {
+  const content = String(text || "");
+  const cleanSearch = search.trim();
+
+  if (!cleanSearch) return <>{content}</>;
+
+  const escaped = cleanSearch.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(`(${escaped})`, "gi");
+  const parts = content.split(regex);
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === cleanSearch.toLowerCase() ? (
+          <mark key={i} className="highlight">
+            {part}
+          </mark>
+        ) : (
+          <React.Fragment key={i}>{part}</React.Fragment>
+        )
+      )}
+    </>
+  );
 }
 
 export default function App() {
@@ -1712,6 +1753,7 @@ export default function App() {
   const [order, setOrder] = useState(questions);
   const [known, setKnown] = useState([]);
   const [review, setReview] = useState([]);
+  const [search, setSearch] = useState("");
 
   const categories = useMemo(
     () => ["Toutes", ...Array.from(new Set(questions.map((q) => q.cat))), "À revoir"],
@@ -1719,13 +1761,25 @@ export default function App() {
   );
 
   const filtered = useMemo(() => {
-    if (category === "À revoir") return order.filter((q) => review.includes(q.id));
-    if (category === "Toutes") return order;
-    return order.filter((q) => q.cat === category);
-  }, [category, order, review]);
+    const normalizedSearch = normalizeText(search);
+
+    const categoryFiltered = (() => {
+      if (category === "À revoir") return order.filter((q) => review.includes(q.id));
+      if (category === "Toutes") return order;
+      return order.filter((q) => q.cat === category);
+    })();
+
+    if (!normalizedSearch) return categoryFiltered;
+
+    return categoryFiltered.filter((q) => {
+      const searchableText = normalizeText(`${q.q} ${q.r} ${q.astuce || ""} ${q.cat}`);
+      return searchableText.includes(normalizedSearch);
+    });
+  }, [category, order, review, search]);
 
   const current = filtered[index] || filtered[0];
   const progress = Math.round((known.length / questions.length) * 100);
+  const hasSearch = search.trim().length > 0;
 
   const resetCardVisibility = (selectedMode = mode) => {
     setShowAnswer(selectedMode === "revision");
@@ -1748,6 +1802,18 @@ export default function App() {
 
   const chooseCategory = (cat) => {
     setCategory(cat);
+    setIndex(0);
+    resetCardVisibility();
+  };
+
+  const handleSearch = (value) => {
+    setSearch(value);
+    setIndex(0);
+    resetCardVisibility();
+  };
+
+  const clearSearch = () => {
+    setSearch("");
     setIndex(0);
     resetCardVisibility();
   };
@@ -1792,7 +1858,7 @@ export default function App() {
         .title { margin: 0; font-size: clamp(30px, 4.4vw, 50px); font-weight: 900; letter-spacing: -0.04em; }
         .subtitle { margin: 4px 0 0; color: #94a3b8; font-size: 15px; }
         .modebar { display: flex; gap: 10px; margin-bottom: 10px; flex: 0 0 auto; }
-        .modeBtn, .btn, .chip {
+        .modeBtn, .btn {
           border: 1px solid #334155;
           background: rgba(255,255,255,.05);
           color: white;
@@ -1803,7 +1869,7 @@ export default function App() {
         .active { border-color: #60a5fa !important; background: rgba(37,99,235,.28) !important; color: #bfdbfe !important; }
         .categoryArea { margin-bottom: 10px; flex: 0 0 auto; }
         .categorySelect {
-          display: none;
+          display: block;
           width: 100%;
           border: 1px solid #334155;
           background: rgba(15, 23, 42, .95);
@@ -1813,21 +1879,59 @@ export default function App() {
           font-size: 15px;
           font-weight: 800;
           outline: none;
+          cursor: pointer;
         }
-        .chips {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        .categorySelect:focus {
+          border-color: #60a5fa;
+          box-shadow: 0 0 0 3px rgba(96,165,250,.14);
+        }
+        .searchArea {
+          display: flex;
           gap: 8px;
-          justify-content: center;
+          align-items: center;
+          margin-bottom: 8px;
+          flex: 0 0 auto;
         }
-        .chip {
-          border-radius: 999px;
-          padding: 9px 13px;
-          font-size: 12px;
-          min-width: 0;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+        .searchInput {
+          flex: 1;
+          width: 100%;
+          border: 1px solid #334155;
+          background: rgba(15, 23, 42, .78);
+          color: white;
+          border-radius: 15px;
+          padding: 13px 15px;
+          font-size: 15px;
+          font-weight: 800;
+          outline: none;
+        }
+        .searchInput:focus {
+          border-color: #60a5fa;
+          box-shadow: 0 0 0 3px rgba(96,165,250,.14);
+        }
+        .searchInput::placeholder { color: #64748b; }
+        .clearBtn {
+          flex: 0 0 auto;
+          border: 1px solid #334155;
+          background: rgba(255,255,255,.05);
+          color: #cbd5e1;
+          cursor: pointer;
+          font-weight: 900;
+          border-radius: 14px;
+          padding: 13px 15px;
+        }
+        .searchInfo {
+          color: #93c5fd;
+          font-size: 13px;
+          font-weight: 800;
+          margin: -2px 0 8px;
+          flex: 0 0 auto;
+        }
+        .highlight {
+          background: rgba(250,204,21,.9);
+          color: #111827;
+          border-radius: 5px;
+          padding: 0 4px;
+          font-weight: 900;
         }
         .meta { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; margin-bottom: 8px; flex: 0 0 auto; }
         .mobileLabel { display: none; }
@@ -1891,7 +1995,7 @@ export default function App() {
         .hint { color: #94a3b8; font-size: 16px; }
         .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 10px; flex: 0 0 auto; }
         .btn { padding: 14px 16px; border-radius: 14px; font-size: 15px; }
-        .btn:hover, .chip:hover, .modeBtn:hover { background: rgba(255,255,255,.10); }
+        .btn:hover, .modeBtn:hover, .clearBtn:hover { background: rgba(255,255,255,.10); }
         .red { border-color: #ef4444; color: #fca5a5; }
         .green { border-color: #22c55e; color: #86efac; }
         .bottomActions { display: flex; gap: 12px; justify-content: center; margin-top: 8px; flex: 0 0 auto; }
@@ -1928,12 +2032,25 @@ export default function App() {
           }
           .categoryArea { margin-bottom: 6px; flex: 0 0 auto; }
           .categorySelect {
-            display: block;
             padding: 9px 12px;
             border-radius: 12px;
             font-size: 13px;
           }
-          .chips { display: none; }
+          .searchArea { gap: 5px; margin-bottom: 5px; }
+          .searchInput {
+            padding: 9px 11px;
+            border-radius: 12px;
+            font-size: 13px;
+          }
+          .clearBtn {
+            padding: 9px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+          }
+          .searchInfo {
+            font-size: 11px;
+            margin: -1px 0 5px;
+          }
           .meta {
             font-size: 11px;
             margin-bottom: 5px;
@@ -2036,31 +2153,32 @@ export default function App() {
               );
             })}
           </select>
-
-          <div className="chips">
-            {categories.map((cat) => {
-              const count =
-                cat === "Toutes"
-                  ? questions.length
-                  : cat === "À revoir"
-                    ? review.length
-                    : questions.filter((q) => q.cat === cat).length;
-              return (
-                <button
-                  key={cat}
-                  className={`chip ${category === cat ? "active" : ""}`}
-                  onClick={() => chooseCategory(cat)}
-                >
-                  {cat} ({count})
-                </button>
-              );
-            })}
-          </div>
         </div>
+
+        <div className="searchArea">
+          <input
+            className="searchInput"
+            value={search}
+            onChange={(e) => handleSearch(e.target.value)}
+            placeholder="🔎 Rechercher un mot-clé : République, impôts, laïcité, sécurité sociale..."
+          />
+          {hasSearch && (
+            <button className="clearBtn" onClick={clearSearch}>
+              ✕
+            </button>
+          )}
+        </div>
+
+        {hasSearch && (
+          <div className="searchInfo">
+            {filtered.length} résultat{filtered.length > 1 ? "s" : ""} trouvé{filtered.length > 1 ? "s" : ""} pour “{search}”
+          </div>
+        )}
 
         {!current ? (
           <div className="card">
-            <h2>Aucune carte à revoir.</h2>
+            <h2>Aucune carte trouvée.</h2>
+            <p className="hint">Essayez un autre mot-clé ou changez de catégorie.</p>
           </div>
         ) : (
           <>
@@ -2076,8 +2194,12 @@ export default function App() {
               className="card"
               onClick={() => mode === "quiz" && setShowAnswer((v) => !v)}
             >
-              <div className="badge">{current.cat.toUpperCase()}</div>
-              <h2 className="question">{current.q}</h2>
+              <div className="badge">
+                <HighlightText text={current.cat.toUpperCase()} search={search} />
+              </div>
+              <h2 className="question">
+                <HighlightText text={current.q} search={search} />
+              </h2>
 
               {showAnswer ? (
                 <div className="answerBox">
@@ -2085,8 +2207,14 @@ export default function App() {
                     <img className="answerImage" src={current.image} alt={current.q} />
                   )}
                   <h3 className="answerTitle">Réponse modèle</h3>
-                  <p className="answer">{current.r}</p>
-                  {current.astuce && <div className="tip">Astuce : {current.astuce}</div>}
+                  <p className="answer">
+                    <HighlightText text={current.r} search={search} />
+                  </p>
+                  {current.astuce && (
+                    <div className="tip">
+                      Astuce : <HighlightText text={current.astuce} search={search} />
+                    </div>
+                  )}
                 </div>
               ) : (
                 <p className="hint">☝️ Cliquez pour voir la réponse</p>
@@ -2118,6 +2246,7 @@ export default function App() {
                   setReview([]);
                   setIndex(0);
                   setOrder(questions);
+                  clearSearch();
                   resetCardVisibility();
                 }}
               >
