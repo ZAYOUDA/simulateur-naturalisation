@@ -292,13 +292,6 @@ Après avoir construit une grande partie de ma vie en France, tant sur le plan p
     astuce: "Équilibre",
   },
   {
-    id: 37,
-    cat: "Questions personnelles",
-    q: "Avez-vous des enfants scolarisés en France ?",
-    r: `Oui, mes enfants sont scolarisés en France.`,
-    astuce: "Oui simple",
-  },
-  {
     id: 38,
     cat: "Questions personnelles",
     q: "Quelle langue parlez-vous avec vos enfants ?",
@@ -322,6 +315,171 @@ Après avoir construit une grande partie de ma vie en France, tant sur le plan p
 
   // ── Histoire, culture et société ───────────────────────────────────────────
   // ── Histoire, culture et société (Tranche 1 : 1-15) ───────────────────────────
+  // ── Histoire, culture et société ───────────────────────────
+
+  {
+    id: 106,
+    cat: "Histoire, culture et société",
+    q: "Le Concordat de 1801 correspond à :",
+    r: "Un accord entre Napoléon Ier et le pape.",
+    astuce: "Signé avec le pape Pie VII, il rétablit la paix religieuse et reconnaît le catholicisme comme religion de la majorité des Français.",
+  },
+  {
+    id: 107,
+    cat: "Histoire, culture et société",
+    q: "Quel pont fortifié du XIVe siècle, à Cahors, est inscrit au patrimoine mondial au titre des chemins de Saint-Jacques-de-Compostelle ?",
+    r: "Le pont Valentré.",
+    astuce: "Doté de trois tours, c'est un chef-d'œuvre de l'architecture médiévale.",
+  },
+  {
+    id: 108,
+    cat: "Histoire, culture et société",
+    q: "Quelle dune, située en Gironde, est la plus haute d'Europe, culminant à plus de 100 m ?",
+    r: "La dune du Pilat.",
+    astuce: "Située au sud du bassin d'Arcachon, elle atteint environ 102 m de hauteur.",
+  },
+  {
+    id: 109,
+    cat: "Histoire, culture et société",
+    q: "Quel architecte a conçu la pyramide de verre du Louvre, inaugurée en 1989 ?",
+    r: "Ieoh Ming Pei.",
+    astuce: "Cet architecte sino-américain a réalisé l'ouvrage à la demande de François Mitterrand.",
+  },
+  {
+    id: 110,
+    cat: "Histoire, culture et société",
+    q: "Quelle bande dessinée française met en scène le pilote d'avion Tanguy accompagné de son coéquipier Laverdure ?",
+    r: "Tanguy et Laverdure.",
+    astuce: "Créée par Charlier et Uderzo en 1959, elle popularise l'aéronautique militaire française.",
+  },
+  {
+    id: 111,
+    cat: "Histoire, culture et société",
+    q: "Quelle danse traditionnelle bretonne se pratique en chaîne et en rond, accompagnée de bombardes ?",
+    r: "L'andro.",
+    astuce: "C'est une danse du pays vannetais caractérisée par son pas glissé.",
+  },
+  {
+    id: 112,
+    cat: "Histoire, culture et société",
+    q: "Dans quel département d'outre-mer se trouve le Centre spatial de Kourou, base de lancement européenne ?",
+    r: "La Guyane.",
+    astuce: "Inauguré en 1968, il bénéficie de la proximité de l'équateur pour le lancement des fusées.",
+  },
+  {
+    id: 113,
+    cat: "Histoire, culture et société",
+    q: "Quelle pâtisserie originaire de Nancy est à base de pâte à choux et de crème pâtissière parfumée au kirsch ?",
+    r: "Le baba au rhum.",
+    astuce: "Il aurait été imaginé au XVIIIe siècle par le pâtissier de Stanislas Leszczynski.",
+  },
+  {
+    id: 114,
+    cat: "Histoire, culture et société",
+    q: "Quel organe constitutionnel français, parfois surnommé « troisième assemblée », est chargé de conseiller le gouvernement et le Parlement ?",
+    r: "Le Conseil économique, social et environnemental (CESE).",
+    astuce: "Il rend des avis sur les projets de loi à caractère économique, social ou environnemental.",
+  },
+  {
+    id: 115,
+    cat: "Histoire, culture et société",
+    q: "Quel courant marin chaud tempère le climat océanique de la côte ouest de la France ?",
+    r: "Le Gulf Stream.",
+    astuce: "Il prolonge l'Atlantique nord et adoucit les hivers de la façade atlantique.",
+  },
+  // ── Histoire, culture et société ───────────────────────────
+
+  {
+    id: 116,
+    cat: "Histoire, culture et société",
+    q: "Quel point culminant de Tahiti est aussi le plus haut sommet de la Polynésie française et de l'outre-mer ?",
+    r: "Le mont Orohena.",
+    astuce: "Il culmine à 2 241 mètres d'altitude sur l'île de Tahiti.",
+  },
+  {
+    id: 117,
+    cat: "Histoire, culture et société",
+    q: "Quel canal reliant la Méditerranée à l'Atlantique fut achevé au XVIIe siècle sous Colbert ?",
+    r: "Le canal du Midi.",
+    astuce: "Œuvre de Pierre-Paul Riquet, il relie Sète à Toulouse et est inscrit à l'UNESCO.",
+  },
+  {
+    id: 118,
+    cat: "Histoire, culture et société",
+    q: "Quel département français possède la plus grande longueur de frontières terrestres avec l'Espagne ?",
+    r: "Les Pyrénées-Atlantiques.",
+    astuce: "Elles partagent environ 163 km de frontière avec la Navarre et le Pays basque espagnol.",
+  },
+  {
+    id: 119,
+    cat: "Histoire, culture et société",
+    q: "Quel article de la Constitution permet au président de soumettre certains projets de loi à référendum ?",
+    r: "L'article 11.",
+    astuce: "Cet article encadre le référendum législatif d'initiative présidentielle.",
+  },
+  {
+    id: 120,
+    cat: "Histoire, culture et société",
+    q: "En quelle année la devise « Liberté, Égalité, Fraternité » est-elle officialisée pour la première fois par la République française ?",
+    r: "1848.",
+    astuce: "La IIe République décrète en 1848 qu'elle doit figurer sur les drapeaux et les bâtiments publics.",
+  },
+  {
+    id: 121,
+    cat: "Histoire, culture et société",
+    q: "Quel décret de 1880 ordonne l'inscription de la devise républicaine sur les bâtiments communaux ?",
+    r: "Le décret Ferry.",
+    astuce: "Le 14 juillet 1880, le ministre Jules Ferry impose la devise sur les frontons des mairies.",
+  },
+  {
+    id: 122,
+    cat: "Histoire, culture et société",
+    q: "Quelle loi française de 1982 a ramené la durée légale du travail hebdomadaire de 40 h à 39 h ?",
+    r: "La loi Auroux.",
+    astuce: "Promulguée sous le gouvernement Mauroy, elle fait partie des réformes du droit du travail.",
+  },
+  {
+    id: 123,
+    cat: "Histoire, culture et société",
+    q: "Quelle langue régionale française est parlée en Occitanie ?",
+    r: "L'occitan.",
+    astuce: "Aussi appelée langue d'oc, elle fait partie du patrimoine linguistique du sud de la France.",
+  },
+  {
+    id: 124,
+    cat: "Arts et Cinéma",
+    q: "Quel réalisateur français est considéré comme l'un des fondateurs de la Nouvelle Vague ?",
+    r: "François Truffaut.",
+    astuce: "Avec 'Les Quatre Cents Coups' (1959), il est l'un des pionniers de ce mouvement qui a révolutionné le cinéma.",
+  },
+  {
+    id: 125,
+    cat: "Arts et Cinéma",
+    q: "Quel est l'ordre chronologique correct des mouvements artistiques suivants en France ?",
+    r: "Baroque – Réalisme – Impressionnisme – Cubisme.",
+    astuce: "Le Baroque précède le Réalisme du XIXe, suivi par l'Impressionnisme, puis le Cubisme au début du XXe siècle.",
+  },
+  {
+    id: 126,
+    cat: "Culture et Mode",
+    q: "Quel couturier français crée la célèbre petite robe noire en 1926 ?",
+    r: "Coco Chanel.",
+    astuce: "Cette pièce est devenue un symbole intemporel de la mode féminine mondiale.",
+  },
+  {
+    id: 127,
+    cat: "Gastronomie",
+    q: "Quelle est la principale spécialité culinaire de la région Alsace ?",
+    r: "La choucroute.",
+    astuce: "La choucroute garnie associe chou fermenté, charcuteries et pommes de terre.",
+  },
+  {
+    id: 128,
+    cat: "Culture et Traditions",
+    q: "Quelle tradition française est associée à la galette des rois ?",
+    r: "L'Épiphanie.",
+    astuce: "Partagée le 6 janvier, elle contient une fève désignant le « roi » ou la « reine » d'un jour.",
+  },
   {
     id: 42,
     cat: "Histoire, culture et société",
@@ -723,41 +881,8 @@ Ces territoires font partie de la République française et possèdent des statu
     image: "/images/Regions.png",
     astuce: "13 régions + outre-mer + rester synthétique",
   },
-  {
-    id: 105,
-    cat: "Géographie et Territoires",
-    q: "Quelles sont les collectivités locales ?",
-    r: `Les trois principaux niveaux sont : la commune, le département et la région.`,
-    astuce: "3 niveaux",
-  },
-  {
-    id: 106,
-    cat: "Géographie et Territoires",
-    q: "Que fait la commune ?",
-    r: `La commune gère les services de proximité (écoles primaires, voirie locale) et s'occupe de l'état civil.`,
-    astuce: "Local",
-  },
-  {
-    id: 107,
-    cat: "Géographie et Territoires",
-    q: "Qui dirige une commune ?",
-    r: `C'est le maire, élu par le conseil municipal.`,
-    astuce: "Maire",
-  },
-  {
-    id: 108,
-    cat: "Géographie et Territoires",
-    q: "Qui représente l'État dans les régions ?",
-    r: `C'est le préfet de région (par exemple Etienne Stoskopf dans le Val-de-Marne).`,
-    astuce: "Préfet",
-  },
-  {
-    id: 109,
-    cat: "Géographie et Territoires",
-    q: "Quel est le plus long fleuve de France ?",
-    r: "La Loire (environ 1006 km).",
-    astuce: "Loire",
-  },
+  
+  
   {
     id: 110,
     cat: "Géographie et Territoires",
@@ -774,30 +899,10 @@ Ces territoires font partie de la République française et possèdent des statu
     id: 111,
     cat: "Géographie et Territoires",
     q: "Citez un fleuve français.",
-    r: "La Seine, la Loire, le Rhône, la Garonne ou le Rhin.",
-    astuce: "Seine, Loire, Rhône, Garonne",
+    r: "La Seine, la Loire (1006 km), le Rhône, la Garonne ou le Rhin.",
+    astuce: "Seine, Loire le plus long, Rhône, Garonne",
   },
-  {
-    id: 112,
-    cat: "Géographie et Territoires",
-    q: "Combien y a-t-il de régions en France ?",
-    r: `Il y a 13 régions en métropole (depuis 2016) et 5 régions d'outre-mer.`,
-    astuce: "13",
-  },
-  {
-    id: 113,
-    cat: "Géographie et Territoires",
-    q: "Combien y a-t-il de départements ?",
-    r: `La France compte 101 départements au total.`,
-    astuce: "101",
-  },
-  {
-    id: 114,
-    cat: "Géographie et Territoires",
-    q: "Quelles sont les 3 types de collectivités en France ?",
-    r: `Il existe trois types de collectivités territoriales : les communes (proximité), les départements (action sociale) et les régions (développement économique).`,
-    astuce: "Communes, Départements, Régions",
-  },
+ 
   {
     id: 115,
     cat: "Géographie et Territoires",
@@ -813,13 +918,6 @@ Ces territoires font partie de la République française et possèdent des statu
     astuce: "Surface",
   },
   {
-    id: 117,
-    cat: "Géographie et Territoires",
-    q: "La France est-elle membre de l'ONU ?",
-    r: "Oui, elle est l'un des membres fondateurs.",
-    astuce: "ONU",
-  },
-  {
     id: 118,
     cat: "Géographie et Territoires",
     q: "Quel est le rôle de la France à l'ONU ?",
@@ -833,41 +931,104 @@ Ces territoires font partie de la République française et possèdent des statu
     r: `On peut citer Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Strasbourg, Montpellier ou Bordeaux.`,
     astuce: "5-6 villes principales",
   },
+// ── Géographie et Territoires (Tranche 1 - Spécial Chevilly-Larue) ────────────
   {
-    id: 120,
+    id: 105,
     cat: "Géographie et Territoires",
-    q: "Qui gère les lycées ?",
-    r: "C'est la Région.",
-    astuce: "Région",
+    q: "Quelles sont les différentes collectivités territoriales et leurs présidents ?",
+    r: `Il existe trois niveaux principaux :
+• La Commune (Chevilly-Larue) : Gérée par la Maire Stéphanie Daumin .
+• Le Département (Val-de-Marne, 94) : Géré par le Président Olivier Capitanio LR.
+• La Région (Île-de-France) : Gérée par la Présidente Valérie Pécresse.`,
+    astuce: "Daumin (Maire), Capitanio (Dépt), Pécresse (Région)",
   },
   {
-    id: 121,
+    id: 106,
     cat: "Géographie et Territoires",
-    q: "Qui gère les collèges ?",
-    r: "C'est le Département.",
-    astuce: "Département",
+    q: "Qui gère les écoles, les collèges et les lycées ?",
+    r: `La responsabilité est répartie ainsi :
+• La Mairie s'occupe des écoles maternelles et primaires.
+• Le Conseil départemental s'occupe des collèges.
+• Le Conseil régional s'occupe des lycées.`,
+    astuce: "Commune (École), Val-de-Marne (Collège), Île-de-France (Lycée)",
+  },
+
+  {
+    id: 112,
+    cat: "Géographie et Territoires",
+    q: "Combien y a-t-il de régions et de départements en France ?",
+    r: `La France compte :
+• 18 régions (13 en métropole dont l'Île-de-France, et 5 d'outre-mer).
+• 101 départements (dont le Val-de-Marne, numéro 94).`,
+    astuce: "18 régions, 101 départements",
   },
   {
-    id: 122,
+    id: 108,
     cat: "Géographie et Territoires",
-    q: "Qui gère les écoles primaires et maternelles ?",
-    r: "C'est la Commune (la mairie).",
-    astuce: "Commune",
-  },
-  {
-    id: 123,
-    cat: "Géographie et Territoires",
-    q: "Qu'est-ce qu'une région ?",
-    r: "Une collectivité territoriale qui regroupe plusieurs départements et gère notamment les lycées et les transports régionaux.",
-    astuce: "Région",
+    q: "Qui représente l'État dans votre département ?",
+    r: `C'est le Préfet du Val-de-Marne, Etienne Stoskopf. Il est nommé par le Président de la République et veille à la sécurité et à l'application des lois dans le 94.`,
+    astuce: "Etienne Stoskopf (Préfet)",
   },
   {
     id: 124,
     cat: "Géographie et Territoires",
-    q: "Qu'est-ce qu'un département ?",
-    r: "Une division administrative chargée notamment de l'action sociale (RSA, aide aux personnes âgées) et des collèges.",
-    astuce: "Département",
+    q: "Quelles sont les missions principales du Département et de la Région ?",
+    r: `• Le Val-de-Marne (Département) gère l'action sociale (RSA, aide aux seniors, crèches) et les collèges.
+• L'Île-de-France (Région) gère le développement économique, les lycées et les transports (SNCF/RATP via Île-de-France Mobilités).`,
+    astuce: "Dépt (Social), Région (Transports/Économie)",
   },
+// ── Géographie et Territoires (Tranche 2) ────────────────────────────────────
+  {
+    id: 115,
+    cat: "Géographie et Territoires",
+    q: "Qu'est-ce que l'Outre-mer français ?",
+    r: `Ce sont les territoires français situés en dehors du continent européen. On distingue les DROM (Départements et Régions d'Outre-mer : Guadeloupe, Guyane, Martinique, La Réunion, Mayotte) et les COM (Collectivités d'Outre-mer : ex. Polynésie française).`,
+    astuce: "Territoires hors Europe (ex: Martinique, Réunion)",
+  },
+  {
+    id: 116,
+    cat: "Géographie et Territoires",
+    q: "Quels sont les principaux fleuves de France ?",
+    r: `Il y en a cinq principaux : la Seine (passe par Paris), la Loire (le plus long), le Rhône, la Garonne et le Rhin.`,
+    astuce: "Seine, Loire, Rhône, Garonne, Rhin",
+  },
+  {
+    id: 117,
+    cat: "Géographie et Territoires",
+    q: "Quels sont les principaux massifs montagneux en France ?",
+    r: `Les principaux sont les Alpes (où se trouve le Mont-Blanc, point culminant), les Pyrénées, le Massif central, le Jura et les Vosges.`,
+    astuce: "Alpes, Pyrénées, Massif central",
+  },
+  {
+    id: 118,
+    cat: "Géographie et Territoires",
+    q: "Quelle est la capitale de la France et quelles sont ses caractéristiques ?",
+    r: `La capitale est Paris. C'est le siège du gouvernement, du Parlement et des principales institutions. Elle est traversée par la Seine et est divisée en 20 arrondissements.`,
+    astuce: "Paris (20 arrondissements)",
+  },
+  {
+    id: 125,
+    cat: "Géographie et Territoires",
+    q: "Qu'est-ce que l'Île-de-France ?",
+    r: `C'est la région où vous habitez (et où se trouve Chevilly-Larue). Elle regroupe 8 départements (Paris, 3 en petite couronne et 4 en grande couronne). C'est le moteur économique et démographique du pays.`,
+    astuce: "Votre région actuelle",
+  },
+  {
+    id: 126,
+    cat: "Géographie et Territoires",
+    q: "Qu'est-ce que la 'Petite Couronne' et la 'Grande Couronne' ?",
+    r: `• Petite Couronne : Les 3 départements limitrophes de Paris (Val-de-Marne, Hauts-de-Seine, Seine-Saint-Denis).
+• Grande Couronne : Les départements plus éloignés (Essonne, Yvelines, Val-d'Oise, Seine-et-Marne).`,
+    astuce: "94 = Petite Couronne",
+  },
+  {
+    id: 127,
+    cat: "Géographie et Territoires",
+    q: "Quelles sont les mers et les océans qui bordent la France ?",
+    r: `La France est bordée par la Mer du Nord, la Manche, l'Océan Atlantique et la Mer Méditerranée.`,
+    astuce: "Atlantique et Méditerranée",
+  },
+
 
   // ── Institutions et Vie Politique ──────────────────────────────────────────
   {
@@ -1704,6 +1865,30 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     q: "valeurs symboles",
     r: "valeurs symboles",
     image: "/images/valeurs_symboles Marseillaise.png",
+    astuce: "A dessiner.",
+  } ,
+       {
+    id: 245,
+    cat: "Illustration",
+    q: "EU",
+    r: "EU",
+    image: "/images/EU.png",
+    astuce: "A dessiner.",
+  },
+       {
+    id: 245,
+    cat: "Illustration",
+    q: "Fleuve",
+    r: "Fleuves",
+    image: "/images/Fleuves.png",
+    astuce: "A dessiner.",
+  } ,
+       {
+    id: 245,
+    cat: "Illustration",
+    q: "Montagne",
+    r: "Montage",
+    image: "/images/Montagnes.png",
     astuce: "A dessiner.",
   } 
 ];
