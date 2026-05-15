@@ -1890,6 +1890,64 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     r: "Montage",
     image: "/images/Montagnes.png",
     astuce: "A dessiner.",
+  },
+  // ── INSTITUTIONS ET VIE POLITIQUE de la République ───────────────────────────
+
+  {
+    id: 133,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quels sont les trois pouvoirs qui fondent la République française et assurent leur indépendance ?",
+    r: "Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire.",
+    astuce: "La séparation de ces trois pouvoirs est un principe fondamental de la démocratie.",
+  },
+  {
+    id: 134,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quel est le rôle principal du Président de la République par rapport à la Constitution ?",
+    r: "Il en est le garant et veille à son respect.",
+    astuce: "Élu pour 5 ans, il nomme également le Premier ministre et préside le Conseil des ministres.",
+  },
+  {
+    id: 135,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "De quelles chambres est composé le Parlement français ?",
+    r: "L'Assemblée nationale et le Sénat.",
+    astuce: "L'Assemblée est élue au suffrage direct, tandis que le Sénat est élu indirectement.",
+  },
+  {
+    id: 136,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quelle institution est chargée de vérifier que les lois sont conformes à la Constitution ?",
+    r: "Le Conseil constitutionnel.",
+    astuce: "Il peut être saisi par les citoyens via la Question Prioritaire de Constitutionnalité (QPC).",
+  },
+  {
+    id: 137,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quelle autorité administrative indépendante protège les citoyens contre les abus de l'administration ?",
+    r: "Le Défenseur des droits.",
+    astuce: "Cette institution défend également les droits de l'enfant et lutte contre les discriminations.",
+  },
+  {
+    id: 138,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quelle juridiction est chargée de contrôler la gestion des finances publiques en France ?",
+    r: "La Cour des comptes.",
+    astuce: "Elle vérifie le bon emploi de l'argent public par l'État et les organismes publics.",
+  },
+  {
+    id: 139,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quelle est la plus haute juridiction de l'ordre administratif en France ?",
+    r: "Le Conseil d'État.",
+    astuce: "Il conseille le gouvernement sur les projets de loi et juge les actes de l'administration.",
+  },
+  {
+    id: 140,
+    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    q: "Quelle est la mission de la Cour de cassation ?",
+    r: "Elle juge la conformité au droit des décisions des tribunaux et cours d'appel.",
+    astuce: "C'est la plus haute juridiction de l'ordre judiciaire, elle ne rejuge pas les faits mais les erreurs de droit.",
   } 
 ];
 
@@ -2444,3 +2502,7 @@ export default function App() {
     </div>
   );
 }
+// npm.cmd run build
+// git add . 
+// git commit -m "fix: correction Filtre "
+// git push
