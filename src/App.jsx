@@ -447,35 +447,35 @@ Après avoir construit une grande partie de ma vie en France, tant sur le plan p
   },
   {
     id: 124,
-    cat: "Arts et Cinéma",
+    cat: "Histoire, culture et société",
     q: "Quel réalisateur français est considéré comme l'un des fondateurs de la Nouvelle Vague ?",
     r: "François Truffaut.",
     astuce: "Avec 'Les Quatre Cents Coups' (1959), il est l'un des pionniers de ce mouvement qui a révolutionné le cinéma.",
   },
   {
     id: 125,
-    cat: "Arts et Cinéma",
+    cat: "Histoire, culture et société",
     q: "Quel est l'ordre chronologique correct des mouvements artistiques suivants en France ?",
     r: "Baroque – Réalisme – Impressionnisme – Cubisme.",
     astuce: "Le Baroque précède le Réalisme du XIXe, suivi par l'Impressionnisme, puis le Cubisme au début du XXe siècle.",
   },
   {
     id: 126,
-    cat: "Culture et Mode",
+    cat: "Histoire, culture et société",
     q: "Quel couturier français crée la célèbre petite robe noire en 1926 ?",
     r: "Coco Chanel.",
     astuce: "Cette pièce est devenue un symbole intemporel de la mode féminine mondiale.",
   },
   {
     id: 127,
-    cat: "Gastronomie",
+    cat: "Histoire, culture et société",
     q: "Quelle est la principale spécialité culinaire de la région Alsace ?",
     r: "La choucroute.",
     astuce: "La choucroute garnie associe chou fermenté, charcuteries et pommes de terre.",
   },
   {
     id: 128,
-    cat: "Culture et Traditions",
+    cat: "Histoire, culture et société",
     q: "Quelle tradition française est associée à la galette des rois ?",
     r: "L'Épiphanie.",
     astuce: "Partagée le 6 janvier, elle contient une fève désignant le « roi » ou la « reine » d'un jour.",
@@ -1255,7 +1255,7 @@ Président : Gérard Larcher (Les Républicains).`,
   // ── Principes et Valeurs de la République ─────────────────────────────────
   {
     id: 164,
-    cat: "Principes et Valeurs de la République",
+    cat: "Valeurs et Principes",
     q: "Quels sont les 4 principes de la République française ?",
     r: `La France est une République indivisible, laïque, démocratique et sociale :
 
@@ -1864,7 +1864,7 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     cat: "Illustration",
     q: "valeurs symboles",
     r: "valeurs symboles",
-    image: "/images/valeurs_symboles Marseillaise.png",
+    image: "/images/valeurs_symboles _repères_historiques.png",
     astuce: "A dessiner.",
   } ,
        {
