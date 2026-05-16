@@ -1,7 +1,107 @@
 import React, { useMemo, useState } from "react";
 
+// ✅ Partie REVISION & QUIZ : ici tu mets uniquement les questions longues.
+// const questions = [
+//   {
+//     id: 1,
+//     cat: "Questions personnelles",
+//     q: "Pourquoi souhaitez-vous devenir français(e) ?",
+//     r: `Je souhaite devenir français car la France représente aujourd'hui le centre de ma vie personnelle et professionnelle.
 
-// ✅ Partie REVISION & QUIZ: ici tu mets uniquement les questions.
+// La France m'a accueilli et m'a permis de m'épanouir sur le plan professionnel et personnel. La premiere fois que je suis venus en France était en 2015 dans le cadre d'une mission. Puis en 2017 j'ai décroché mon premier CDI et depuis j'y vis de manière continue, et j'y ai construit un parcours solide dans le domaine de la data et de l'IA.
+
+// J'ai débuté en tant que consultant senior, puis j'ai évolué vers des fonctions à plus forte responsabilité jusqu'à occuper actuellement un poste de directeur des opérations. Mon engagement s'est également concrétisé par un investissement dans mon entreprise, dont je suis aujourd'hui associé, ce qui témoigne de ma volonté de m'inscrire durablement dans l'économie française.
+
+// Sur le plan personnel, je suis marié depuis 2018 et je partage ma vie en France avec mon épouse. Nous y avons construit notre stabilité familiale et sociale, ce qui renforce profondément mon attachement au pays.
+
+// Je me reconnais pleinement dans les valeurs de la République française, notamment le mérite, l'égalité des chances et la responsabilité. Obtenir la nationalité française représente pour moi une étape naturelle afin de m'engager pleinement dans la société, de participer activement à son développement et de construire mon avenir sur le long terme en France.`,
+//     astuce: "Intégration + valeurs",
+//   },
+//   {
+//     id: 2,
+//     cat: "Questions personnelles",
+//     q: "Que représente pour toi la nationalité française ?",
+//     r: `La nationalité française est pour moi une reconnaissance de mon attachement à la France et une étape naturelle dans mon parcours d'intégration.`,
+//     astuce: "Durée + intégration",
+//   },
+//   {
+//     id: 3,
+//     cat: "Questions personnelles",
+//     q: "Pourquoi avez-vous choisi de vivre en France ?",
+//     r: `J'ai choisi de vivre en France initialement dans le cadre d'une opportunité professionnelle en 2016, qui m'a permis de découvrir un environnement de travail dynamique et structuré, notamment dans le domaine de la data et des nouvelles technologies.
+
+// La France s'est rapidement imposée comme un choix évident grâce à la qualité de son écosystème professionnel, à la richesse de ses opportunités dans mon domaine, ainsi qu'à la stabilité qu'elle offre. J'ai particulièrement apprécié l'importance accordée à l'innovation, notamment dans les secteurs de la data et de l'intelligence artificielle.
+
+// Au-delà de l'aspect professionnel, j'ai été sensible à la qualité de vie, à l'équilibre entre vie personnelle et professionnelle, ainsi qu'aux valeurs portées par la société française. Cette première expérience positive m'a naturellement conduit à m'y installer durablement dès 2017, puis à y construire l'ensemble de mon parcours professionnel et personnel.`,
+//     astuce: "Stabilité + opportunités + droits",
+//   },
+//   {
+//     id: 4,
+//     cat: "Questions personnelles",
+//     q: "Vous sentez-vous intégré(e) ? Pourquoi ?",
+//     r: `Oui, je me sens pleinement intégré en France, aussi bien sur le plan professionnel que personnel.
+
+// Sur le plan professionnel, j'ai construit une grande partie de ma carrière en France depuis 2017, en évoluant de consultant senior à directeur des opérations. Aujourd'hui, j'occupe un poste à responsabilités et je suis également associé dans mon entreprise, ce qui implique une participation active au développement économique et une interaction quotidienne avec des équipes, des partenaires et des clients en France.
+
+// Sur le plan personnel, je vis en France avec mon épouse depuis notre mariage en 2018, et nous y avons construit notre stabilité familiale et sociale. Par ailleurs, je maîtrise la langue française, comme en atteste mon niveau B2 obtenu au TEF avec une moyenne de 490, ce qui me permet d'être parfaitement à l'aise dans mon environnement professionnel et dans la vie quotidienne.
+
+// Enfin, je comprends et je partage les valeurs de la République française, ce qui renforce mon sentiment d'appartenance et mon intégration dans la société.`,
+//     astuce: "Travail + relations + quotidien",
+//   },
+//   {
+//     id: 5,
+//     cat: "Questions personnelles",
+//     q: "Pourquoi avez-vous décidé de demander la naturalisation en France ?",
+//     r: `Cela fait 10 ans que je construis ma vie ici. Je paye mes impôts, je crée de l'emploi, j'ai mes attaches personnelles. Devenir Français n'est pas une simple formalité administrative pour obtenir un passeport, c'est une démarche de cohérence. Je veux participer à la vie de la cité, voter, et porter officiellement les couleurs d'un pays dont je partage déjà le quotidien et les valeurs`,
+//     astuce: "Langue + travail + lois",
+//   },
+// ];
+
+// ✅ Partie dédiée au mode QCM : ici tu mets uniquement les questions QCM spécifiques.
+// Elles sont indépendantes des cartes de révision/quiz.
+// const qcmQuestions = [
+//   {
+//     id: "qcm-1",
+//     cat: "Histoire de France",
+//     q: "Qui était le premier roi des Francs ?",
+//     options: ["Clovis", "Charlemagne", "Louis XIV"],
+//     correctIndex: 0,
+//     correction: "Clovis est considéré comme le premier roi des Francs à avoir unifié les tribus franques.",
+//   },
+//   {
+//     id: "qcm-2",
+//     cat: "Histoire de France",
+//     q: "En quelle année la Révolution française a-t-elle commencé ?",
+//     options: ["1789", "1792", "1804"],
+//     correctIndex: 0,
+//     correction: "La Révolution française débute en 1789, marquée notamment par la prise de la Bastille.",
+//   },
+//   {
+//     id: "qcm-3",
+//     cat: "Histoire de France",
+//     q: "Quel événement a marqué la fin de la seconde guerre mondiale en Europe ?",
+//     options: ["Le débarquement en Normandie", "La chute de Berlin", "La signature de l'armistice"],
+//     correctIndex: 1,
+//     correction: "La prise de Berlin par les Alliés et la capitulation de l'Allemagne marquent la fin du conflit en Europe.",
+//   },
+//   {
+//     id: "qcm-4",
+//     cat: "Histoire de France",
+//     q: "Qui était Jeanne d'Arc ?",
+//     options: ["Une reine de France", "Une héroïne de guerre", "Une philosophe"],
+//     correctIndex: 1,
+//     correction: "Jeanne d'Arc est une figure emblématique de l'histoire de France qui a aidé à lever le siège d'Orléans.",
+//   },
+//   {
+//     id: "qcm-5",
+//     cat: "Histoire de France",
+//     q: "Qui a instauré l'école gratuite et obligatoire en France ?",
+//     options: ["Jules Ferry", "Napoléon Bonaparte", "Léon Blum"],
+//     correctIndex: 0,
+//     correction: "Les lois de Jules Ferry de 1881 et 1882 ont rendu l'enseignement primaire gratuit et l'instruction obligatoire.",
+//   },
+// ];
+
 const questions = [
   // ── Questions personnelles ──────────────────────────────────────────────────
   {
@@ -1893,60 +1993,60 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     image: "/images/Montagnes.png",
     astuce: "A dessiner.",
   },
-  // ── INSTITUTIONS ET VIE POLITIQUE de la République ───────────────────────────
+  // ── Institutions et Vie Politique de la République ───────────────────────────
 
   {
     id: 133,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quels sont les trois pouvoirs qui fondent la République française et assurent leur indépendance ?",
     r: "Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire.",
     astuce: "La séparation de ces trois pouvoirs est un principe fondamental de la démocratie.",
   },
   {
     id: 134,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quel est le rôle principal du Président de la République par rapport à la Constitution ?",
     r: "Il en est le garant et veille à son respect.",
     astuce: "Élu pour 5 ans, il nomme également le Premier ministre et préside le Conseil des ministres.",
   },
   {
     id: 135,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "De quelles chambres est composé le Parlement français ?",
     r: "L'Assemblée nationale et le Sénat.",
     astuce: "L'Assemblée est élue au suffrage direct, tandis que le Sénat est élu indirectement.",
   },
   {
     id: 136,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quelle institution est chargée de vérifier que les lois sont conformes à la Constitution ?",
     r: "Le Conseil constitutionnel.",
     astuce: "Il peut être saisi par les citoyens via la Question Prioritaire de Constitutionnalité (QPC).",
   },
   {
     id: 137,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quelle autorité administrative indépendante protège les citoyens contre les abus de l'administration ?",
     r: "Le Défenseur des droits.",
     astuce: "Cette institution défend également les droits de l'enfant et lutte contre les discriminations.",
   },
   {
     id: 138,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quelle juridiction est chargée de contrôler la gestion des finances publiques en France ?",
     r: "La Cour des comptes.",
     astuce: "Elle vérifie le bon emploi de l'argent public par l'État et les organismes publics.",
   },
   {
     id: 139,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quelle est la plus haute juridiction de l'ordre administratif en France ?",
     r: "Le Conseil d'État.",
     astuce: "Il conseille le gouvernement sur les projets de loi et juge les actes de l'administration.",
   },
   {
     id: 140,
-    cat: "INSTITUTIONS ET VIE POLITIQUE",
+    cat: "Institutions et Vie Politique",
     q: "Quelle est la mission de la Cour de cassation ?",
     r: "Elle juge la conformité au droit des décisions des tribunaux et cours d'appel.",
     astuce: "C'est la plus haute juridiction de l'ordre judiciaire, elle ne rejuge pas les faits mais les erreurs de droit.",
@@ -2015,7 +2115,6 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     astuce: "Soulignez votre capacité à vivre en harmonie avec des personnes d'origines ou de croyances différentes.",
   } 
 ];
-
 
 // ✅ Partie dédiée au mode QCM : ici tu mets uniquement les questions QCM spécifiques.
 // Elles sont indépendantes des cartes de révision/quiz.
@@ -2891,47 +2990,6 @@ const qcmQuestions = [
 ];
 
 
-  const activeList = mode === "qcm" ? qcmOrder : order;
-  const totalCount = mode === "qcm" ? qcmQuestions.length : questions.length;
-
-  const categories = useMemo(() => {
-    const source = mode === "qcm" ? qcmQuestions : questions;
-    return ["Toutes", ...Array.from(new Set(source.map((q) => q.cat))), "À revoir"];
-  }, [mode]);
-
-  const filtered = useMemo(() => {
-    const normalizedSearch = normalizeText(search);
-
-    const categoryFiltered = (() => {
-      if (category === "À revoir") return activeList.filter((q) => review.includes(q.id));
-      if (category === "Toutes") return activeList;
-      return activeList.filter((q) => q.cat === category);
-    })();
-
-    if (!normalizedSearch) return categoryFiltered;
-
-    return categoryFiltered.filter((q) => {
-      const qcmText = q.options ? q.options.join(" ") + " " + (q.correction || "") : "";
-      const searchableText = normalizeText(`${q.q} ${q.r || ""} ${q.astuce || ""} ${q.cat} ${qcmText}`);
-      return searchableText.includes(normalizedSearch);
-    });
-  }, [activeList, category, review, search]);
-
-  const current = filtered[index] || filtered[0];
-  const progress = Math.round((known.length / (questions.length + qcmQuestions.length)) * 100);
-  const hasSearch = search.trim().length > 0;
-
-  const resetCardVisibility = (selectedMode = mode) => {
-    setShowAnswer(selectedMode === "revision");
-    setSelectedChoice(null);
-    setQcmAnswered(false);
-  };
-
-  const goNext = () => {
-    setIndex((i) => Math.min(i + 1, Math.max(filtered.length - 1, 0)));
-    resetCardVisibility();
-  };
-
 function shuffleArray(list) {
   return [...list].sort(() => Math.random() - 0.5);
 }
@@ -2981,6 +3039,48 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [qcmAnswered, setQcmAnswered] = useState(false);
+
+  // ✅ Important : ce bloc doit rester DANS App(), après les useState.
+  const activeList = mode === "qcm" ? qcmOrder : order;
+  const totalCount = mode === "qcm" ? qcmQuestions.length : questions.length;
+
+  const categories = useMemo(() => {
+    const source = mode === "qcm" ? qcmQuestions : questions;
+    return ["Toutes", ...Array.from(new Set(source.map((q) => q.cat))), "À revoir"];
+  }, [mode]);
+
+  const filtered = useMemo(() => {
+    const normalizedSearch = normalizeText(search);
+
+    const categoryFiltered = (() => {
+      if (category === "À revoir") return activeList.filter((q) => review.includes(q.id));
+      if (category === "Toutes") return activeList;
+      return activeList.filter((q) => q.cat === category);
+    })();
+
+    if (!normalizedSearch) return categoryFiltered;
+
+    return categoryFiltered.filter((q) => {
+      const qcmText = q.options ? q.options.join(" ") + " " + (q.correction || "") : "";
+      const searchableText = normalizeText(`${q.q} ${q.r || ""} ${q.astuce || ""} ${q.cat} ${qcmText}`);
+      return searchableText.includes(normalizedSearch);
+    });
+  }, [activeList, category, review, search]);
+
+  const current = filtered[index] || filtered[0];
+  const progress = Math.round((known.length / (questions.length + qcmQuestions.length)) * 100);
+  const hasSearch = search.trim().length > 0;
+
+  const resetCardVisibility = (selectedMode = mode) => {
+    setShowAnswer(selectedMode === "revision");
+    setSelectedChoice(null);
+    setQcmAnswered(false);
+  };
+
+  const goNext = () => {
+    setIndex((i) => Math.min(i + 1, Math.max(filtered.length - 1, 0)));
+    resetCardVisibility();
+  };
 
   const goPrev = () => {
     setIndex((i) => Math.max(i - 1, 0));
@@ -3054,7 +3154,7 @@ export default function App() {
     setIndex(0);
     setOrder(questions);
     setQcmOrder(qcmQuestions);
-    clearSearch();
+    setSearch("");
     resetCardVisibility();
   };
 
@@ -3189,8 +3289,6 @@ export default function App() {
           border-radius: 18px;
           overflow-y: auto;
           overscroll-behavior: contain;
-		 
-					
           border: 1px solid rgba(34,197,94,.35);
           background: rgba(34,197,94,.08);
         }
@@ -3289,7 +3387,7 @@ export default function App() {
           .answer { font-size: clamp(14px, 4.2vw, 17px); line-height: 1.28; }
           .tip { margin-top: 8px; padding: 7px 9px; font-size: 12px; }
 
-          .qcmMode .app, .app.qcmMode { padding: 6px; }
+          .app.qcmMode { padding: 6px; }
           .qcmMode .header { margin-bottom: 4px; }
           .qcmMode .title { font-size: 22px; }
           .qcmMode .modebar { gap: 4px; margin-bottom: 4px; }
