@@ -1,7 +1,5 @@
 import React, { useMemo, useState } from "react";
 
-
-// ✅ Partie REVISION & QUIZ: ici tu mets uniquement les questions.
 const questions = [
   // ── Questions personnelles ──────────────────────────────────────────────────
   {
@@ -2016,880 +2014,6 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
   } 
 ];
 
-
-// ✅ Partie dédiée au mode QCM : ici tu mets uniquement les questions QCM spécifiques.
-// Elles sont indépendantes des cartes de révision/quiz.
-const qcmQuestions = [
-  {
-    id: "qcm-1",
-    cat: "Histoire de France",
-    q: "Qui était le premier roi des Francs ?",
-    options: ["Clovis", "Charlemagne", "Louis XIV"],
-    correctIndex: 0,
-    correction: "Clovis est considéré comme le premier roi des Francs à avoir unifié les tribus franques.",
-  },
-  {
-    id: "qcm-2",
-    cat: "Histoire de France",
-    q: "En quelle année la Révolution française a-t-elle commencé ?",
-    options: ["1789", "1792", "1804"],
-    correctIndex: 0,
-    correction: "La Révolution française débute en 1789, marquée notamment par la prise de la Bastille.",
-  },
-  {
-    id: "qcm-3",
-    cat: "Histoire de France",
-    q: "Quel événement a marqué la fin de la seconde guerre mondiale en Europe ?",
-    options: ["Le débarquement en Normandie", "La chute de Berlin", "La signature de l'armistice"],
-    correctIndex: 1,
-    correction: "La prise de Berlin par les Alliés et la capitulation de l'Allemagne marquent la fin du conflit en Europe.",
-  },
-  {
-    id: "qcm-4",
-    cat: "Histoire de France",
-    q: "Qui était Jeanne d'Arc ?",
-    options: ["Une reine de France", "Une héroïne de guerre", "Une philosophe"],
-    correctIndex: 1,
-    correction: "Jeanne d'Arc est une figure emblématique de l'histoire de France qui a aidé à lever le siège d'Orléans.",
-  },
-  {
-    id: "qcm-5",
-    cat: "Histoire de France",
-    q: "Qui a instauré l'école gratuite et obligatoire en France ?",
-    options: ["Jules Ferry", "Napoléon Bonaparte", "Léon Blum"],
-    correctIndex: 0,
-    correction: "Les lois de Jules Ferry (1881-1882) ont rendu l'enseignement primaire obligatoire et gratuit.",
-  },
-  {
-    id: "qcm-6",
-    cat: "Histoire de France",
-    q: "Quelle bataille a marqué la fin de Napoléon Bonaparte ?",
-    options: ["Austerlitz", "Waterloo", "Verdun"],
-    correctIndex: 1,
-    correction: "La défaite de Waterloo en 1815 marque la chute définitive de Napoléon Ier.",
-  },
-  {
-    id: "qcm-7",
-    cat: "Histoire de France",
-    q: "En quelle année la France a-t-elle aboli l'esclavage pour la deuxième fois ?",
-    options: ["1794", "1848", "1871"],
-    correctIndex: 1,
-    correction: "L'abolition définitive de l'esclavage en France a été décrétée en 1848.",
-  },
-  {
-    id: "qcm-8",
-    cat: "Histoire de France",
-    q: "Quel roi a été guillotiné pendant la Révolution française ?",
-    options: ["Louis XIV", "Louis XVI", "Louis XVIII"],
-    correctIndex: 1,
-    correction: "Louis XVI a été exécuté le 21 janvier 1793 sur la place de la Révolution.",
-  },
-  {
-    id: "qcm-9",
-    cat: "Histoire de France",
-    q: "Qui a écrit Les Misérables ?",
-    options: ["Victor Hugo", "Émile Zola", "Honoré de Balzac"],
-    correctIndex: 0,
-    correction: "Victor Hugo est l'auteur de ce chef-d'œuvre de la littérature française publié en 1862.",
-  },
-  {
-    id: "qcm-10",
-    cat: "Histoire de France",
-    q: "Quelle était l'occupation principale de Vercingétorix ?",
-    options: ["Roi", "Chef gaulois", "Philosophe"],
-    correctIndex: 1,
-    correction: "Vercingétorix était le chef de la coalition gauloise qui s'opposa à Jules César.",
-  },
-  {
-    id: "qcm-11",
-    cat: "Histoire de France",
-    q: "Quand a eu lieu la bataille de Hastings ?",
-    options: ["1066", "1215", "1453"],
-    correctIndex: 0,
-    correction: "La bataille de Hastings a eu lieu en 1066, marquant le début de la conquête de l'Angleterre par Guillaume le Conquérant.",
-  },
-  {
-    id: "qcm-12",
-    cat: "Histoire de France",
-    q: "Quelle guerre a opposé la France à l'Angleterre entre 1337 et 1453 ?",
-    options: ["La Guerre de Cent Ans", "La Guerre des Deux-Roses", "La Guerre de Sept Ans"],
-    correctIndex: 0,
-    correction: "La Guerre de Cent Ans est un conflit majeur qui a duré plus d'un siècle entre les deux pays.",
-  },
-  {
-    id: "qcm-13",
-    cat: "Histoire de France",
-    q: "Qui a signé la Déclaration des Droits de l'Homme et du Citoyen ?",
-    options: ["Louis XVI", "Maximilien Robespierre", "L'Assemblée nationale"],
-    correctIndex: 2,
-    correction: "Elle a été adoptée par l'Assemblée nationale constituante en août 1789.",
-  },
-  {
-    id: "qcm-14",
-    cat: "Histoire de France",
-    q: "Qui était le général français qui a libéré la France en 1944 ?",
-    options: ["Charles de Gaulle", "Philippe Pétain", "Henri Giraud"],
-    correctIndex: 0,
-    correction: "Le général de Gaulle a dirigé la France Libre et a été le symbole de la Libération.",
-  },
-  {
-    id: "qcm-15",
-    cat: "Histoire de France",
-    q: "En quelle année Napoléon Bonaparte a-t-il été couronné empereur ?",
-    options: ["1804", "1815", "1799"],
-    correctIndex: 0,
-    correction: "Napoléon Ier a été sacré empereur des Français le 2 décembre 1804.",
-  },
-  {
-    id: "qcm-16",
-    cat: "Histoire de France",
-    q: "Quelle bataille est célèbre pour la victoire de Clovis contre les Alamans ?",
-    options: ["La bataille de Poitiers", "La bataille de Tolbiac", "La bataille de Waterloo"],
-    correctIndex: 1,
-    correction: "C'est lors de la bataille de Tolbiac que Clovis aurait promis de se convertir au christianisme.",
-  },
-  {
-    id: "qcm-17",
-    cat: "Histoire de France",
-    q: "Quelle grande monarchie a été renversée en 1792 lors de la Révolution française ?",
-    options: ["La monarchie des Bourbons", "La monarchie des Capétiens", "La monarchie des Mérovingiens"],
-    correctIndex: 0,
-    correction: "La chute de la monarchie des Bourbons a conduit à la proclamation de la Ire République.",
-  },
-  {
-    id: "qcm-18",
-    cat: "Histoire de France",
-    q: "En quelle année le Code Civil a-t-il été promulgué sous Napoléon ?",
-    options: ["1804", "1815", "1792"],
-    correctIndex: 0,
-    correction: "Le Code Civil des Français (ou Code Napoléon) a été publié en 1804.",
-  },
-  {
-    id: "qcm-19",
-    cat: "Histoire de France",
-    q: "Qui a mené la France pendant la Première Guerre Mondiale ?",
-    options: ["Georges Clemenceau", "Raymond Poincaré", "Philippe Pétain"],
-    correctIndex: 0,
-    correction: "Surnommé 'Le Tigre', Georges Clemenceau a été le chef du gouvernement à la fin de la Grande Guerre.",
-  },
-  {
-    id: "qcm-20",
-    cat: "Histoire de France",
-    q: "Qui est considéré comme le 'père de la France moderne' ?",
-    options: ["Napoléon Bonaparte", "Charles de Gaulle", "François Mitterrand"],
-    correctIndex: 1,
-    correction: "Charles de Gaulle est souvent désigné ainsi pour avoir fondé la Ve République.",
-  },
-  {
-    id: "qcm-21",
-    cat: "Institutions et Politique",
-    q: "Qui est actuellement le chef de l'État en France ?",
-    options: ["Le Premier ministre", "Le Président de la République", "Le Président du Sénat"],
-    correctIndex: 1,
-    correction: "En France, sous la Ve République, le chef de l'État est le Président de la République.",
-  },
-  {
-    id: "qcm-22",
-    cat: "Institutions et Politique",
-    q: "Quelle est la durée du mandat présidentiel en France ?",
-    options: ["5 ans", "6 ans", "7 ans"],
-    correctIndex: 0,
-    correction: "Le mandat présidentiel est de 5 ans (le quinquennat) depuis le référendum de 2000.",
-  },
-  {
-    id: "qcm-23",
-    cat: "Institutions et Politique",
-    q: "Que représente le drapeau français ?",
-    options: ["La monarchie", "La République", "La colonisation"],
-    correctIndex: 1,
-    correction: "Le drapeau tricolore bleu, blanc, rouge est l'emblème national de la République française.",
-  },
-  {
-    id: "qcm-24",
-    cat: "Institutions et Politique",
-    q: "Quelle est la devise de la République française ?",
-    options: ["Liberté, égalité, fraternité", "Travail, famille, patrie", "Paix, justice, solidarité"],
-    correctIndex: 0,
-    correction: "La devise de la France est 'Liberté, Égalité, Fraternité', héritée de la Révolution.",
-  },
-  {
-    id: "qcm-25",
-    cat: "Institutions et Politique",
-    q: "Combien de régions administratives compte la France métropolitaine ?",
-    options: ["13", "18", "20"],
-    correctIndex: 0,
-    correction: "Depuis la réforme de 2016, la France métropolitaine est divisée en 13 régions.",
-  },
-  {
-    id: "qcm-26",
-    cat: "Institutions et Politique",
-    q: "Quel est le rôle du Conseil constitutionnel ?",
-    options: ["Contrôler les lois votées", "Voter des lois", "Diriger le gouvernement"],
-    correctIndex: 0,
-    correction: "Le Conseil constitutionnel veille à la conformité des lois avec la Constitution.",
-  },
-  {
-    id: "qcm-27",
-    cat: "Institutions et Politique",
-    q: "Qui nomme le Premier ministre ?",
-    options: ["Le peuple", "Le Président de la République", "L'Assemblée nationale"],
-    correctIndex: 1,
-    correction: "Selon l'article 8 de la Constitution, le Président de la République nomme le Premier ministre.",
-  },
-  {
-    id: "qcm-28",
-    cat: "Institutions et Politique",
-    q: "Quel organe législatif est composé de députés ?",
-    options: ["Le Sénat", "L'Assemblée nationale", "Le Conseil d'État"],
-    correctIndex: 1,
-    correction: "Les députés siègent à l'Assemblée nationale, tandis que les sénateurs siègent au Sénat.",
-  },
-  {
-    id: "qcm-29",
-    cat: "Institutions et Politique",
-    q: "Comment appelle-t-on les membres du Sénat ?",
-    options: ["Les députés", "Les sénateurs", "Les conseillers"],
-    correctIndex: 1,
-    correction: "Les membres du Sénat sont appelés les sénateurs, ils sont élus au suffrage universel indirect.",
-  },
-  {
-    id: "qcm-30",
-    cat: "Institutions et Politique",
-    q: "Combien de fois une personne peut-elle être élue Président de la République ?",
-    options: ["Deux mandats consécutifs", "Trois mandats consécutifs", "Pas de limite"],
-    correctIndex: 0,
-    correction: "Nul ne peut exercer plus de deux mandats consécutifs depuis la révision constitutionnelle de 2008.",
-  },
-  {
-    id: "qcm-31",
-    cat: "Institutions et Politique",
-    q: "Qui est chargé de la politique de défense en France ?",
-    options: ["Le Président de la République", "Le Ministre de la Défense", "Le Premier ministre"],
-    correctIndex: 0,
-    correction: "Le Président de la République est le chef des armées et préside les conseils de défense.",
-  },
-  {
-    id: "qcm-32",
-    cat: "Institutions et Politique",
-    q: "Quelle institution vote les lois en France ?",
-    options: ["Le Sénat", "L'Assemblée nationale", "Le Conseil constitutionnel"],
-    correctIndex: 1,
-    correction: "Bien que le Sénat y participe, l'Assemblée nationale est l'institution principale qui vote les lois et a le dernier mot.",
-  },
-  {
-    id: "qcm-33",
-    cat: "Institutions et Politique",
-    q: "Quel est le rôle du Président de la République ?",
-    options: ["Gouverner le pays", "Nommer le Premier ministre et diriger les relations internationales", "Diriger les ministères"],
-    correctIndex: 1,
-    correction: "Le Président nomme le Premier ministre et représente la France à l'étranger.",
-  },
-  {
-    id: "qcm-34",
-    cat: "Institutions et Politique",
-    q: "Quelle est la fonction principale du Conseil d'État ?",
-    options: ["Assurer la défense nationale", "Donner des avis juridiques au gouvernement", "Élire les membres du Sénat"],
-    correctIndex: 1,
-    correction: "Le Conseil d'État est avant tout le conseiller juridique du gouvernement.",
-  },
-  {
-    id: "qcm-35",
-    cat: "Institutions et Politique",
-    q: "Qui peut saisir le Conseil constitutionnel ?",
-    options: ["Le Président de la République", "Le Parlement", "Les citoyens"],
-    correctIndex: 1,
-    correction: "Le Parlement (60 députés ou 60 sénateurs) peut saisir le Conseil pour vérifier une loi avant sa promulgation.",
-  },
-  {
-    id: "qcm-36",
-    cat: "Institutions et Politique",
-    q: "Qu'est-ce que le suffrage universel ?",
-    options: ["Le droit de vote pour tous les citoyens majeurs", "Une élection réservée aux hommes", "Une élection pour les étrangers"],
-    correctIndex: 0,
-    correction: "Le suffrage universel permet à tous les citoyens français majeurs de voter.",
-  },
-  {
-    id: "qcm-37",
-    cat: "Institutions et Politique",
-    q: "Combien de départements compte la France ?",
-    options: ["96", "101", "115"],
-    correctIndex: 1,
-    correction: "La France compte 101 départements (96 en métropole et 5 outre-mer).",
-  },
-  {
-    id: "qcm-38",
-    cat: "Institutions et Politique",
-    q: "Quelle institution défend les droits des citoyens en France ?",
-    options: ["Le Conseil constitutionnel", "Le Défenseur des droits", "L'Assemblée nationale"],
-    correctIndex: 1,
-    correction: "Le Défenseur des droits est une autorité constitutionnelle indépendante chargée de protéger vos droits.",
-  },
-  {
-    id: "qcm-39",
-    cat: "Institutions et Politique",
-    q: "Quelle est la procédure pour un changement de constitution ?",
-    options: ["Un vote à l'Assemblée nationale", "Un référendum national", "Un décret présidentiel"],
-    correctIndex: 1,
-    correction: "La révision de la Constitution nécessite généralement un référendum ou un vote du Congrès.",
-  },
-  {
-    id: "qcm-40",
-    cat: "Institutions et Politique",
-    q: "Quel est le rôle du Premier ministre ?",
-    options: ["Gouverner la France", "Nommer les ministres et organiser les politiques publiques", "Organiser les élections présidentielles"],
-    correctIndex: 1,
-    correction: "Le Premier ministre dirige l'action du Gouvernement et coordonne les politiques publiques.",
-  },
-  {
-    id: "qcm-41",
-    cat: "République & Valeurs",
-    q: "Quelle est la signification du terme 'Laïcité' en France ?",
-    options: [
-      "Séparation de l'État et de la religion",
-      "Union entre l'État et l'Église",
-      "Liberté d'expression"
-    ],
-    correctIndex: 0,
-    correction: "La laïcité repose sur la séparation des Églises et de l'État (loi de 1905), garantissant la neutralité de l'État.",
-  },
-  {
-    id: "qcm-42",
-    cat: "République & Valeurs",
-    q: "Que signifie l'égalité en France ?",
-    options: [
-      "Une égalité de traitement pour tous les citoyens",
-      "Une égalité des richesses",
-      "Une égalité entre hommes et femmes uniquement"
-    ],
-    correctIndex: 0,
-    correction: "L'égalité signifie que la loi est la même pour tous, sans distinction d'origine, de race ou de religion.",
-  },
-  {
-    id: "qcm-43",
-    cat: "République & Valeurs",
-    q: "Qui est responsable de la mise en œuvre des principes de la République ?",
-    options: ["Le Président de la République", "Les citoyens", "Le gouvernement"],
-    correctIndex: 2,
-    correction: "Le Gouvernement détermine et conduit la politique de la Nation et assure l'exécution des lois.",
-  },
-  {
-    id: "qcm-44",
-    cat: "République & Valeurs",
-    q: "Que représente la devise 'Liberté, Égalité, Fraternité' ?",
-    options: [
-      "Les valeurs de la monarchie",
-      "Les principes fondamentaux de la République française",
-      "Un slogan politique"
-    ],
-    correctIndex: 1,
-    correction: "C'est la devise officielle de la République française, inscrite dans la Constitution.",
-  },
-  {
-    id: "qcm-45",
-    cat: "République & Valeurs",
-    q: "En quoi consiste le principe d'indivisibilité de la République ?",
-    options: [
-      "L'État doit protéger les citoyens",
-      "La France doit rester une nation unie sans divisions",
-      "Le territoire de la France est divisé en zones autonomes"
-    ],
-    correctIndex: 1,
-    correction: "L'indivisibilité signifie qu'aucune partie du peuple, ni aucun individu, ne peut s'attribuer l'exercice de la souveraineté nationale.",
-  },
-  {
-    id: "qcm-46",
-    cat: "République & Valeurs",
-    q: "Comment la France protège-t-elle ses valeurs républicaines ?",
-    options: ["Par des lois", "Par des décrets", "Par des interventions militaires"],
-    correctIndex: 0,
-    correction: "La France utilise l'arsenal législatif pour garantir le respect des principes républicains.",
-  },
-  {
-    id: "qcm-47",
-    cat: "République & Valeurs",
-    q: "Quel est le rôle du juge administratif en France ?",
-    options: [
-      "Gérer les relations internationales",
-      "Appliquer la loi concernant l'administration publique",
-      "Interdire les partis politiques"
-    ],
-    correctIndex: 1,
-    correction: "Le juge administratif règle les litiges entre les citoyens et les collectivités publiques.",
-  },
-  {
-    id: "qcm-48",
-    cat: "République & Valeurs",
-    q: "Qu'est-ce que le 'pacte républicain' ?",
-    options: [
-      "Un accord entre les partis politiques",
-      "Une promesse de fidélité à la République et à ses principes",
-      "Une loi concernant la citoyenneté"
-    ],
-    correctIndex: 1,
-    correction: "Le pacte républicain exprime l'adhésion commune aux valeurs de liberté, d'égalité et de laïcité.",
-  },
-  {
-    id: "qcm-49",
-    cat: "République & Valeurs",
-    q: "Quelle est la position de la France sur la liberté d'expression ?",
-    options: [
-      "Elle est limitée par la loi",
-      "Elle est garantie par la Constitution",
-      "Elle est restreinte en fonction des opinions politiques"
-    ],
-    correctIndex: 1,
-    correction: "La liberté d'expression est un droit fondamental protégé par la Déclaration de 1789 et la Constitution.",
-  },
-  {
-    id: "qcm-50",
-    cat: "République & Valeurs",
-    q: "Que garantit la Constitution de 1958 ?",
-    options: [
-      "La souveraineté du peuple",
-      "L'indépendance de la France",
-      "La stabilité des partis politiques"
-    ],
-    correctIndex: 0,
-    correction: "La Constitution garantit que la souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum.",
-  },
-  {
-    id: "qcm-51",
-    cat: "République & Valeurs",
-    q: "Que fait l'État pour garantir la fraternité en France ?",
-    options: [
-      "L'égalité devant la loi",
-      "La solidarité entre les citoyens",
-      "L'assistance aux entreprises"
-    ],
-    correctIndex: 1,
-    correction: "La fraternité se traduit par la solidarité nationale, notamment à travers la protection sociale.",
-  },
-  {
-    id: "qcm-52",
-    cat: "République & Valeurs",
-    q: "Quel est le principe du 'contrôle de la constitutionnalité' en France ?",
-    options: [
-      "Le contrôle des élections",
-      "Le contrôle des lois et règlements pour vérifier leur conformité à la Constitution",
-      "Le contrôle de l'activité gouvernementale"
-    ],
-    correctIndex: 1,
-    correction: "Ce contrôle est principalement exercé par le Conseil constitutionnel.",
-  },
-  {
-    id: "qcm-53",
-    cat: "République & Valeurs",
-    q: "En France, quel est le statut de la famille dans la Constitution ?",
-    options: [
-      "Elle est protégée par la loi",
-      "Elle est un élément clé de l'État",
-      "Elle est indépendante de l'État"
-    ],
-    correctIndex: 0,
-    correction: "La Nation assure à l'individu et à la famille les conditions nécessaires à leur développement.",
-  },
-  {
-    id: "qcm-54",
-    cat: "République & Valeurs",
-    q: "Quelle est la place des droits de l'homme dans la Constitution de la Ve République ?",
-    options: [
-      "Ils sont garantis par la Déclaration des Droits de l'Homme et du Citoyen",
-      "Ils sont facultatifs",
-      "Ils sont sous le contrôle du Parlement"
-    ],
-    correctIndex: 0,
-    correction: "Le préambule de la Constitution de 1958 réaffirme solennellement les droits de l'homme définis en 1789.",
-  },
-  {
-    id: "qcm-55",
-    cat: "République & Valeurs",
-    q: "Quel est le rôle de la Déclaration des droits de l'homme et du citoyen de 1789 ?",
-    options: [
-      "Assurer l'égalité des citoyens devant la loi",
-      "Protéger la monarchie",
-      "Définir la religion d'État"
-    ],
-    correctIndex: 0,
-    correction: "Elle établit que tous les citoyens sont égaux devant la loi sans distinction.",
-  },
-  {
-    id: "qcm-56",
-    cat: "République & Valeurs",
-    q: "Quelle institution est chargée de garantir le respect de la Constitution ?",
-    options: ["Le Conseil constitutionnel", "Le Sénat", "L'Assemblée nationale"],
-    correctIndex: 0,
-    correction: "Le Conseil constitutionnel est le gardien de la Constitution de la Ve République.",
-  },
-  {
-    id: "qcm-57",
-    cat: "République & Valeurs",
-    q: "En quelle année la Déclaration des Droits de l'Homme et du Citoyen a-t-elle été adoptée ?",
-    options: ["1789", "1791", "1795"],
-    correctIndex: 0,
-    correction: "Elle a été adoptée le 26 août 1789 par l'Assemblée nationale constituante.",
-  },
-  {
-    id: "qcm-58",
-    cat: "République & Valeurs",
-    q: "Qui a rédigé la Déclaration des droits de l'homme et du citoyen ?",
-    options: [
-      "Les révolutionnaires de 1789",
-      "Napoléon Bonaparte",
-      "Le général de Gaulle"
-    ],
-    correctIndex: 0,
-    correction: "Elle a été élaborée et votée par les députés de l'Assemblée nationale constituante en 1789.",
-  },
-  {
-    id: "qcm-59",
-    cat: "République & Valeurs",
-    q: "Que signifie 'l'égalité devant la loi' ?",
-    options: [
-      "Tous les citoyens ont les mêmes droits",
-      "Tous les citoyens doivent payer des impôts égaux",
-      "Les citoyens doivent suivre les mêmes religions"
-    ],
-    correctIndex: 0,
-    correction: "L'égalité devant la loi signifie que la règle est identique pour chaque citoyen.",
-  },
-  {
-    id: "qcm-60",
-    cat: "République & Valeurs",
-    q: "Quelle est la position de la France sur la séparation des pouvoirs ?",
-    options: [
-      "Les pouvoirs législatif et exécutif sont séparés",
-      "Le gouvernement détient tous les pouvoirs",
-      "Les pouvoirs judiciaire et législatif sont unifiés"
-    ],
-    correctIndex: 0,
-    correction: "La France applique la séparation des pouvoirs (législatif, exécutif et judiciaire) pour éviter la tyrannie.",
-  },
-  {
-    id: "qcm-61",
-    cat: "Géographie",
-    q: "Quel est le plus long fleuve de France ?",
-    options: ["La Seine", "La Loire", "Le Rhône"],
-    correctIndex: 1,
-    correction: "La Loire est le plus long fleuve de France avec une longueur d'environ 1 006 kilomètres.",
-  },
-  {
-    id: "qcm-62",
-    cat: "Géographie",
-    q: "Quelle est la capitale de la France ?",
-    options: ["Lyon", "Marseille", "Paris"],
-    correctIndex: 2,
-    correction: "Paris est la capitale et la ville la plus peuplée de France.",
-  },
-  {
-    id: "qcm-63",
-    cat: "Géographie",
-    q: "Combien de pays ont une frontière terrestre avec la France métropolitaine ?",
-    options: ["5", "8", "10"],
-    correctIndex: 1,
-    correction: "La France métropolitaine a des frontières avec 8 pays : Belgique, Luxembourg, Allemagne, Suisse, Italie, Monaco, Espagne et Andorre.",
-  },
-  {
-    id: "qcm-64",
-    cat: "Géographie",
-    q: "Quelle mer borde le sud de la France ?",
-    options: ["La mer Méditerranée", "La mer du Nord", "La mer Noire"],
-    correctIndex: 0,
-    correction: "La mer Méditerranée borde toute la côte sud de la France métropolitaine.",
-  },
-  {
-    id: "qcm-65",
-    cat: "Géographie",
-    q: "Quel est le plus haut sommet de France ?",
-    options: ["Le Mont-Dore", "Le Mont Blanc", "Le Pic du Midi"],
-    correctIndex: 1,
-    correction: "Le Mont Blanc, situé dans les Alpes, est le point culminant de la France et de l'Europe occidentale.",
-  },
-  {
-    id: "qcm-66",
-    cat: "Géographie",
-    q: "Quelle ville française est connue pour son port sur la Méditerranée ?",
-    options: ["Bordeaux", "Marseille", "Lille"],
-    correctIndex: 1,
-    correction: "Marseille possède le plus grand port de commerce français et est située au bord de la Méditerranée.",
-  },
-  {
-    id: "qcm-67",
-    cat: "Géographie",
-    q: "Quel océan borde l'ouest de la France ?",
-    options: ["L'océan Atlantique", "L'océan Indien", "L'océan Pacifique"],
-    correctIndex: 0,
-    correction: "L'océan Atlantique borde toute la façade ouest de la France.",
-  },
-  {
-    id: "qcm-68",
-    cat: "Géographie",
-    q: "Quelles sont les trois plus grandes villes de France en population ?",
-    options: [
-      "Paris, Lyon, Marseille",
-      "Paris, Marseille, Lyon",
-      "Paris, Bordeaux, Lille"
-    ],
-    correctIndex: 1,
-    correction: "L'ordre décroissant de population est Paris, puis Marseille, puis Lyon.",
-  },
-  {
-    id: "qcm-69",
-    cat: "Géographie",
-    q: "Quelle île française se situe en mer Méditerranée ?",
-    options: ["La Corse", "L'île d'Oléron", "L'île de Ré"],
-    correctIndex: 0,
-    correction: "La Corse est une île montagneuse située au sud-est de la France continentale.",
-  },
-  {
-    id: "qcm-70",
-    cat: "Géographie",
-    q: "Quelle chaîne de montagnes sépare la France de l'Espagne ?",
-    options: ["Les Alpes", "Les Pyrénées", "Le Massif central"],
-    correctIndex: 1,
-    correction: "Les Pyrénées forment une frontière naturelle entre la France et l'Espagne.",
-  },
-  {
-    id: "qcm-71",
-    cat: "Géographie",
-    q: "Quel est le département français le plus peuplé ?",
-    options: ["Le Nord", "Paris", "Les Bouches-du-Rhône"],
-    correctIndex: 0,
-    correction: "Le département du Nord (59) est statistiquement le plus peuplé de France.",
-  },
-  {
-    id: "qcm-72",
-    cat: "Géographie",
-    q: "Quelle ville est surnommée la 'ville rose' ?",
-    options: ["Toulouse", "Montpellier", "Nice"],
-    correctIndex: 0,
-    correction: "Toulouse doit ce surnom à l'utilisation de la brique de terre cuite pour la construction de ses bâtiments.",
-  },
-  {
-    id: "qcm-73",
-    cat: "Géographie",
-    q: "Dans quelle région se trouve la ville de Strasbourg ?",
-    options: ["Grand Est", "Hauts-de-France", "Bretagne"],
-    correctIndex: 0,
-    correction: "Strasbourg est la capitale de la région Grand Est et le siège de plusieurs institutions européennes.",
-  },
-  {
-    id: "qcm-74",
-    cat: "Géographie",
-    q: "Quel fleuve traverse la ville de Bordeaux ?",
-    options: ["La Seine", "La Garonne", "La Loire"],
-    correctIndex: 1,
-    correction: "La Garonne traverse Bordeaux avant de rejoindre l'estuaire de la Gironde.",
-  },
-  {
-    id: "qcm-75",
-    cat: "Géographie",
-    q: "Quelle région française est célèbre pour ses volcans éteints ?",
-    options: ["L'Auvergne", "La Normandie", "La Provence"],
-    correctIndex: 0,
-    correction: "L'Auvergne abrite la chaîne des Puys, un ensemble de volcans endormis.",
-  },
-  {
-    id: "qcm-76",
-    cat: "Géographie",
-    q: "Quel est le plus grand département de France métropolitaine par sa superficie ?",
-    options: ["La Gironde", "Les Landes", "La Guyane"],
-    correctIndex: 0,
-    correction: "En métropole, c'est la Gironde. (La Guyane est le plus grand tout court, mais hors métropole).",
-  },
-  {
-    id: "qcm-77",
-    cat: "Géographie",
-    q: "Quelle ville française est célèbre pour son festival de cinéma ?",
-    options: ["Cannes", "Avignon", "Deauville"],
-    correctIndex: 0,
-    correction: "Cannes accueille chaque année en mai son célèbre Festival international du film.",
-  },
-  {
-    id: "qcm-78",
-    cat: "Géographie",
-    q: "Quelle mer se trouve au nord de la France ?",
-    options: ["La mer du Nord", "La mer Méditerranée", "La mer Baltique"],
-    correctIndex: 0,
-    correction: "La mer du Nord borde la France au niveau de la région Hauts-de-France.",
-  },
-  {
-    id: "qcm-79",
-    cat: "Géographie",
-    q: "Quel fleuve traverse la ville de Lyon ?",
-    options: ["La Seine", "Le Rhône et la Saône", "La Loire"],
-    correctIndex: 1,
-    correction: "Lyon est située au confluent du Rhône et de la Saône.",
-  },
-  {
-    id: "qcm-80",
-    cat: "Géographie",
-    q: "Laquelle de ces villes n'est pas située en bord de mer ?",
-    options: ["Nice", "Brest", "Grenoble"],
-    correctIndex: 2,
-    correction: "Grenoble est située au cœur des Alpes, loin des côtes.",
-  },
-  {
-    id: "qcm-81",
-    cat: "Culture & Rayonnement",
-    q: "Quelle est la langue officielle de la France ?",
-    options: ["Le français", "L'anglais", "L'espagnol"],
-    correctIndex: 0,
-    correction: "L'article 2 de la Constitution stipule que 'La langue de la République est le français'.",
-  },
-  {
-    id: "qcm-82",
-    cat: "Culture & Rayonnement",
-    q: "Quel musée parisien est le plus visité au monde ?",
-    options: ["Le Musée d'Orsay", "Le Centre Pompidou", "Le Musée du Louvre"],
-    correctIndex: 2,
-    correction: "Le Musée du Louvre est le plus grand musée d'art et d'antiquités au monde et le plus visité.",
-  },
-  {
-    id: "qcm-83",
-    cat: "Culture & Rayonnement",
-    q: "Quel monument parisien a été construit pour l'Exposition universelle de 1889 ?",
-    options: ["L'Arc de Triomphe", "La Tour Eiffel", "Le Sacré-Cœur"],
-    correctIndex: 1,
-    correction: "La Tour Eiffel a été érigée par Gustave Eiffel pour célébrer le centenaire de la Révolution française.",
-  },
-  {
-    id: "qcm-84",
-    cat: "Culture & Rayonnement",
-    q: "Qui a écrit 'Le Petit Prince' ?",
-    options: ["Antoine de Saint-Exupéry", "Albert Camus", "Marcel Proust"],
-    correctIndex: 0,
-    correction: "Antoine de Saint-Exupéry est l'auteur de ce conte philosophique mondialement célèbre.",
-  },
-  {
-    id: "qcm-85",
-    cat: "Culture & Rayonnement",
-    q: "Quel est l'hymne national de la France ?",
-    options: ["La Marseillaise", "Le Chant des Partisans", "L'Ode à la joie"],
-    correctIndex: 0,
-    correction: "La Marseillaise, composée par Rouget de Lisle en 1792, est l'hymne national depuis 1795.",
-  },
-  {
-    id: "qcm-86",
-    cat: "Culture & Rayonnement",
-    q: "Dans quel domaine la France est-elle mondialement reconnue ?",
-    options: ["La gastronomie", "La technologie spatiale", "Le cinéma"],
-    correctIndex: 0, // Note: Les trois sont vrais, mais la gastronomie est souvent la réponse attendue dans ce contexte.
-    correction: "Le 'repas gastronomique des Français' est inscrit au patrimoine culturel immatériel de l'humanité.",
-  },
-  {
-    id: "qcm-87",
-    cat: "Culture & Rayonnement",
-    q: "Quelle est la fête nationale française ?",
-    options: ["Le 1er mai", "Le 14 juillet", "Le 11 novembre"],
-    correctIndex: 1,
-    correction: "Le 14 juillet commémore la prise de la Bastille (1789) et la Fête de la Fédération (1790).",
-  },
-  {
-    id: "qcm-88",
-    cat: "Culture & Rayonnement",
-    q: "Quel écrivain français a reçu le prix Nobel de littérature en 1957 ?",
-    options: ["Jean-Paul Sartre", "Albert Camus", "André Gide"],
-    correctIndex: 1,
-    correction: "Albert Camus a été récompensé pour son œuvre mettant en lumière les problèmes se posant de nos jours à la conscience des hommes.",
-  },
-  {
-    id: "qcm-89",
-    cat: "Culture & Rayonnement",
-    q: "Quelle est la devise de la France ?",
-    options: ["Liberté, Égalité, Fraternité", "Unité, Travail, Progrès", "Honneur et Patrie"],
-    correctIndex: 0,
-    correction: "Cette devise est issue de la Révolution française et figure dans la Constitution de 1958.",
-  },
-  {
-    id: "qcm-90",
-    cat: "Culture & Rayonnement",
-    q: "Quel château était la résidence des rois de France sous Louis XIV ?",
-    options: ["Le château de Chambord", "Le château de Fontainebleau", "Le château de Versailles"],
-    correctIndex: 2,
-    correction: "Louis XIV a transformé le pavillon de chasse de son père en un immense palais, siège du pouvoir royal.",
-  },
-  {
-    id: "qcm-91",
-    cat: "Culture & Rayonnement",
-    q: "Quel savant français a mis au point le vaccin contre la rage ?",
-    options: ["Louis Pasteur", "Marie Curie", "Antoine Lavoisier"],
-    correctIndex: 0,
-    correction: "Louis Pasteur a réalisé la première vaccination humaine contre la rage en 1885.",
-  },
-  {
-    id: "qcm-92",
-    cat: "Culture & Rayonnement",
-    q: "Quelle femme scientifique française a reçu deux prix Nobel ?",
-    options: ["Simone Veil", "Marie Curie", "Édith Piaf"],
-    correctIndex: 1,
-    correction: "Marie Curie a reçu le prix Nobel de physique (1903) et le prix Nobel de chimie (1911).",
-  },
-  {
-    id: "qcm-93",
-    cat: "Culture & Rayonnement",
-    q: "Quel courant artistique est né en France au XIXe siècle avec Monet et Renoir ?",
-    options: ["Le Surréalisme", "L'Impressionnisme", "Le Cubisme"],
-    correctIndex: 1,
-    correction: "L'Impressionnisme privilégie les sensations et la lumière plutôt que la précision du trait.",
-  },
-  {
-    id: "qcm-94",
-    cat: "Culture & Rayonnement",
-    q: "Quel célèbre cabaret parisien se trouve à Montmartre ?",
-    options: ["Le Moulin Rouge", "Le Lido", "Le Crazy Horse"],
-    correctIndex: 0,
-    correction: "Le Moulin Rouge, fondé en 1889, est mondialement connu pour son French Cancan.",
-  },
-  {
-    id: "qcm-95",
-    cat: "Culture & Rayonnement",
-    q: "Quelle est la principale religion pratiquée en France (historiquement) ?",
-    options: ["L'Islam", "Le Protestantisme", "Le Catholicisme"],
-    correctIndex: 2,
-    correction: "Bien que la France soit un État laïc, le catholicisme est la religion majoritaire historique.",
-  },
-  {
-    id: "qcm-96",
-    cat: "Culture & Rayonnement",
-    q: "Qui était Édith Piaf ?",
-    options: ["Une femme politique", "Une chanteuse célèbre", "Une peintre"],
-    correctIndex: 1,
-    correction: "Surnommée 'La Môme', Édith Piaf est une icône mondiale de la chanson française.",
-  },
-  {
-    id: "qcm-97",
-    cat: "Culture & Rayonnement",
-    q: "Quelle est la spécialité culinaire française faite de pâte feuilletée et de beurre ?",
-    options: ["Le croissant", "La baguette", "Le macaron"],
-    correctIndex: 0,
-    correction: "Le croissant est l'élément emblématique du petit-déjeuner français à travers le monde.",
-  },
-  {
-    id: "qcm-98",
-    cat: "Culture & Rayonnement",
-    q: "Quel événement sportif majeur se déroule chaque année en France en juillet ?",
-    options: ["Le Tour de France", "Roland-Garros", "Le Marathon de Paris"],
-    correctIndex: 0,
-    correction: "Le Tour de France est la plus prestigieuse des courses cyclistes mondiales.",
-  },
-  {
-    id: "qcm-99",
-    cat: "Culture & Rayonnement",
-    q: "Qui a sculpté la Statue de la Liberté, offerte par la France aux États-Unis ?",
-    options: ["Auguste Rodin", "Frédéric Auguste Bartholdi", "Gustave Eiffel"],
-    correctIndex: 1,
-    correction: "Bartholdi a conçu la statue, tandis que Gustave Eiffel en a conçu la structure interne.",
-  },
-  {
-    id: "qcm-100",
-    cat: "Culture & Rayonnement",
-    q: "Quelle organisation internationale a son siège à Paris ?",
-    options: ["L'ONU", "L'UNESCO", "L'OTAN"],
-    correctIndex: 1,
-    correction: "L'UNESCO, chargée de l'éducation, de la science et de la culture, a son siège dans le 7e arrondissement de Paris.",
-  }
-];
-
 function shuffleArray(list) {
   return [...list].sort(() => Math.random() - 0.5);
 }
@@ -2928,52 +2052,43 @@ function HighlightText({ text, search }) {
 }
 
 export default function App() {
-  const [mode, setMode] = useState("revision");
   const [category, setCategory] = useState("Toutes");
   const [index, setIndex] = useState(0);
+  const [mode, setMode] = useState("revision");
   const [showAnswer, setShowAnswer] = useState(true);
   const [order, setOrder] = useState(questions);
-  const [qcmOrder, setQcmOrder] = useState(qcmQuestions);
   const [known, setKnown] = useState([]);
   const [review, setReview] = useState([]);
   const [search, setSearch] = useState("");
-  const [selectedChoice, setSelectedChoice] = useState(null);
-  const [qcmAnswered, setQcmAnswered] = useState(false);
 
-  const activeList = mode === "qcm" ? qcmOrder : order;
-  const totalCount = mode === "qcm" ? qcmQuestions.length : questions.length;
-
-  const categories = useMemo(() => {
-    const source = mode === "qcm" ? qcmQuestions : questions;
-    return ["Toutes", ...Array.from(new Set(source.map((q) => q.cat))), "À revoir"];
-  }, [mode]);
+  const categories = useMemo(
+    () => ["Toutes", ...Array.from(new Set(questions.map((q) => q.cat))), "À revoir"],
+    []
+  );
 
   const filtered = useMemo(() => {
     const normalizedSearch = normalizeText(search);
 
     const categoryFiltered = (() => {
-      if (category === "À revoir") return activeList.filter((q) => review.includes(q.id));
-      if (category === "Toutes") return activeList;
-      return activeList.filter((q) => q.cat === category);
+      if (category === "À revoir") return order.filter((q) => review.includes(q.id));
+      if (category === "Toutes") return order;
+      return order.filter((q) => q.cat === category);
     })();
 
     if (!normalizedSearch) return categoryFiltered;
 
     return categoryFiltered.filter((q) => {
-      const qcmText = q.options ? q.options.join(" ") + " " + (q.correction || "") : "";
-      const searchableText = normalizeText(`${q.q} ${q.r || ""} ${q.astuce || ""} ${q.cat} ${qcmText}`);
+      const searchableText = normalizeText(`${q.q} ${q.r} ${q.astuce || ""} ${q.cat}`);
       return searchableText.includes(normalizedSearch);
     });
-  }, [activeList, category, review, search]);
+  }, [category, order, review, search]);
 
   const current = filtered[index] || filtered[0];
-  const progress = Math.round((known.length / (questions.length + qcmQuestions.length)) * 100);
+  const progress = Math.round((known.length / questions.length) * 100);
   const hasSearch = search.trim().length > 0;
 
   const resetCardVisibility = (selectedMode = mode) => {
     setShowAnswer(selectedMode === "revision");
-    setSelectedChoice(null);
-    setQcmAnswered(false);
   };
 
   const goNext = () => {
@@ -2988,8 +2103,6 @@ export default function App() {
 
   const switchMode = (newMode) => {
     setMode(newMode);
-    setCategory("Toutes");
-    setIndex(0);
     resetCardVisibility(newMode);
   };
 
@@ -3025,38 +2138,6 @@ export default function App() {
     goNext();
   };
 
-  const handleQcmChoice = (choiceIndex) => {
-    if (!current || qcmAnswered) return;
-
-    setSelectedChoice(choiceIndex);
-    setQcmAnswered(true);
-
-    if (choiceIndex === current.correctIndex) {
-      setKnown((prev) => (prev.includes(current.id) ? prev : [...prev, current.id]));
-      setReview((prev) => prev.filter((id) => id !== current.id));
-    } else {
-      setReview((prev) => (prev.includes(current.id) ? prev : [...prev, current.id]));
-      setKnown((prev) => prev.filter((id) => id !== current.id));
-    }
-  };
-
-  const shuffleCurrentMode = () => {
-    if (mode === "qcm") setQcmOrder(shuffleArray(qcmQuestions));
-    else setOrder(shuffleArray(questions));
-    setIndex(0);
-    resetCardVisibility();
-  };
-
-  const resetProgress = () => {
-    setKnown([]);
-    setReview([]);
-    setIndex(0);
-    setOrder(questions);
-    setQcmOrder(qcmQuestions);
-    clearSearch();
-    resetCardVisibility();
-  };
-
   return (
     <div className="app">
       <style>{`
@@ -3082,7 +2163,7 @@ export default function App() {
         .header { text-align: center; margin-bottom: 10px; flex: 0 0 auto; }
         .title { margin: 0; font-size: clamp(30px, 4.4vw, 50px); font-weight: 900; letter-spacing: -0.04em; }
         .subtitle { margin: 4px 0 0; color: #94a3b8; font-size: 15px; }
-        .modebar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; flex: 0 0 auto; }
+        .modebar { display: flex; gap: 10px; margin-bottom: 10px; flex: 0 0 auto; }
         .modeBtn, .btn {
           border: 1px solid #334155;
           background: rgba(255,255,255,.05);
@@ -3090,7 +2171,7 @@ export default function App() {
           cursor: pointer;
           font-weight: 800;
         }
-        .modeBtn { padding: 13px 14px; border-radius: 16px; font-size: 15px; }
+        .modeBtn { flex: 1; padding: 13px 14px; border-radius: 16px; font-size: 15px; }
         .active { border-color: #60a5fa !important; background: rgba(37,99,235,.28) !important; color: #bfdbfe !important; }
         .categoryArea { margin-bottom: 10px; flex: 0 0 auto; }
         .categorySelect {
@@ -3105,6 +2186,10 @@ export default function App() {
           font-weight: 800;
           outline: none;
           cursor: pointer;
+        }
+        .categorySelect:focus {
+          border-color: #60a5fa;
+          box-shadow: 0 0 0 3px rgba(96,165,250,.14);
         }
         .searchArea {
           display: flex;
@@ -3125,7 +2210,13 @@ export default function App() {
           font-weight: 800;
           outline: none;
         }
+        .searchInput:focus {
+          border-color: #60a5fa;
+          box-shadow: 0 0 0 3px rgba(96,165,250,.14);
+        }
+        .searchInput::placeholder { color: #64748b; }
         .clearBtn {
+          flex: 0 0 auto;
           border: 1px solid #334155;
           background: rgba(255,255,255,.05);
           color: #cbd5e1;
@@ -3149,6 +2240,7 @@ export default function App() {
           font-weight: 900;
         }
         .meta { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; margin-bottom: 8px; flex: 0 0 auto; }
+        .mobileLabel { display: none; }
         .progress { color: #93c5fd; font-weight: 800; }
         .card {
           flex: 1 1 auto;
@@ -3179,121 +2271,187 @@ export default function App() {
           white-space: nowrap;
         }
         .question { font-size: clamp(22px, 3.2vw, 34px); line-height: 1.2; max-width: 900px; margin: 0 0 18px; flex: 0 0 auto; }
-        .answerBox, .qcmBox {
+        .answerBox {
           width: 100%;
-          max-width: 980px;
+          max-width: 900px;
           flex: 1 1 auto;
           min-height: 0;
           padding: 22px;
           border-radius: 18px;
+          border: 1px solid rgba(34,197,94,.35);
+          background: rgba(34,197,94,.08);
           overflow-y: auto;
           overscroll-behavior: contain;
         }
-        .answerBox {
-          border: 1px solid rgba(34,197,94,.35);
-          background: rgba(34,197,94,.08);
+        .answerImage {
+          display: block;
+          width: 100%;
+          max-height: 360px;
+          object-fit: contain;
+          border-radius: 14px;
+          margin: 0 auto 18px;
+          background: rgba(255,255,255,.04);
         }
+        .answerBox::-webkit-scrollbar { width: 10px; }
+        .answerBox::-webkit-scrollbar-thumb { background: rgba(148,163,184,.45); border-radius: 999px; }
+        .answerBox::-webkit-scrollbar-track { background: rgba(15,23,42,.35); border-radius: 999px; }
         .answerTitle { color: #86efac; font-size: 22px; margin: 0 0 14px; }
         .answer { font-size: clamp(18px, 2.5vw, 24px); line-height: 1.45; margin: 0; white-space: pre-line; }
         .tip { margin-top: 18px; padding: 12px 16px; border-radius: 14px; border: 1px solid rgba(96,165,250,.45); background: rgba(37,99,235,.16); color: #bfdbfe; font-size: 16px; font-weight: 800; }
         .hint { color: #94a3b8; font-size: 16px; }
-        .qcmInstruction { margin: 0 0 14px; color: #cbd5e1; font-size: 16px; font-weight: 800; }
-        .qcmChoices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
-        .qcmChoice {
-          border: 1px solid #334155;
-          background: rgba(15, 23, 42, .72);
-          color: white;
-          border-radius: 18px;
-          padding: 16px;
-          cursor: pointer;
-          text-align: left;
-          min-height: 94px;
-          transition: transform .15s ease, background .15s ease, border-color .15s ease;
-        }
-        .qcmChoice:hover { transform: translateY(-2px); background: rgba(30, 41, 59, .95); border-color: #60a5fa; }
-        .qcmLetter {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 28px;
-          height: 28px;
-          border-radius: 999px;
-          background: rgba(96,165,250,.18);
-          color: #bfdbfe;
-          font-weight: 900;
-          margin-bottom: 10px;
-        }
-        .qcmText { display: block; color: #e2e8f0; font-size: 16px; line-height: 1.35; font-weight: 800; }
-        .correctChoice { border-color: #22c55e !important; background: rgba(34,197,94,.14) !important; }
-        .wrongChoice { border-color: #ef4444 !important; background: rgba(239,68,68,.14) !important; }
-        .disabledChoice { cursor: default; transform: none !important; }
-        .qcmFeedback { margin-top: 14px; padding: 14px 16px; border-radius: 16px; font-weight: 900; line-height: 1.35; }
-        .successFeedback { border: 1px solid rgba(34,197,94,.45); background: rgba(34,197,94,.12); color: #86efac; }
-        .errorFeedback { border: 1px solid rgba(239,68,68,.45); background: rgba(239,68,68,.12); color: #fca5a5; }
-        .qcmCorrection { margin-top: 10px; color: #cbd5e1; font-weight: 700; font-size: 14px; }
         .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 10px; flex: 0 0 auto; }
         .btn { padding: 14px 16px; border-radius: 14px; font-size: 15px; }
+        .btn:hover, .modeBtn:hover, .clearBtn:hover { background: rgba(255,255,255,.10); }
         .red { border-color: #ef4444; color: #fca5a5; }
         .green { border-color: #22c55e; color: #86efac; }
         .bottomActions { display: flex; gap: 12px; justify-content: center; margin-top: 8px; flex: 0 0 auto; }
         .bottomActions .btn { min-width: 240px; }
 
         @media (max-width: 700px) {
-          .app { padding: 8px; }
-          .title { font-size: 26px; }
+          html, body, #root { height: 100%; overflow: hidden; }
+          .app {
+            height: 100dvh;
+            min-height: 100dvh;
+            padding: 8px;
+            overflow: hidden;
+          }
+          .container {
+            max-width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          .header { margin-bottom: 6px; flex: 0 0 auto; }
+          .title { font-size: 26px; letter-spacing: -0.03em; }
           .subtitle { display: none; }
-          .modebar { gap: 6px; margin-bottom: 6px; }
-          .modeBtn { padding: 8px 4px; border-radius: 11px; font-size: 11px; }
-          .categorySelect, .searchInput, .clearBtn { padding: 9px 10px; border-radius: 12px; font-size: 12px; }
-          .meta { font-size: 11px; margin-bottom: 5px; }
+          .modebar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 6px;
+            flex: 0 0 auto;
+          }
+          .modeBtn {
+            padding: 8px 6px;
+            border-radius: 11px;
+            font-size: 12px;
+          }
+          .categoryArea { margin-bottom: 6px; flex: 0 0 auto; }
+          .categorySelect {
+            padding: 9px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+          }
+          .searchArea { gap: 5px; margin-bottom: 5px; }
+          .searchInput {
+            padding: 9px 11px;
+            border-radius: 12px;
+            font-size: 13px;
+          }
+          .clearBtn {
+            padding: 9px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+          }
+          .searchInfo {
+            font-size: 11px;
+            margin: -1px 0 5px;
+          }
+          .meta {
+            font-size: 11px;
+            margin-bottom: 5px;
+            gap: 6px;
+            flex: 0 0 auto;
+          }
           .meta span:last-child { display: none; }
-          .card { border-radius: 16px; padding: 10px; overflow-y: auto; }
-          .badge { font-size: 9px; padding: 5px 9px; margin-bottom: 8px; }
-          .question { font-size: clamp(17px, 5.3vw, 22px); margin-bottom: 9px; }
-          .answerBox, .qcmBox { padding: 10px; border-radius: 13px; }
-          .answerTitle { font-size: 14px; }
+          .mobileLabel { display: inline; }
+          .card {
+            flex: 1 1 auto;
+            min-height: 0;
+            max-height: none;
+            overflow-y: auto;
+            border-radius: 16px;
+            padding: 10px;
+            justify-content: center;
+          }
+          .badge {
+            font-size: 9px;
+            padding: 5px 9px;
+            margin-bottom: 8px;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .question {
+            font-size: clamp(17px, 5.3vw, 22px);
+            line-height: 1.15;
+            margin-bottom: 9px;
+          }
+          .answerBox { padding: 10px; border-radius: 13px; }
+          .answerImage { max-height: 230px; margin-bottom: 10px; }
+          .answerTitle { font-size: 14px; margin-bottom: 6px; }
           .answer { font-size: clamp(14px, 4.2vw, 17px); line-height: 1.28; }
-          .tip { margin-top: 8px; padding: 7px 9px; font-size: 12px; }
-          .qcmInstruction { font-size: 12px; margin-bottom: 8px; }
-          .qcmChoices { grid-template-columns: 1fr; gap: 7px; }
-          .qcmChoice { min-height: 0; padding: 9px; border-radius: 12px; }
-          .qcmLetter { width: 22px; height: 22px; font-size: 11px; margin-bottom: 5px; }
-          .qcmText { font-size: 12px; }
-          .qcmFeedback { margin-top: 8px; padding: 9px; border-radius: 12px; font-size: 12px; }
-          .actions { gap: 5px; margin-top: 6px; }
-          .btn { padding: 8px 4px; border-radius: 10px; font-size: 10.5px; min-height: 34px; }
-          .bottomActions { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+          .tip { margin-top: 8px; padding: 7px 9px; font-size: 12px; border-radius: 11px; }
+          .hint { font-size: 13px; }
+          .actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin-top: 6px;
+            flex: 0 0 auto;
+          }
+          .btn {
+            padding: 8px 4px;
+            border-radius: 10px;
+            font-size: 10.5px;
+            min-height: 34px;
+          }
+          .bottomActions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            margin-top: 5px;
+            flex: 0 0 auto;
+          }
           .bottomActions .btn { width: 100%; min-width: 0; }
         }
       `}</style>
 
       <main className="container">
         <header className="header">
-          <h1 className="title">Marbouha</h1>
+          <h1 className="title">Inchalla Marbouha</h1>
           <p className="subtitle">Révision pour l'entretien de naturalisation</p>
         </header>
 
         <div className="modebar">
-          <button className={`modeBtn ${mode === "revision" ? "active" : ""}`} onClick={() => switchMode("revision")}>
-            📖 Révision
+          <button
+            className={`modeBtn ${mode === "revision" ? "active" : ""}`}
+            onClick={() => switchMode("revision")}
+          >
+            📖 Mode révision
           </button>
-          <button className={`modeBtn ${mode === "quiz" ? "active" : ""}`} onClick={() => switchMode("quiz")}>
-            🎯 Quiz
-          </button>
-          <button className={`modeBtn ${mode === "qcm" ? "active" : ""}`} onClick={() => switchMode("qcm")}>
-            ✅ QCM dédié
+          <button
+            className={`modeBtn ${mode === "quiz" ? "active" : ""}`}
+            onClick={() => switchMode("quiz")}
+          >
+            🎯 Mode quiz
           </button>
         </div>
 
         <div className="categoryArea">
-          <select className="categorySelect" value={category} onChange={(e) => chooseCategory(e.target.value)}>
+          <select
+            className="categorySelect"
+            value={category}
+            onChange={(e) => chooseCategory(e.target.value)}
+          >
             {categories.map((cat) => {
               const count =
                 cat === "Toutes"
-                  ? totalCount
+                  ? questions.length
                   : cat === "À revoir"
-                    ? review.filter((id) => activeList.some((q) => q.id === id)).length
-                    : activeList.filter((q) => q.cat === cat).length;
+                    ? review.length
+                    : questions.filter((q) => q.cat === cat).length;
               return (
                 <option key={cat} value={cat}>
                   {cat} ({count})
@@ -3308,9 +2466,13 @@ export default function App() {
             className="searchInput"
             value={search}
             onChange={(e) => handleSearch(e.target.value)}
-            placeholder="🔎 Rechercher un mot-clé : République, impôts, laïcité, président..."
+            placeholder="🔎 Rechercher un mot-clé : République, impôts, laïcité, sécurité sociale..."
           />
-          {hasSearch && <button className="clearBtn" onClick={clearSearch}>✕</button>}
+          {hasSearch && (
+            <button className="clearBtn" onClick={clearSearch}>
+              ✕
+            </button>
+          )}
         </div>
 
         {hasSearch && (
@@ -3327,64 +2489,29 @@ export default function App() {
         ) : (
           <>
             <div className="meta">
-              <span>Question {index + 1} / {filtered.length}</span>
+              <span>
+                <span className="mobileLabel">Q </span>Question {index + 1} / {filtered.length}
+              </span>
               <span className="progress">{progress}% mémorisé</span>
-              <span>Total mode : {totalCount}</span>
+              <span>Total : {questions.length}</span>
             </div>
 
-            <section className="card" onClick={() => mode === "quiz" && setShowAnswer((v) => !v)}>
+            <section
+              className="card"
+              onClick={() => mode === "quiz" && setShowAnswer((v) => !v)}
+            >
               <div className="badge">
                 <HighlightText text={current.cat.toUpperCase()} search={search} />
               </div>
-
               <h2 className="question">
                 <HighlightText text={current.q} search={search} />
               </h2>
 
-              {mode === "qcm" ? (
-                <div className="qcmBox">
-                  <p className="qcmInstruction">Choisissez une réponse. La correction s'affiche directement.</p>
-
-                  <div className="qcmChoices">
-                    {current.options.map((option, choiceIndex) => {
-                      const isSelected = selectedChoice === choiceIndex;
-                      const isCorrectChoice = current.correctIndex === choiceIndex;
-                      const choiceClass = [
-                        "qcmChoice",
-                        qcmAnswered ? "disabledChoice" : "",
-                        qcmAnswered && isCorrectChoice ? "correctChoice" : "",
-                        qcmAnswered && isSelected && !isCorrectChoice ? "wrongChoice" : "",
-                      ].join(" ");
-
-                      return (
-                        <button
-                          key={`${current.id}-${choiceIndex}`}
-                          className={choiceClass}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleQcmChoice(choiceIndex);
-                          }}
-                        >
-                          <span className="qcmLetter">{String.fromCharCode(65 + choiceIndex)}</span>
-                          <span className="qcmText">
-                            <HighlightText text={option} search={search} />
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {qcmAnswered && (
-                    <div className={`qcmFeedback ${selectedChoice === current.correctIndex ? "successFeedback" : "errorFeedback"}`}>
-                      {selectedChoice === current.correctIndex
-                        ? "✅ Bonne réponse ! Question marquée comme mémorisée."
-                        : "❌ Mauvaise réponse. Question ajoutée à À revoir."}
-                      <div className="qcmCorrection">Correction : {current.correction}</div>
-                    </div>
-                  )}
-                </div>
-              ) : showAnswer ? (
+              {showAnswer ? (
                 <div className="answerBox">
+                  {current.image && (
+                    <img className="answerImage" src={current.image} alt={current.q} />
+                  )}
                   <h3 className="answerTitle">Réponse modèle</h3>
                   <p className="answer">
                     <HighlightText text={current.r} search={search} />
@@ -3408,8 +2535,29 @@ export default function App() {
             </div>
 
             <div className="bottomActions">
-              <button className="btn" onClick={shuffleCurrentMode}>🔀 Mélanger ce mode</button>
-              <button className="btn" onClick={resetProgress}>🧹 Réinitialiser la progression</button>
+              <button
+                className="btn"
+                onClick={() => {
+                  setOrder(shuffleArray(questions));
+                  setIndex(0);
+                  resetCardVisibility();
+                }}
+              >
+                🔀 Mélanger les cartes
+              </button>
+              <button
+                className="btn"
+                onClick={() => {
+                  setKnown([]);
+                  setReview([]);
+                  setIndex(0);
+                  setOrder(questions);
+                  clearSearch();
+                  resetCardVisibility();
+                }}
+              >
+                🧹 Réinitialiser la progression
+              </button>
             </div>
           </>
         )}
@@ -3417,3 +2565,7 @@ export default function App() {
     </div>
   );
 }
+// npm.cmd run build
+// git add . 
+// git commit -m "fix: correction Filtre "
+// git push
