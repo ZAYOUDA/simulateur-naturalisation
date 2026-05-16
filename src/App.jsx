@@ -2890,6 +2890,48 @@ const qcmQuestions = [
   }
 ];
 
+
+  const activeList = mode === "qcm" ? qcmOrder : order;
+  const totalCount = mode === "qcm" ? qcmQuestions.length : questions.length;
+
+  const categories = useMemo(() => {
+    const source = mode === "qcm" ? qcmQuestions : questions;
+    return ["Toutes", ...Array.from(new Set(source.map((q) => q.cat))), "À revoir"];
+  }, [mode]);
+
+  const filtered = useMemo(() => {
+    const normalizedSearch = normalizeText(search);
+
+    const categoryFiltered = (() => {
+      if (category === "À revoir") return activeList.filter((q) => review.includes(q.id));
+      if (category === "Toutes") return activeList;
+      return activeList.filter((q) => q.cat === category);
+    })();
+
+    if (!normalizedSearch) return categoryFiltered;
+
+    return categoryFiltered.filter((q) => {
+      const qcmText = q.options ? q.options.join(" ") + " " + (q.correction || "") : "";
+      const searchableText = normalizeText(`${q.q} ${q.r || ""} ${q.astuce || ""} ${q.cat} ${qcmText}`);
+      return searchableText.includes(normalizedSearch);
+    });
+  }, [activeList, category, review, search]);
+
+  const current = filtered[index] || filtered[0];
+  const progress = Math.round((known.length / (questions.length + qcmQuestions.length)) * 100);
+  const hasSearch = search.trim().length > 0;
+
+  const resetCardVisibility = (selectedMode = mode) => {
+    setShowAnswer(selectedMode === "revision");
+    setSelectedChoice(null);
+    setQcmAnswered(false);
+  };
+
+  const goNext = () => {
+    setIndex((i) => Math.min(i + 1, Math.max(filtered.length - 1, 0)));
+    resetCardVisibility();
+  };
+
 function shuffleArray(list) {
   return [...list].sort(() => Math.random() - 0.5);
 }
@@ -2939,47 +2981,6 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [qcmAnswered, setQcmAnswered] = useState(false);
-
-  const activeList = mode === "qcm" ? qcmOrder : order;
-  const totalCount = mode === "qcm" ? qcmQuestions.length : questions.length;
-
-  const categories = useMemo(() => {
-    const source = mode === "qcm" ? qcmQuestions : questions;
-    return ["Toutes", ...Array.from(new Set(source.map((q) => q.cat))), "À revoir"];
-  }, [mode]);
-
-  const filtered = useMemo(() => {
-    const normalizedSearch = normalizeText(search);
-
-    const categoryFiltered = (() => {
-      if (category === "À revoir") return activeList.filter((q) => review.includes(q.id));
-      if (category === "Toutes") return activeList;
-      return activeList.filter((q) => q.cat === category);
-    })();
-
-    if (!normalizedSearch) return categoryFiltered;
-
-    return categoryFiltered.filter((q) => {
-      const qcmText = q.options ? q.options.join(" ") + " " + (q.correction || "") : "";
-      const searchableText = normalizeText(`${q.q} ${q.r || ""} ${q.astuce || ""} ${q.cat} ${qcmText}`);
-      return searchableText.includes(normalizedSearch);
-    });
-  }, [activeList, category, review, search]);
-
-  const current = filtered[index] || filtered[0];
-  const progress = Math.round((known.length / (questions.length + qcmQuestions.length)) * 100);
-  const hasSearch = search.trim().length > 0;
-
-  const resetCardVisibility = (selectedMode = mode) => {
-    setShowAnswer(selectedMode === "revision");
-    setSelectedChoice(null);
-    setQcmAnswered(false);
-  };
-
-  const goNext = () => {
-    setIndex((i) => Math.min(i + 1, Math.max(filtered.length - 1, 0)));
-    resetCardVisibility();
-  };
 
   const goPrev = () => {
     setIndex((i) => Math.max(i - 1, 0));
@@ -3058,7 +3059,7 @@ export default function App() {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${mode === "qcm" ? "qcmMode" : ""}`}>
       <style>{`
         * { box-sizing: border-box; }
         html, body, #root { height: 100%; overflow: hidden; }
@@ -3179,7 +3180,7 @@ export default function App() {
           white-space: nowrap;
         }
         .question { font-size: clamp(22px, 3.2vw, 34px); line-height: 1.2; max-width: 900px; margin: 0 0 18px; flex: 0 0 auto; }
-        .answerBox, .qcmBox {
+        .answerBox {
           width: 100%;
           max-width: 980px;
           flex: 1 1 auto;
@@ -3188,8 +3189,8 @@ export default function App() {
           border-radius: 18px;
           overflow-y: auto;
           overscroll-behavior: contain;
-        }
-        .answerBox {
+		 
+					
           border: 1px solid rgba(34,197,94,.35);
           background: rgba(34,197,94,.08);
         }
@@ -3197,46 +3198,79 @@ export default function App() {
         .answer { font-size: clamp(18px, 2.5vw, 24px); line-height: 1.45; margin: 0; white-space: pre-line; }
         .tip { margin-top: 18px; padding: 12px 16px; border-radius: 14px; border: 1px solid rgba(96,165,250,.45); background: rgba(37,99,235,.16); color: #bfdbfe; font-size: 16px; font-weight: 800; }
         .hint { color: #94a3b8; font-size: 16px; }
-        .qcmInstruction { margin: 0 0 14px; color: #cbd5e1; font-size: 16px; font-weight: 800; }
-        .qcmChoices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
+
+        .qcmMode .header { margin-bottom: 6px; }
+        .qcmMode .title { font-size: clamp(26px, 3.5vw, 40px); }
+        .qcmMode .subtitle { font-size: 13px; margin-top: 2px; }
+        .qcmMode .modebar { margin-bottom: 7px; gap: 8px; }
+        .qcmMode .modeBtn { padding: 10px 12px; font-size: 13px; border-radius: 13px; }
+        .qcmMode .categoryArea { margin-bottom: 7px; }
+        .qcmMode .categorySelect { padding: 9px 12px; font-size: 13px; border-radius: 12px; }
+        .qcmMode .searchArea { margin-bottom: 6px; }
+        .qcmMode .searchInput { padding: 10px 12px; font-size: 13px; border-radius: 12px; }
+        .qcmMode .clearBtn { padding: 10px 12px; border-radius: 12px; }
+        .qcmMode .meta { font-size: 12px; margin-bottom: 6px; }
+        .qcmMode .card { padding: 14px 18px; border-radius: 18px; justify-content: flex-start; }
+        .qcmMode .badge { margin-bottom: 8px; padding: 5px 11px; font-size: 10.5px; }
+        .qcmMode .question { font-size: clamp(18px, 2.5vw, 27px); line-height: 1.12; margin-bottom: 10px; }
+        .qcmBox {
+          width: 100%;
+          max-width: 980px;
+          flex: 1 1 auto;
+          min-height: 0;
+          padding: 0;
+          border-radius: 14px;
+          overflow: hidden;
+          overscroll-behavior: contain;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        .qcmInstruction { margin: 0 0 8px; color: #cbd5e1; font-size: 12.5px; font-weight: 800; }
+        .qcmChoices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; }
         .qcmChoice {
           border: 1px solid #334155;
           background: rgba(15, 23, 42, .72);
           color: white;
-          border-radius: 18px;
-          padding: 16px;
+          border-radius: 13px;
+          padding: 10px 11px;
           cursor: pointer;
           text-align: left;
-          min-height: 94px;
+          min-height: 66px;
           transition: transform .15s ease, background .15s ease, border-color .15s ease;
         }
-        .qcmChoice:hover { transform: translateY(-2px); background: rgba(30, 41, 59, .95); border-color: #60a5fa; }
+        .qcmChoice:hover { transform: translateY(-1px); background: rgba(30, 41, 59, .95); border-color: #60a5fa; }
         .qcmLetter {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 28px;
-          height: 28px;
+          width: 21px;
+          height: 21px;
           border-radius: 999px;
           background: rgba(96,165,250,.18);
           color: #bfdbfe;
+          font-size: 10.5px;
           font-weight: 900;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
         }
-        .qcmText { display: block; color: #e2e8f0; font-size: 16px; line-height: 1.35; font-weight: 800; }
+        .qcmText { display: block; color: #e2e8f0; font-size: 12.2px; line-height: 1.18; font-weight: 700; }
         .correctChoice { border-color: #22c55e !important; background: rgba(34,197,94,.14) !important; }
         .wrongChoice { border-color: #ef4444 !important; background: rgba(239,68,68,.14) !important; }
         .disabledChoice { cursor: default; transform: none !important; }
-        .qcmFeedback { margin-top: 14px; padding: 14px 16px; border-radius: 16px; font-weight: 900; line-height: 1.35; }
+        .qcmFeedback { margin-top: 8px; padding: 8px 10px; border-radius: 12px; font-weight: 900; line-height: 1.22; font-size: 11.5px; }
         .successFeedback { border: 1px solid rgba(34,197,94,.45); background: rgba(34,197,94,.12); color: #86efac; }
         .errorFeedback { border: 1px solid rgba(239,68,68,.45); background: rgba(239,68,68,.12); color: #fca5a5; }
-        .qcmCorrection { margin-top: 10px; color: #cbd5e1; font-weight: 700; font-size: 14px; }
+        .qcmCorrection { margin-top: 5px; color: #cbd5e1; font-weight: 700; font-size: 11px; }
         .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 10px; flex: 0 0 auto; }
         .btn { padding: 14px 16px; border-radius: 14px; font-size: 15px; }
         .red { border-color: #ef4444; color: #fca5a5; }
         .green { border-color: #22c55e; color: #86efac; }
         .bottomActions { display: flex; gap: 12px; justify-content: center; margin-top: 8px; flex: 0 0 auto; }
         .bottomActions .btn { min-width: 240px; }
+        .qcmMode .actions { margin-top: 7px; gap: 8px; }
+        .qcmMode .btn { padding: 10px 12px; font-size: 12px; border-radius: 11px; min-height: 36px; }
+        .qcmMode .bottomActions { margin-top: 6px; gap: 8px; }
+        .qcmMode .bottomActions .btn { min-width: 190px; }
 
         @media (max-width: 700px) {
           .app { padding: 8px; }
@@ -3247,29 +3281,48 @@ export default function App() {
           .categorySelect, .searchInput, .clearBtn { padding: 9px 10px; border-radius: 12px; font-size: 12px; }
           .meta { font-size: 11px; margin-bottom: 5px; }
           .meta span:last-child { display: none; }
-          .card { border-radius: 16px; padding: 10px; overflow-y: auto; }
+          .card { border-radius: 16px; padding: 10px; overflow: hidden; }
           .badge { font-size: 9px; padding: 5px 9px; margin-bottom: 8px; }
           .question { font-size: clamp(17px, 5.3vw, 22px); margin-bottom: 9px; }
-          .answerBox, .qcmBox { padding: 10px; border-radius: 13px; }
+          .answerBox { padding: 10px; border-radius: 13px; }
           .answerTitle { font-size: 14px; }
           .answer { font-size: clamp(14px, 4.2vw, 17px); line-height: 1.28; }
           .tip { margin-top: 8px; padding: 7px 9px; font-size: 12px; }
-          .qcmInstruction { font-size: 12px; margin-bottom: 8px; }
-          .qcmChoices { grid-template-columns: 1fr; gap: 7px; }
-          .qcmChoice { min-height: 0; padding: 9px; border-radius: 12px; }
-          .qcmLetter { width: 22px; height: 22px; font-size: 11px; margin-bottom: 5px; }
-          .qcmText { font-size: 12px; }
-          .qcmFeedback { margin-top: 8px; padding: 9px; border-radius: 12px; font-size: 12px; }
+
+          .qcmMode .app, .app.qcmMode { padding: 6px; }
+          .qcmMode .header { margin-bottom: 4px; }
+          .qcmMode .title { font-size: 22px; }
+          .qcmMode .modebar { gap: 4px; margin-bottom: 4px; }
+          .qcmMode .modeBtn { padding: 6px 3px; border-radius: 9px; font-size: 9.5px; }
+          .qcmMode .categoryArea { margin-bottom: 4px; }
+          .qcmMode .categorySelect { padding: 7px 9px; font-size: 11px; border-radius: 10px; }
+          .qcmMode .searchArea { margin-bottom: 4px; gap: 4px; }
+          .qcmMode .searchInput { padding: 7px 9px; font-size: 11px; border-radius: 10px; }
+          .qcmMode .clearBtn { padding: 7px 9px; border-radius: 10px; }
+          .qcmMode .meta { font-size: 9.5px; margin-bottom: 4px; }
+          .qcmMode .card { padding: 7px; border-radius: 12px; }
+          .qcmMode .badge { font-size: 8px; padding: 4px 7px; margin-bottom: 5px; }
+          .qcmMode .question { font-size: clamp(14px, 4.5vw, 18px); line-height: 1.08; margin-bottom: 6px; }
+          .qcmInstruction { display: none; }
+          .qcmChoices { grid-template-columns: 1fr; gap: 4px; }
+          .qcmChoice { min-height: 0; padding: 6px 7px; border-radius: 9px; }
+          .qcmLetter { width: 17px; height: 17px; font-size: 9px; margin-bottom: 2px; }
+          .qcmText { font-size: 9.7px; line-height: 1.15; font-weight: 700; }
+          .qcmFeedback { margin-top: 5px; padding: 6px 7px; border-radius: 9px; font-size: 9.5px; }
+          .qcmCorrection { font-size: 9px; margin-top: 3px; }
           .actions { gap: 5px; margin-top: 6px; }
           .btn { padding: 8px 4px; border-radius: 10px; font-size: 10.5px; min-height: 34px; }
+          .qcmMode .actions { gap: 4px; margin-top: 4px; }
+          .qcmMode .btn { padding: 6px 2px; border-radius: 8px; font-size: 8.8px; min-height: 28px; }
           .bottomActions { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
           .bottomActions .btn { width: 100%; min-width: 0; }
+          .qcmMode .bottomActions { gap: 4px; margin-top: 4px; }
         }
       `}</style>
 
       <main className="container">
         <header className="header">
-          <h1 className="title">Marbouha</h1>
+          <h1 className="title">Inchalla Marbouha</h1>
           <p className="subtitle">Révision pour l'entretien de naturalisation</p>
         </header>
 
@@ -3281,7 +3334,7 @@ export default function App() {
             🎯 Quiz
           </button>
           <button className={`modeBtn ${mode === "qcm" ? "active" : ""}`} onClick={() => switchMode("qcm")}>
-            ✅ QCM dédié
+            ✅ QCM
           </button>
         </div>
 
