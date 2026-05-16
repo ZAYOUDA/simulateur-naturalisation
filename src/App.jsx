@@ -3387,34 +3387,34 @@ export default function App() {
           .answer { font-size: clamp(14px, 4.2vw, 17px); line-height: 1.28; }
           .tip { margin-top: 8px; padding: 7px 9px; font-size: 12px; }
 
-          .app.qcmMode { padding: 6px; }
-          .qcmMode .header { margin-bottom: 4px; }
-          .qcmMode .title { font-size: 22px; }
-          .qcmMode .modebar { gap: 4px; margin-bottom: 4px; }
-          .qcmMode .modeBtn { padding: 6px 3px; border-radius: 9px; font-size: 9.5px; }
-          .qcmMode .categoryArea { margin-bottom: 4px; }
-          .qcmMode .categorySelect { padding: 7px 9px; font-size: 11px; border-radius: 10px; }
-          .qcmMode .searchArea { margin-bottom: 4px; gap: 4px; }
+          .app.qcmMode { padding: 8px; }
+          .qcmMode .header { margin-bottom: 6px; }
+          .qcmMode .title { font-size: 24px; }
+          .qcmMode .modebar { gap: 4px; margin-bottom: 6px; }
+          .qcmMode .modeBtn { padding: 6px 5px; border-radius: 10px; font-size: 10.5px; }
+          .qcmMode .categoryArea { margin-bottom: 6px; }
+          .qcmMode .categorySelect { padding: 9px 11px; font-size: 13px; border-radius: 11px; }
+          .qcmMode .searchArea { margin-bottom: 6px; gap: 6px; }
           .qcmMode .searchInput { padding: 7px 9px; font-size: 11px; border-radius: 10px; }
           .qcmMode .clearBtn { padding: 7px 9px; border-radius: 10px; }
-          .qcmMode .meta { font-size: 9.5px; margin-bottom: 4px; }
-          .qcmMode .card { padding: 7px; border-radius: 12px; }
-          .qcmMode .badge { font-size: 8px; padding: 4px 7px; margin-bottom: 5px; }
-          .qcmMode .question { font-size: clamp(14px, 4.5vw, 18px); line-height: 1.08; margin-bottom: 6px; }
+          .qcmMode .meta { font-size: 10.5px; margin-bottom: 6px; }
+          .qcmMode .card { padding: 9px; border-radius: 14px; }
+          .qcmMode .badge { font-size: 10px; padding: 5px 8px; margin-bottom: 6px; }
+          .qcmMode .question { font-size: clamp(16px, 4.5vw, 18px); line-height: 1.08; margin-bottom: 6px; }
           .qcmInstruction { display: none; }
-          .qcmChoices { grid-template-columns: 1fr; gap: 4px; }
-          .qcmChoice { min-height: 0; padding: 6px 7px; border-radius: 9px; }
-          .qcmLetter { width: 17px; height: 17px; font-size: 9px; margin-bottom: 2px; }
+          .qcmChoices { grid-template-columns: 1fr; gap: 6px; }
+          .qcmChoice { min-height: 0; padding: 8px 9px; border-radius: 11px; }
+          .qcmLetter { width: 18px; height: 18px; font-size: 11px; margin-bottom: 2px; }
           .qcmText { font-size: 9.7px; line-height: 1.15; font-weight: 700; }
           .qcmFeedback { margin-top: 5px; padding: 6px 7px; border-radius: 9px; font-size: 9.5px; }
           .qcmCorrection { font-size: 9px; margin-top: 3px; }
           .actions { gap: 5px; margin-top: 6px; }
           .btn { padding: 8px 4px; border-radius: 10px; font-size: 10.5px; min-height: 34px; }
-          .qcmMode .actions { gap: 4px; margin-top: 4px; }
+          .qcmMode .actions { gap: 6px; margin-top: 6px; }
           .qcmMode .btn { padding: 6px 2px; border-radius: 8px; font-size: 8.8px; min-height: 28px; }
           .bottomActions { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
           .bottomActions .btn { width: 100%; min-width: 0; }
-          .qcmMode .bottomActions { gap: 4px; margin-top: 4px; }
+          .qcmMode .bottomActions { gap: 6px; margin-top: 6px; }
         }
       `}</style>
 
