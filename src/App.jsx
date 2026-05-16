@@ -2074,7 +2074,7 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
   },
   {
     id: 127,
-    cat: "Gastronomie",
+    cat: "Histoire, culture et société",
     q: "Quelle est la principale spécialité culinaire de la région Alsace ?",
     r: "La choucroute.",
     astuce: "La choucroute garnie associe chou fermenté, charcuteries et pommes de terre.",
@@ -2109,7 +2109,7 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
   },
   {
     id: 132,
-    cat: "EValeurs et Principes",
+    cat: "Valeurs et Principes",
     q: "Pouvez-vous décrire la diversité de votre cercle social ?",
     r: "Mon cercle est multiculturel, notamment avec mes voisins. Nous échangeons régulièrement dans le respect mutuel et la liberté de culte.",
     astuce: "Soulignez votre capacité à vivre en harmonie avec des personnes d'origines ou de croyances différentes.",
