@@ -1940,9 +1940,9 @@ Les devoirs comprennent le respect des lois, le paiement des impôts, la partici
     {
     id: 243,
     cat: "Illustration",
-    q: "institutions pouvoirs valeurs",
-    r: "institutions pouvoirs valeurs.",
-    image: "/images/institutions_pouvoirs_valeurs.png",
+    q: "Regions",
+    r: "Regions.",
+    image: "/images/Regions.png",
     astuce: "A dessiner.",
   },
       {
@@ -2135,14 +2135,14 @@ const qcmQuestions = [
     correctIndex: 0,
     correction: "La Révolution française débute en 1789, marquée notamment par la prise de la Bastille.",
   },
-  {
-    id: "qcm-3",
-    cat: "Histoire de France",
-    q: "Quel événement a marqué la fin de la seconde guerre mondiale en Europe ?",
-    options: ["Le débarquement en Normandie", "La chute de Berlin", "La signature de l'armistice"],
-    correctIndex: 1,
-    correction: "La prise de Berlin par les Alliés et la capitulation de l'Allemagne marquent la fin du conflit en Europe.",
-  },
+{
+  id: "qcm-3",
+  cat: "Histoire de France",
+  q: "Quel événement marque la fin de la Seconde Guerre mondiale en Europe ?",
+  options: ["La capitulation de l'Allemagne nazie", "La prise de la Bastille", "La bataille de Verdun"],
+  correctIndex: 0,
+  correction: "La capitulation de l'Allemagne nazie, le 8 mai 1945, marque la fin de la Seconde Guerre mondiale en Europe.",
+},
   {
     id: "qcm-4",
     cat: "Histoire de France",
@@ -2216,14 +2216,6 @@ const qcmQuestions = [
     correction: "La Guerre de Cent Ans est un conflit majeur qui a duré plus d'un siècle entre les deux pays.",
   },
   {
-    id: "qcm-13",
-    cat: "Histoire de France",
-    q: "Qui a signé la Déclaration des Droits de l'Homme et du Citoyen ?",
-    options: ["Louis XVI", "Maximilien Robespierre", "L'Assemblée nationale"],
-    correctIndex: 2,
-    correction: "Elle a été adoptée par l'Assemblée nationale constituante en août 1789.",
-  },
-  {
     id: "qcm-14",
     cat: "Histoire de France",
     q: "Qui était le général français qui a libéré la France en 1944 ?",
@@ -2271,14 +2263,14 @@ const qcmQuestions = [
     correctIndex: 0,
     correction: "Surnommé 'Le Tigre', Georges Clemenceau a été le chef du gouvernement à la fin de la Grande Guerre.",
   },
-  {
-    id: "qcm-20",
-    cat: "Histoire de France",
-    q: "Qui est considéré comme le 'père de la France moderne' ?",
-    options: ["Napoléon Bonaparte", "Charles de Gaulle", "François Mitterrand"],
-    correctIndex: 1,
-    correction: "Charles de Gaulle est souvent désigné ainsi pour avoir fondé la Ve République.",
-  },
+{
+  id: "qcm-20",
+  cat: "Histoire de France",
+  q: "Quel homme politique a fondé la Ve République en 1958 ?",
+  options: ["Charles de Gaulle", "Georges Clemenceau", "François Mitterrand"],
+  correctIndex: 0,
+  correction: "Charles de Gaulle a joué un rôle central dans la fondation de la Ve République en 1958.",
+},
   {
     id: "qcm-21",
     cat: "Institutions et Politique",
@@ -2320,30 +2312,6 @@ const qcmQuestions = [
     correction: "Depuis la réforme de 2016, la France métropolitaine est divisée en 13 régions.",
   },
   {
-    id: "qcm-26",
-    cat: "Institutions et Politique",
-    q: "Quel est le rôle du Conseil constitutionnel ?",
-    options: ["Contrôler les lois votées", "Voter des lois", "Diriger le gouvernement"],
-    correctIndex: 0,
-    correction: "Le Conseil constitutionnel veille à la conformité des lois avec la Constitution.",
-  },
-  {
-    id: "qcm-27",
-    cat: "Institutions et Politique",
-    q: "Qui nomme le Premier ministre ?",
-    options: ["Le peuple", "Le Président de la République", "L'Assemblée nationale"],
-    correctIndex: 1,
-    correction: "Selon l'article 8 de la Constitution, le Président de la République nomme le Premier ministre.",
-  },
-  {
-    id: "qcm-28",
-    cat: "Institutions et Politique",
-    q: "Quel organe législatif est composé de députés ?",
-    options: ["Le Sénat", "L'Assemblée nationale", "Le Conseil d'État"],
-    correctIndex: 1,
-    correction: "Les députés siègent à l'Assemblée nationale, tandis que les sénateurs siègent au Sénat.",
-  },
-  {
     id: "qcm-29",
     cat: "Institutions et Politique",
     q: "Comment appelle-t-on les membres du Sénat ?",
@@ -2367,22 +2335,22 @@ const qcmQuestions = [
     correctIndex: 0,
     correction: "Le Président de la République est le chef des armées et préside les conseils de défense.",
   },
-  {
-    id: "qcm-32",
-    cat: "Institutions et Politique",
-    q: "Quelle institution vote les lois en France ?",
-    options: ["Le Sénat", "L'Assemblée nationale", "Le Conseil constitutionnel"],
-    correctIndex: 1,
-    correction: "Bien que le Sénat y participe, l'Assemblée nationale est l'institution principale qui vote les lois et a le dernier mot.",
-  },
-  {
-    id: "qcm-33",
-    cat: "Institutions et Politique",
-    q: "Quel est le rôle du Président de la République ?",
-    options: ["Gouverner le pays", "Nommer le Premier ministre et diriger les relations internationales", "Diriger les ministères"],
-    correctIndex: 1,
-    correction: "Le Président nomme le Premier ministre et représente la France à l'étranger.",
-  },
+{
+  id: "qcm-32",
+  cat: "Institutions et Politique",
+  q: "Comment appelle-t-on les deux chambres du Parlement français ?",
+  options: ["L'Assemblée nationale et le Sénat", "Le Gouvernement et le Sénat", "Le Conseil d'État et l'Assemblée nationale"],
+  correctIndex: 0,
+  correction: "Le Parlement français est composé de deux chambres : l'Assemblée nationale et le Sénat.",
+},
+{
+  id: "qcm-35",
+  cat: "Institutions et Politique",
+  q: "Combien de députés ou de sénateurs peuvent saisir le Conseil constitutionnel avant la promulgation d'une loi ?",
+  options: ["30", "60", "100"],
+  correctIndex: 1,
+  correction: "Le Conseil constitutionnel peut être saisi par 60 députés ou 60 sénateurs avant la promulgation d'une loi.",
+},
   {
     id: "qcm-34",
     cat: "Institutions et Politique",
@@ -2450,18 +2418,6 @@ const qcmQuestions = [
     ],
     correctIndex: 0,
     correction: "La laïcité repose sur la séparation des Églises et de l'État (loi de 1905), garantissant la neutralité de l'État.",
-  },
-  {
-    id: "qcm-42",
-    cat: "République & Valeurs",
-    q: "Que signifie l'égalité en France ?",
-    options: [
-      "Une égalité de traitement pour tous les citoyens",
-      "Une égalité des richesses",
-      "Une égalité entre hommes et femmes uniquement"
-    ],
-    correctIndex: 0,
-    correction: "L'égalité signifie que la loi est la même pour tous, sans distinction d'origine, de race ou de religion.",
   },
   {
     id: "qcm-43",
@@ -2611,46 +2567,42 @@ const qcmQuestions = [
     correctIndex: 0,
     correction: "Elle établit que tous les citoyens sont égaux devant la loi sans distinction.",
   },
-  {
-    id: "qcm-56",
-    cat: "République & Valeurs",
-    q: "Quelle institution est chargée de garantir le respect de la Constitution ?",
-    options: ["Le Conseil constitutionnel", "Le Sénat", "L'Assemblée nationale"],
-    correctIndex: 0,
-    correction: "Le Conseil constitutionnel est le gardien de la Constitution de la Ve République.",
-  },
-  {
-    id: "qcm-57",
-    cat: "République & Valeurs",
-    q: "En quelle année la Déclaration des Droits de l'Homme et du Citoyen a-t-elle été adoptée ?",
-    options: ["1789", "1791", "1795"],
-    correctIndex: 0,
-    correction: "Elle a été adoptée le 26 août 1789 par l'Assemblée nationale constituante.",
-  },
-  {
-    id: "qcm-58",
-    cat: "République & Valeurs",
-    q: "Qui a rédigé la Déclaration des droits de l'homme et du citoyen ?",
-    options: [
-      "Les révolutionnaires de 1789",
-      "Napoléon Bonaparte",
-      "Le général de Gaulle"
-    ],
-    correctIndex: 0,
-    correction: "Elle a été élaborée et votée par les députés de l'Assemblée nationale constituante en 1789.",
-  },
-  {
-    id: "qcm-59",
-    cat: "République & Valeurs",
-    q: "Que signifie 'l'égalité devant la loi' ?",
-    options: [
-      "Tous les citoyens ont les mêmes droits",
-      "Tous les citoyens doivent payer des impôts égaux",
-      "Les citoyens doivent suivre les mêmes religions"
-    ],
-    correctIndex: 0,
-    correction: "L'égalité devant la loi signifie que la règle est identique pour chaque citoyen.",
-  },
+{
+  id: "qcm-56",
+  cat: "République & Valeurs",
+  q: "Que signifie le principe de souveraineté nationale ?",
+  options: [
+    "Le pouvoir appartient au peuple",
+    "Le pouvoir appartient uniquement au Président",
+    "Le pouvoir appartient aux juges"
+  ],
+  correctIndex: 0,
+  correction: "La souveraineté nationale appartient au peuple, qui l'exerce par ses représentants et par référendum.",
+},
+{
+  id: "qcm-58",
+  cat: "République & Valeurs",
+  q: "Quel texte affirme que les hommes naissent et demeurent libres et égaux en droits ?",
+  options: [
+    "La Déclaration des droits de l'homme et du citoyen",
+    "Le Code civil",
+    "La Constitution de 1958 uniquement"
+  ],
+  correctIndex: 0,
+  correction: "L'article premier de la Déclaration de 1789 affirme que les hommes naissent et demeurent libres et égaux en droits.",
+},
+{
+  id: "qcm-59",
+  cat: "République & Valeurs",
+  q: "Que signifie la fraternité dans la devise républicaine ?",
+  options: [
+    "La solidarité entre les citoyens",
+    "L'obligation d'avoir la même opinion",
+    "La priorité donnée à une région"
+  ],
+  correctIndex: 0,
+  correction: "La fraternité renvoie à l'idée de solidarité, d'entraide et de cohésion entre les citoyens.",
+},
   {
     id: "qcm-60",
     cat: "République & Valeurs",
@@ -2867,14 +2819,14 @@ const qcmQuestions = [
     correctIndex: 0,
     correction: "La Marseillaise, composée par Rouget de Lisle en 1792, est l'hymne national depuis 1795.",
   },
-  {
-    id: "qcm-86",
-    cat: "Culture & Rayonnement",
-    q: "Dans quel domaine la France est-elle mondialement reconnue ?",
-    options: ["La gastronomie", "La technologie spatiale", "Le cinéma"],
-    correctIndex: 0, // Note: Les trois sont vrais, mais la gastronomie est souvent la réponse attendue dans ce contexte.
-    correction: "Le 'repas gastronomique des Français' est inscrit au patrimoine culturel immatériel de l'humanité.",
-  },
+{
+  id: "qcm-86",
+  cat: "Culture & Rayonnement",
+  q: "Quel élément de la culture française est inscrit au patrimoine culturel immatériel de l'UNESCO ?",
+  options: ["Le repas gastronomique des Français", "Le métro parisien", "La pétanque"],
+  correctIndex: 0,
+  correction: "Le repas gastronomique des Français est inscrit au patrimoine culturel immatériel de l'humanité.",
+},
   {
     id: "qcm-87",
     cat: "Culture & Rayonnement",
@@ -2890,14 +2842,6 @@ const qcmQuestions = [
     options: ["Jean-Paul Sartre", "Albert Camus", "André Gide"],
     correctIndex: 1,
     correction: "Albert Camus a été récompensé pour son œuvre mettant en lumière les problèmes se posant de nos jours à la conscience des hommes.",
-  },
-  {
-    id: "qcm-89",
-    cat: "Culture & Rayonnement",
-    q: "Quelle est la devise de la France ?",
-    options: ["Liberté, Égalité, Fraternité", "Unité, Travail, Progrès", "Honneur et Patrie"],
-    correctIndex: 0,
-    correction: "Cette devise est issue de la Révolution française et figure dans la Constitution de 1958.",
   },
   {
     id: "qcm-90",
@@ -3420,7 +3364,7 @@ export default function App() {
 
       <main className="container">
         <header className="header">
-          <h1 className="title">Inchalla Marbouha</h1>
+          <h1 className="title">Marbouha</h1>
           <p className="subtitle">Révision pour l'entretien de naturalisation</p>
         </header>
 
